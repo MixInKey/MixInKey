@@ -22,3 +22,5 @@ Route::get('/electro', function () {
 Route::get('/login', function () {
     return view('templates.login');
 });
+
+Route::get('/call', array('uses' => 'BeatportController@call'));

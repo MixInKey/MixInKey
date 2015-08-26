@@ -53,14 +53,14 @@ class BeatportApi {
         $authurl        = 'https://oauth-api.beatport.com/identity/1/oauth/authorize';
         $auth_submiturl = 'https://oauth-api.beatport.com/identity/1/oauth/authorize-submit';
         $acc_url        = 'https://oauth-api.beatport.com/identity/1/oauth/access-token';
-        $http_request = new HTTP_Request2(null, HTTP_Request2::METHOD_GET, array(
+        $http_request = new \HTTP_Request2(null, HTTP_Request2::METHOD_GET, array(
             'ssl_verify_peer' => false,
             'ssl_verify_host' => false
         ));
         $http_request->setHeader('Accept-Encoding', '.*');
-        $consumer_request = new HTTP_OAuth_Consumer_Request();
+        $consumer_request = new \HTTP_OAuth_Consumer_Request();
         $consumer_request->accept($http_request);
-        $oauth = new HTTP_OAuth_Consumer($conskey, $conssec);
+        $oauth = new \HTTP_OAuth_Consumer($conskey, $conssec);
         $oauth->accept($consumer_request);
 
 
@@ -95,15 +95,14 @@ class BeatportApi {
         $oauth->getAccessToken('https://oauth-api.beatport.com/identity/1/oauth/access-token', $oauth_exploded['oauth_verifier']);
         return $oauth;
     }
-    public function queryApi($parameters) {
 
+    public function queryApi($parameters)
+    {
         $query    = $this->buildQuery($parameters);
         $path     = $query['path'];
         $qryarray = $query['qryarray'];
-        var_dump($qryarray); // debug
         $request  = $this->oauth->sendRequest('https://oauth-api.beatport.com/catalog/3/' . $path, $qryarray);
         $json     = $request->getBody();
         return json_decode($json, true);
     }
 }
-

@@ -1,12 +1,10 @@
 <?php
 //test
-error_reporting(E_ALL); // debug
-ini_set('display_errors', '1'); //debug
-include'vendor/autoload.php';
-include "BeatportApi.class.php"; // include the class
-include "config.php";
+// include'vendor/autoload.php';
+// include "BeatportApi.php"; // include the class
+// include "Beatportconfig.php";
 $parameters = array(
-    'consumer' => CONSUMER,
+    'consumer' => CONSUMERAPI,
     'secret' => SECRET,
     'login' => LOGIN,
     'password' => PASSWORD
