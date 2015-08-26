@@ -4,10 +4,17 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-	"laravelcollective/html": "~5.0"
+	      "laravelcollective/html": "~5.0",
+        "pear-pear.php.net/HTTP_OAuth": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

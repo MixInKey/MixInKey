@@ -23,6 +23,9 @@ Route::get('/login', function () {
     return view('templates.login');
 });
 
+
 Route::get('/search', function () {
     return view('templates.search');
 });
+
+Route::get('/call', array('uses' => 'BeatportController@call'));
