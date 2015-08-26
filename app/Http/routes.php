@@ -22,3 +22,7 @@ Route::get('/electro', function () {
 Route::get('/login', function () {
     return view('templates.login');
 });
+
+Route::get('/search', function () {
+    return view('templates.search');
+});
