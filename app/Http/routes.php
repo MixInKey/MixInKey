@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/electro', function () {
+    return view('templates.electro');
+});
+
+Route::get('/login', function () {
+    return view('templates.login');
+});

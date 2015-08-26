@@ -83,14 +83,14 @@
 
 				<ul class="nav">
 					<li>
-						<a class="waves-attach" href="/index.html"><span class="icon icon-lg">home</span>Home</a>
+						<a class="waves-attach" href="/"><span class="icon icon-lg">home</span>Home</a>
 					</li>
 					<li>
 						<a class="waves-attach menu-collapse collapsed" data-target="#genre" data-toggle="collapse" href="#"><span class="icon icon-lg">view_list</span>Genres</a>
 						<span class="menu-collapse-toggle collapsed" data-target="#genre" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
 						<ul class="menu-collapse collapse" id="genre">
 							<li>
-								<a class="waves-attach" href="templates/electro.html">Electro</a>
+								<a class="waves-attach" href="/electro">Electro</a>
 							</li>
 							<li>
 								<a class="waves-attach" href="#">Hip Hop</a>
@@ -114,6 +114,34 @@
 					<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
 				</div>
 			</div>
+			<div class="menu-content">
+				<ul class="nav">
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Compte</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">shopping_cart</span>Mon panier</a>
+					</li>
+					<li>
+						<a class="waves-attach menu-collapse collapsed" data-target="#playlist" data-toggle="collapse" href="javascript:void(0)"><span class="icon icon-lg">library_add</span>Playlists</a>
+						<span class="menu-collapse-toggle collapsed" data-target="#playlist" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
+						<ul class="menu-collapse collapse" id="playlist">
+							<li>
+								<a class="waves-attach" href="#"><span class="icon icon-lg">add</span>Créer une playlist</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">settings</span>Paramètres</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="/login"><span class="icon icon-lg">exit_to_app</span>Déconnexion</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
       @yield('content')
 			<!-- Footer -->
 		<footer class="footer">

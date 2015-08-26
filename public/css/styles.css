@@ -1,0 +1,116 @@
+body {
+  padding-bottom: 69px;
+  background-color: #263238;
+  color: #ABB3BD;
+}
+
+.content-heading {
+  background-color: #303e45;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 68px;
+  border-bottom: 1px solid white;
+}
+
+.header-logo img, .menu-logo img {
+    display: block;
+    max-height: 50px;
+    width: auto;
+    margin-top: -11px;
+}
+
+.search-bar{
+  margin-left: 20px;
+}
+
+.header-transparent.affix{
+  background-color: #00c77f !important;
+}
+
+.menu-content > .menu-logo:first-child{
+  background-color: #303e45;
+  color: white;
+}
+
+.menu-scroll{
+  background-color: #263238;
+}
+
+.menu-content .nav a, .menu-content .nav .a{
+  color: #ABB3BD;
+}
+
+.menu-collapse-toggle-close{
+  color: white;
+}
+
+.menu-collapse-toggle-default{
+  color: white;
+}
+
+.menu-content .nav a:hover{
+  color: white;
+  background-color: #02dd8e;
+}
+
+.menu-content .nav a:focus, .menu-content .nav .a:focus{
+  color: white;
+  background-color: #00a96c;
+}
+
+.menu-logo{
+  height: 65px;
+}
+
+.form-control{
+  color: white;
+}
+
+.menu-logo:focus, .menu-logo{
+  color: #ABB3BD;
+}
+
+.menu-logo:focus, .menu-logo:hover{
+  color: white;
+}
+
+.menu-top{
+  background-color: #00c77f;
+}
+
+.footer{
+  background-color: #303e45;
+}
+
+.fbtn-green{
+  background-color: #00c77f;
+}
+
+/* Login page */
+
+.header{
+  background-color: #00c77f;
+}
+
+.card-login{
+  background: transparent;
+  box-shadow: 0 1px 6px rgba(0,0,0,.3);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  -webkit-transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
+  border-radius: 6px;
+}
+
+.btn{
+  background-color: #02dd8e;
+}
+
+.btn-flat.btn-blue, .btn-flat.btn-blue[disabled], fieldset[disabled] .btn-flat.btn-blue{
+  color: black;
+}
