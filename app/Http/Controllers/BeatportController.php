@@ -11,12 +11,6 @@ class BeatPortController extends Controller
 
     public function call()
     {
-        //test
-        error_reporting(E_ALL); // debug
-        ini_set('display_errors', '1'); //debug
-        // include'vendor/autoload.php';
-        // include "BeatportApi.php"; // include the class
-        // include "Beatportconfig.php";
         $parameters = array(
             'consumer' => CONSUMERAPI,
             'secret' => SECRET,
@@ -24,7 +18,9 @@ class BeatPortController extends Controller
             'password' => PASSWORD
         );
 
-        /*Key Values: Amin=6, Amaj=23,
+            /*
+            Key Values:
+              Amin=6, Amaj=23,
         			A#min=26 , A#maj=25 ,
         			Bmin=10, Bmaj=13 ,
         			Cmin=5 , Cmaj=20 ,
@@ -35,7 +31,8 @@ class BeatPortController extends Controller
         			Fmin=4, Fmaj=19 ,
         			F#min=11 , F#maj=14 ,
         		 	Gmin=6 , Gmaj= 21,
-        		 	G#min=32 , G#maj=31 ,*/
+        		 	G#min=32 , G#maj=31 ,
+            */
         $query = array(
             'facets' => 'artistId:405818,genreName:Electro House,key:4',
             'url' => 'tracks',
@@ -43,7 +40,9 @@ class BeatPortController extends Controller
         );
 
         $api = new \BeatportApi($parameters);
-        $response = $api->queryApi($query);
+        $queryApi = 0;
+        if(isset($queryApi))
+            $response = $api->queryApi($query);
 
         return view('api.call')->with('response', $response);
     }

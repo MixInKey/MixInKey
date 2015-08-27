@@ -90,7 +90,7 @@ body {
 /* Login page */
 
 .header{
-  background-color: #00c77f;
+  background-color: #00c77f !important;
 }
 
 .card-login{
@@ -113,4 +113,16 @@ body {
 
 .btn-flat.btn-blue, .btn-flat.btn-blue[disabled], fieldset[disabled] .btn-flat.btn-blue{
   color: black;
+}
+
+.slide-bpm label{
+  font-size: 18px!important;
+  font-weight: bold;
+}
+.slide-bpm .label-more{
+  float:right;
+  padding-right: 25px;
+}
+.slide-bpm .label-less{
+  padding-left: 25px;
 }
