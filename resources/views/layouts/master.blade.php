@@ -7,12 +7,11 @@
 	<title>Music World</title>
 
 	<!-- css -->
-	<link href="css/material-design.css" rel="stylesheet">
+	<link href="{{ URL::to('css/material-design.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!-- css for this project -->
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -50,7 +49,7 @@
 			</li>
 		</ul>
 		<a class="header-logo margin-left-no" data-toggle="menu" href="#menu">
-			<img src="images/logo/logo.png"></img>
+			<img src="{{ URL::to('images/logo/logo.png') }}"></img>
 		</a>
 		<!-- Page indicator -->
 		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
@@ -63,7 +62,7 @@
 			<li>
 				<a data-toggle="menu" href="#profile">
 					<span class="access-hide">Sylvain Martin</span>
-					<span class="avatar"><img src="images/users/avatar-001.jpg"></span>
+					<span class="avatar"><img src="{{ URL::to('images/users/avatar-001.jpg') }}"></span>
 				</a>
 			</li>
 		</ul>
@@ -113,7 +112,7 @@
 		<div class="menu-scroll">
 			<div class="menu-top">
 				<div class="menu-top-info">
-					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img src="images/users/avatar-001.jpg"></span>Sylvain Martin</a>
+					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img src="{{ URL::to('images/users/avatar-001.jpg') }}"></span>Sylvain Martin</a>
 				</div>
 				<div class="menu-top-info-sub">
 					<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
@@ -168,10 +167,13 @@
 		</div>
 
 		<!-- js -->
+
+		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/material-design.js"></script>
+		<script src="{{ URL::to('js/material-design.js') }}"></script>
+		<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 
 		<!-- js for this project -->
-		<script src="js/project.js"></script>
+		<script src="{{ URL::to('js/script.js') }}"></script>
 	</body>
 	</html>
