@@ -23,6 +23,17 @@
                     <span class="label-more"><i class="fa fa-plus"></i></span>
               </div>
 					</section>
+			</div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+					<section class="content-inner">
+						<p><a class="btn collapsed waves-attach waves-button" data-toggle="collapse" href="#Genre"><span class="collapsed-hide"><i class="icon icon-lg">close</i> Genre</span><span class="collapsed-show"><i class="icon icon-lg">view_list</i> Genre</span></a></p>
+						<div class="collapsible-region collapse in" id="Genre">
+              <div class="form-group form-group-label slide-bpm">
+                <select class="form-control">
+                    <option ng-repeat="genre in genres"><% genre.name %></option>
+                </select>
+              </div>
+					</section>
 				</div>
         <div class="col-lg-3 col-md-4 col-sm-6">
             <section class="content-inner">

@@ -51,7 +51,8 @@ class BeatPortController extends Controller
         return response()->json($response);
     }
 
-    public function getAllArtists(){
+    public function getAllArtists()
+    {
         $parameters = array(
             'consumer' => CONSUMERAPI,
             'secret' => SECRET,
@@ -63,6 +64,27 @@ class BeatPortController extends Controller
             'facets' => '',
             'url' => 'artists',
             'perPage' => '150',
+        );
+
+        $api = new \BeatportApi($parameters);
+        $response = $api->queryApi($query);
+
+        return response()->json($response);
+    }
+
+    public function getAllGenres()
+    {
+        $parameters = array(
+            'consumer' => CONSUMERAPI,
+            'secret' => SECRET,
+            'login' => LOGIN,
+            'password' => PASSWORD
+        );
+
+        $query = array(
+            'facets' => '',
+            'url' => 'genres',
+            'perPage' => '1000',
         );
 
         $api = new \BeatportApi($parameters);

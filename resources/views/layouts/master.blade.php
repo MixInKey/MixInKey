@@ -87,21 +87,6 @@
 						<a class="waves-attach" href="/"><span class="icon icon-lg">home</span>Home</a>
 					</li>
 					<li>
-						<a class="waves-attach menu-collapse collapsed" data-target="#genre" data-toggle="collapse" href="#"><span class="icon icon-lg">view_list</span>Genres</a>
-						<span class="menu-collapse-toggle collapsed" data-target="#genre" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="genre">
-							<li>
-								<a class="waves-attach" href="/electro">Electro</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="#">Hip Hop</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="#">Rock</a>
-							</li>
-						</ul>
-					</li>
-					<li>
 						<a class="waves-attach" href="/search"><span class="icon icon-lg">youtube_searched_for</span>Recherche Avancée</a>
 					</li>
 			</div>

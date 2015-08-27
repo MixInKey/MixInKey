@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/electro', function () {
-    return view('templates.electro');
+    return view('templates.search');
 });
 
 Route::get('/login', function () {
@@ -30,4 +26,5 @@ Route::get('/search', function () {
 
 Route::get('/call', array('uses' => 'BeatportController@call'));
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
+Route::get('/genres', array('uses' => 'BeatportController@getAllGenres'));
 Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));
