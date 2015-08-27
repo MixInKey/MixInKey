@@ -1,13 +1,17 @@
 angular.module('MainCtrl', [])
 
-.controller('MainController', function ($scope, $interval, Beatport) {
+.controller('MainController', function ($scope, Beatport) {
 
-    Beatport.getTracks()
-      .success(function(data){
-          $scope.ops = data;
-          $scope.query.id = '!!';
-      })
-      .error(function(data){
-          console.log(data);
-      });
+    $scope.tracks = {};
+
+    $scope.findTracks = function(){
+        Beatport.getTracks()
+          .success(function(data){
+              $scope.tracks = data;
+          })
+          .error(function(data){
+              console.log(data);
+          });
+    };
+
 });

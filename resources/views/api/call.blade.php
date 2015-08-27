@@ -11,5 +11,6 @@
 		</div>
 </div>
 @endforeach
-<iframe src='http://embed.beatport.com/player/?id=5500589&type=track' width='100%' height='166' scrolling='no' frameborder='0'></iframe>
+{{-- <iframe src='http://embed.beatport.com/player/?id=5500589&type=track' width='100%' height='166' scrolling='no' frameborder='0'></iframe> --}}
+<iframe src='https://embed-www.beatport.com/s/uykuzpdtjo4s' width='100%' height='166' scrolling='no' frameborder='0'></iframe>
 @stop

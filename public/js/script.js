@@ -1,5 +1,13 @@
-// project
-	// ui-form-adv.html
+var app = angular.module('beatportApp', [
+    'MainCtrl',
+		'beatportService',
+],function($interpolateProvider){
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
+
+$(document).ready(function(){
+		// ui-form-adv.html
 		$('.datepicker-adv-doc-1').datepicker();
 
 		$('.datepicker-adv-doc-2').datepicker({
@@ -8,7 +16,7 @@
 			selectYears: 30
 		});
 
-	// ui-modal.html
+		// ui-modal.html
 		$('#toast-1').on('click', function () {
 			$('body').toast({
 				content: 'Simple toast with some text'
@@ -21,7 +29,7 @@
 			});
 		});
 
-	// ui-progress.html
+		// ui-progress.html
 		$('.finish-loading').on('click', function(e) {
 			e.stopPropagation();
 			$($(this).attr('data-target')).addClass('el-loading-done');
@@ -44,3 +52,4 @@
 				};
 			});
 		});
+});

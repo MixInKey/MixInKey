@@ -1,13 +1,14 @@
 angular.module('beatportService', [])
 
 .factory('Beatport', function($http){
-    var urlApi = 'http://localhost:8000/api/'
+    var urlApi = 'http://localhost:8000/api/';
+    var genreId, artistId, trackId;
     return {
     		getOne : function(trackId) {
-            return $http.get(urlApi+'track/'+genreID);
+            return $http.get(urlApi+'track/'+trackId);
     		},
     		getTracks : function(genreId) {
-            return $http.get(urlApi+'genre/'+genreID);
+            return $http.get(urlApi+'genre/'+genreId);
     		},
     		getByArtist : function(artistId) {
             return $http.get(urlApi+'artist/'+artistId);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="beatportApp">
 <head>
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -23,7 +23,7 @@
 		<![endif]-->
 </head>
 <!-- Loader -->
-<body class="avoid-fout">
+<body class="avoid-fout" ng-controller="MainController">
 	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
 		<div class="progress-circular progress-circular-alt progress-circular-center">
 			<div class="progress-circular-wrapper">
@@ -172,6 +172,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="{{ URL::to('js/material-design.js') }}"></script>
 		<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
+		<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
+		<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
 
 		<!-- js for this project -->
 		<script src="{{ URL::to('js/script.js') }}"></script>
