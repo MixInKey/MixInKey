@@ -50,4 +50,24 @@ class BeatPortController extends Controller
 
         return response()->json($response);
     }
+
+    public function getAllArtists(){
+        $parameters = array(
+            'consumer' => CONSUMERAPI,
+            'secret' => SECRET,
+            'login' => LOGIN,
+            'password' => PASSWORD
+        );
+
+        $query = array(
+            'facets' => '',
+            'url' => 'artists',
+            'perPage' => '150',
+        );
+
+        $api = new \BeatportApi($parameters);
+        $response = $api->queryApi($query);
+
+        return response()->json($response);
+    }
 }

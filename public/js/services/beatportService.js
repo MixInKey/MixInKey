@@ -1,7 +1,7 @@
 angular.module('beatportService', [])
 
 .factory('Beatport', function($http){
-    var urlApi = 'http://localhost:8000/api/';
+    var urlApi = 'http://localhost:8000/';
     var genreId, artistId, trackId;
     return {
     		getOne : function(trackId) {
@@ -23,6 +23,9 @@ angular.module('beatportService', [])
     		},
     		getByArtist : function(artistId) {
             return $http.get(urlApi+'artist/'+artistId);
+    		},
+    		getAllArtists : function() {
+            return $http.get(urlApi+'artists');
     		},
     }
 });

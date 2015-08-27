@@ -29,4 +29,5 @@ Route::get('/search', function () {
 });
 
 Route::get('/call', array('uses' => 'BeatportController@call'));
+Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
 Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));

@@ -12,12 +12,18 @@
 			</div>
 		</div>
 		<div>
-			<div class="col-md-6" ng-repeat="track in tracks.results">
-					<p><% track.id %></p>
-					<img class="thumbnail" src="<% track.images.large.url %>">
+			<div class="input-group">
+					<input type="text" class="form-control" ng-model="query.name" placeholder="Search .."><br><br>
 			</div>
+			<div class="col-md-6" ng-repeat="track in tracks.results | filter: query">
+					<p><% track.id %> <% track.name %></p>
+					<img class="thumbnail" ng-src="<% track.images.medium.url %>">
+			</div>
+
+			<iframe src='http://embed.beatport.com/player/?id=5500589&type=track' id="playerFrame" width='400px' height='166' scrolling='no' frameborder='0'></iframe>
 		</div>
-		<iframe src='https://embed-www.beatport.com/s/uykuzpdtjo4s' width='100%' height='166' scrolling='no' frameborder='0'></iframe>
+		<ul ng-repeat="artist in artists">
+				<li ><% artist.name %> <% artiste.id %></li>
+		</div>
 </div>
-{{-- <iframe src='http://embed.beatport.com/player/?id=5500589&type=track' width='100%' height='166' scrolling='no' frameborder='0'></iframe> --}}
 @stop

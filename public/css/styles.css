@@ -127,3 +127,7 @@ body {
 .slide-bpm .label-less{
   padding-left: 25px;
 }
+
+#playerFrame{
+  margin-top: 8%;
+}

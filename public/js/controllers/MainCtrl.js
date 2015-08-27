@@ -2,7 +2,7 @@ angular.module('MainCtrl', [])
 
 .controller('MainController', function ($scope, Beatport) {
 
-    $scope.tracks = {};
+    $scope.tracks = {}, $scope.artists = {};
 
     $scope.findTracks = function(){
         Beatport.getTracks()
@@ -13,5 +13,17 @@ angular.module('MainCtrl', [])
               console.log(data);
           });
     };
+
+    $scope.findArtists = function(){
+        Beatport.getAllArtists()
+          .success(function(data){
+              $scope.artists = data.results;
+          })
+          .error(function(data){
+              console.log(data);
+          });
+    };
+
+    $scope.findArtists();
 
 });
