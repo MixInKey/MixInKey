@@ -7,6 +7,7 @@ var app = angular.module('beatportApp', [
 });
 
 $(document).ready(function(){
+
 		// ui-form-adv.html
 		$('.datepicker-adv-doc-1').datepicker();
 

@@ -9,7 +9,7 @@ angular.module('beatportService', [])
     		},
     		getTracks : function() {
             var data = {
-              facets : 'artistId:405818,genreName:Electro House,key:4',
+              facets : 'artistId:405818',
               url : 'tracks',
               perPage : '150'
             }

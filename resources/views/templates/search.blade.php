@@ -13,57 +13,64 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-6">
-					<section class="content-inner">
-						<p><a class="btn collapsed waves-attach waves-button" data-toggle="collapse" href="#BPM"><span class="collapsed-hide"><i class="icon icon-lg">close</i> BPM</span><span class="collapsed-show"><i class="icon icon-lg">view_list</i> BPM</span></a></p>
-						<div class="collapsible-region collapse in" id="BPM">
-              <div class="form-group form-group-label slide-bpm">
-                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0"/>
-                    <span class="label-less"><i class="fa fa-minus"></i></span>
-                    <span class="label-more"><i class="fa fa-plus"></i></span>
-              </div>
-					</section>
-			</div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-					<section class="content-inner">
-						<p><a class="btn collapsed waves-attach waves-button" data-toggle="collapse" href="#Genre"><span class="collapsed-hide"><i class="icon icon-lg">close</i> Genre</span><span class="collapsed-show"><i class="icon icon-lg">view_list</i> Genre</span></a></p>
-						<div class="collapsible-region collapse in" id="Genre">
-              <div class="form-group form-group-label slide-bpm">
-                <select class="form-control">
-                    <option ng-repeat="genre in genres"><% genre.name %></option>
-                </select>
-              </div>
-					</section>
-				</div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <section class="content-inner">
-              <p><a class="btn collapsed waves-attach waves-button" data-toggle="collapse" href="#KEY"><span class="collapsed-hide"><i class="icon icon-lg">close</i> KEY</span><span class="collapsed-show"><i class="icon icon-lg">view_list</i> KEY</span></a></p>
-              <div class="collapsible-region collapse in" id="KEY">
-                <div class="form-group">
-                  <div class="checkbox checkbox-adv">
-                    <label for="input-checkbox-1">
-                      <input class="access-hide" id="input-checkbox-1" name="input-checkbox" type="checkbox">Option 1
-                      <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
-                    </label>
-                  </div>
-                  <div class="checkbox checkbox-adv">
-                    <label for="input-checkbox-2">
-                      <input class="access-hide" id="input-checkbox-2" name="input-checkbox" type="checkbox">Option 2
-                      <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
-                    </label>
-                  </div>
-                  <div class="checkbox checkbox-adv">
-                    <label for="input-checkbox-3">
-                      <input class="access-hide" id="input-checkbox-3" name="input-checkbox" type="checkbox">Option 3
-                      <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
-                    </label>
-                  </div>
+      <div class="col-md-5">
+        <form class="form-horizontal">
+          <div class="form-group form-group-label" ng-init="findGenres()">
+            <label for="genre">Genre</label>
+            <select class="form-control" id="genre">
+                <option ng-repeat="genre in genres"><% genre.name %></option>
+            </select>
+          </div>
+          <div class="form-group form-group-label slide-bpm" >
+            <label for="bpm-input">BPM</label>
+            <div id="BPM">
+              <input id="bpm-input" class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0"/>
+              {{-- <a ng-click="lessBpm()" class="btnlabel-less"><i class="fa fa-minus"></i></a> --}}
+              <button ng-click="lessBpm()" class="label-less mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                <i class="material-icons">remove</i>
+              </button>
+              <button ng-click="moreBpm()" class="label-more mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                <i class="material-icons">add</i>
+              </button>
+            </div>
+          </div>
+            <div class="form-group form-group-label">
+              <div class="col-md-3">
+                <div class="checkbox checkbox-adv">
+                  <label for="input-checkbox-1">
+                    <input class="access-hide" id="input-checkbox-1" name="input-checkbox" type="checkbox">Option 1
+                    <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
+                  </label>
                 </div>
               </div>
-            </section>
-          </div>
+              <div class="col-md-3">
+                <div class="checkbox checkbox-adv">
+                  <label for="input-checkbox-2">
+                    <input class="access-hide" id="input-checkbox-2" name="input-checkbox" type="checkbox">Option 2
+                    <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="checkbox checkbox-adv">
+                  <label for="input-checkbox-3">
+                    <input class="access-hide" id="input-checkbox-3" name="input-checkbox" type="checkbox">Option 3
+                    <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="checkbox checkbox-adv">
+                  <label for="input-checkbox-4">
+                    <input class="access-hide" id="input-checkbox-4" name="input-checkbox" type="checkbox">Option 4
+                    <span class="circle"></span><span class="circle-check"></span><span class="circle-icon icon">done</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 @stop

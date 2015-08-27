@@ -8,13 +8,9 @@
 
 	<!-- css -->
 	<link href="{{ URL::to('css/material-design.css') }}" rel="stylesheet">
-	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+ 	<link rel="stylesheet" href="{{ URL::to('css/material.min.css') }}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<!-- css for this project -->
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
-
-	<!-- favicon -->
-	<!-- ... -->
 
 	<!-- ie -->
 		<!--[if lt IE 9]>
@@ -130,37 +126,35 @@
 			</div>
 		</div>
 	</nav>
-
       @yield('content')
-			<!-- Footer -->
-		<footer class="footer">
-			<div class="container">
-				<p>©Copyright</p>
-			</div>
-		</footer>
-		<!-- Player button -->
-		<div class="fbtn-container">
-			<div class="fbtn-inner">
-				<a class="fbtn fbtn-green fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Player</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
-				<div class="fbtn-dropdown">
-					<a class="fbtn" target="_blank"><span class="fbtn-text">Back</span><span class="fa fa-step-backward"></span></a>
-					<a class="fbtn" target="_blank"><span class="fbtn-text">Play</span><span class="fa fa-play"></span></a>
-					<a class="fbtn" target="_blank"><span class="fbtn-text">Pause</span><span class="fa fa-pause"></span></a>
-					<a class="fbtn" target="_blank"><span class="fbtn-text">Next</span><span class="fa fa-step-forward"></span></a>
-				</div>
+		<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<p>©Copyright</p>
+		</div>
+	</footer>
+	<!-- Player button -->
+	<div class="fbtn-container">
+		<div class="fbtn-inner">
+			<a class="fbtn fbtn-green fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Player</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
+			<div class="fbtn-dropdown">
+				<a class="fbtn" target="_blank"><span class="fbtn-text">Back</span><span class="fa fa-step-backward"></span></a>
+				<a class="fbtn" target="_blank"><span class="fbtn-text">Play</span><span class="fa fa-play"></span></a>
+				<a class="fbtn" target="_blank"><span class="fbtn-text">Pause</span><span class="fa fa-pause"></span></a>
+				<a class="fbtn" target="_blank"><span class="fbtn-text">Next</span><span class="fa fa-step-forward"></span></a>
 			</div>
 		</div>
+	</div>
 
-		<!-- js -->
+	<!-- js -->
 
-		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="{{ URL::to('js/material-design.js') }}"></script>
-		<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
-		<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
-		<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
-
-		<!-- js for this project -->
-		<script src="{{ URL::to('js/script.js') }}"></script>
-	</body>
-	</html>
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{{ URL::to('js/material-design.js') }}"></script>
+	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
+	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
+	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
+	<!-- js for this project -->
+	<script src="{{ URL::to('js/script.js') }}"></script>
+</body>
+</html>
