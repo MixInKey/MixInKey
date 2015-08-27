@@ -29,3 +29,4 @@ Route::get('/search', function () {
 });
 
 Route::get('/call', array('uses' => 'BeatportController@call'));
+Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));

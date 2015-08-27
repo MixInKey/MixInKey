@@ -81,6 +81,7 @@ body {
 
 .footer{
   background-color: #303e45;
+  position: relative!important;
 }
 
 .fbtn-green{
