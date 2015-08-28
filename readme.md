@@ -29,3 +29,30 @@ uery filter))
 
 - Intégration du player BeatPort :
       - Lecture de sons
+
+# SPECS
+
+##DEV BACKEND
+
+### BEATPORT API CLASS
+
+- Créer une classe BeatportApi avec ses méthodes d'appel vers l'API Beatport.
+- Intégrer la classe dans notre application Symfony2 comme un Service utilisable depuis nos controlleurs.
+- Creer un service REST avec méthodes (GET, POST ...) d'appel vers l'API via Controller (genres, artistes, tracks, audio mp3).
+
+### USER SYSTEM
+
+- Créer un système d'utilisateurs client/server.
+- Créer un système de playlists par utilisateur, auquel les users pourront ajouter des morceaux / genres / artistes favoris et relire .
+
+## DEV FRONTEND
+
+- Appeller l'API avec un service AngularJS.
+- Créer un controlleur dans notre app AngularJS et créer des functions de scope accessibles dans les templates, appellées par le biais de directives sur évènements (ngClick, ngChange, ngInit ...)
+- Créer des filtres Angular pour filter les résultats de notre API.
+
+## DESIGN
+
+- Material Design by Google intégration.
+- Expérience utilisateur à fond
+- Single Page App

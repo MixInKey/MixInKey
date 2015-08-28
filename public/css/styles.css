@@ -136,7 +136,21 @@ body {
 #playerFrame{
   margin-top: 8%;
 }
-div#BPM {
-  margin-left: -4%;
-  margin-right: -5%;
+
+.filtres{
+  padding: 5px !important;
+}
+.filtres .form-group{
+  width: 80%;
+  margin-left: 10%;
+}
+
+#periodFilter, #typeFilter{
+  width: 25% !important;
+  margin-right: 2.5%;
+}
+
+#montantMin, #montantMax{
+  width: 17% !important;
+  margin-left: 1%;
 }

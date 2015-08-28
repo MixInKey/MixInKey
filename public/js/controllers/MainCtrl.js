@@ -17,7 +17,7 @@ angular.module('MainCtrl', [])
             $scope.tracks = data;  // success , reset the $scope variable with new data to refresh in template
         })
         .error(function(data) {
-            console.log(data); // error , log the server error in console at network tab
+            console.log(data); // error , log the server response in console at network tab (with PHP error)
         });
     },
 
