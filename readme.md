@@ -1,5 +1,50 @@
 # Associative Project
-  Specs
+
+### Le contexte du projet
+
+La recherche de titres qui s'accordent entre eux est une problématique à laquelle aucun projet actuel ne répond.
+
+### L'explication du projet
+
+- Un système de recherche de musique avancée (**par matching morceaux**)
+
+### Les objectifs du projet
+
+- Une application web type "Single Page", fluide, intéractive, user-friendly.
+
+### Les concurrents  
+
+- Pour l'instant aucun projet semblable au notre (à premiere vue)
+Toutes autres information utiles:
+
+### Matière de départ
+
+- BeatPort API, Laravel5 (back), AngularJS (middle/front)
+
+### Etat des lieux
+
+- Un logiciel existant permettant de 'match' des musiques entre elles (mais pas de rechercher des titres)
+
+### Charte graphique
+
+Respect de la charte imposée par BeatPort lorsqu'on utilise leur API.
+
+Contenus de départ : Logo, media player, Search engine (API)
+
+## Outils
+
+### Nos outils de travail en équipe
+
+- Tasks Management : **Trello**
+- Team Communication : **Slack**
+- Versionning : **Git**
+
+### Nos outils de développement
+
+- Server: Symfony2
+- Client: AngularJS
+- Stylesheet: Material-Design / Bootstrap
+- DOM manipulation : jQuery
 
 ## Usage de l'API BeatPort
 
