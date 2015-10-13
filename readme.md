@@ -64,16 +64,20 @@ Contenus de départ : Logo, media player, Search engine (API)
 - Intégrer AngularJS pour notre recherche (résultats change en live, filtres custom ... (ng-repeat + q
 uery filter))
 - Création de compte utilisateur
-- Création de playlists
+- Création de playlists globales
+- Création de playlists ciblées (nommés **Mixs**) :
+      - Association de sons avec proposition d'ordre de lecture par matching multi-critères (sonores, conseil pour réel mix).
+- Export/Import de playlists/Mixs (titres) sous forme de csv/pdf.
 - Recherche par correspondance de son :
-
       - Depuis sa playlist
       - Depuis un listing dans recherche multi-critères
 
 ### Player
 
-- Intégration du player BeatPort :
-      - Lecture de sons
+- Intégration du player BeatPorts:
+      - Lecture pour chacun des titres/sons
+      - Lecture de playlists completes
+      - Lecture de mixs réordonnées manuellement/par nos soins.
 
 # SPECS
 
@@ -88,16 +92,20 @@ uery filter))
 ### USER SYSTEM
 
 - Créer un système d'utilisateurs client/server.
-- Créer un système de playlists par utilisateur, auquel les users pourront ajouter des morceaux / genres / artistes favoris et relire .
+- Créer un système de playlists globales par utilisateur, auquel les users pourront ajouter des morceaux / genres / artistes favoris et relire .
+- Créer un système de playlists ciblées appelées **Mixs**, conseils de matching pour l'ordre de lecture des titres dans le cas d'utilisation pour un réel mix. Utilisation de paramètres sonores fournis par BeatPort et d'informations extérieures auxquelles on se réferera. pour matcher les titres.
 
 ## DEV FRONTEND
 
 - Appeller l'API avec un service AngularJS.
-- Créer un controlleur dans notre app AngularJS et créer des functions de scope accessibles dans les templates, appellées par le biais de directives sur évènements (ngClick, ngChange, ngInit ...)
+- Créer des functions de scope accessibles dans les templates, appellées par le biais de directives sur évènements (ngClick, ngChange, ngInit ...)
 - Créer des filtres Angular pour filter les résultats de notre API.
+- Du local storage
+- Utilisation d'Angular pour composition/lecture de playlists à l'aide du scope et du routing.
 
 ## DESIGN
 
 - Material Design by Google intégration.
 - Expérience utilisateur à fond
 - Single Page App
+- Simple, clair et fonctionnel.

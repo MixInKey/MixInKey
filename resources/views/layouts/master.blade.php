@@ -8,7 +8,7 @@
 
 	<!-- css -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<!-- <link href="{{ URL::to('css/material-design.css') }}" rel="stylesheet"> -->
+	<link href="{{ URL::to('css/material-design.css') }}" rel="stylesheet">
  	<link rel="stylesheet" href="{{ URL::to('css/material.min.css') }}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
