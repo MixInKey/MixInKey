@@ -14,7 +14,10 @@ Relié à l'API BeatPort (service de recherche de titres par de  multiples crit�
 
 - Une application web type SPA (Single Page App), fluide, interactive, user-friendly.
 
+
 - Relation directe avec l'utilisateur, développée grâce à une interface de création de mixs automatisée et des playlits illimitées.
+
+![Search](https://raw.githubusercontent.com/chalasr/AssociativeProject/master/Mockup/genre.jpg "Search")
 
 ### Les concurrents  
 
@@ -61,19 +64,18 @@ Contenus de départ : Logo, media player, Search engine (API).
 - Construction du form de recherche.
 - Partie utilisateur (playlists, avec lecteur, register, authentication).
 
+
+
 ### Recherche
 
 - Construire notre formulaire de recherche (simple, puis avancée).
 - Intégrer AngularJS pour notre recherche (résultats change en live, filtres custom ... (ng-repeat + q
 uery filter)).
-- Création de compte utilisateur.
-- Création de playlists globales.
-- Création de playlists ciblées (nommés **Mixs**) :
-      - Association de sons avec proposition d'ordre de lecture par matching multi-critères (sonores, conseil pour réel mix).
-- Export/Import de playlists/Mixs (titres) sous forme de csv/pdf.
 - Recherche par correspondance de son :
       - Depuis sa playlist.
       - Depuis un listing dans recherche multi-critères.
+
+![Menu](https://raw.githubusercontent.com/chalasr/AssociativeProject/master/Mockup/Home%20%2B%20Menu.jpg "Menu")
 
 ### Player
 
@@ -84,7 +86,7 @@ uery filter)).
 
 # SPECS
 
-##DEV BACKEND
+## DEV BACKEND
 
 ### BEATPORT API CLASS
 
@@ -94,9 +96,16 @@ uery filter)).
 
 ### USER SYSTEM
 
+![Authentication](https://raw.githubusercontent.com/chalasr/AssociativeProject/master/Mockup/login.jpg "Authentication")
+
 - Créer un système d'utilisateurs client/server.
 - Créer un système de playlists globales par utilisateur, auquel les users pourront ajouter des morceaux / genres / artistes favoris et relire .
 - Créer un système de playlists ciblées appelées **Mixs**, conseils de matching pour l'ordre de lecture des titres dans le cas d'utilisation pour un réel mix. Utilisation de paramètres sonores fournis par BeatPort et d'informations extérieures auxquelles on se réferera. pour matcher les titres.
+- Création de compte utilisateur.
+- Création de playlists globales.
+- Création de playlists ciblées (nommés **Mixs**) :
+      - Association de sons avec proposition d'ordre de lecture par matching multi-critères (sonores, conseil pour réel mix).
+- Export/Import de playlists/Mixs (titres) sous forme de csv/pdf.
 
 ## DEV FRONTEND
 
@@ -105,6 +114,9 @@ uery filter)).
 - Filtres Angular pour filter les résultats d'une recherche via notre API.
 - Du local storage.
 - Utilisation d'Angular pour composition/lecture de playlists à l'aide du scope et du routing.
+
+![Authentication](https://raw.githubusercontent.com/chalasr/AssociativeProject/master/Mockup/Home.jpg "Authentication")
+
 
 ## DESIGN
 
