@@ -63,10 +63,6 @@ body {
   height: 65px;
 }
 
-.form-control{
-  color: white;
-}
-
 .menu-logo:focus, .menu-logo{
   color: #ABB3BD;
 }
