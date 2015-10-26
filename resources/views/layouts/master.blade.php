@@ -58,10 +58,16 @@
 		<ul class="nav nav-list pull-right">
 			<li>
 				<a data-toggle="menu" href="#profile">
-					<span class="access-hide">Sylvain Martin</span>
-					<span class="avatar"><img src="{{ URL::to('images/users/avatar-001.jpg') }}"></span>
+					<span class="avatar">@if(Auth::check()) {{ Auth::user()->name }} @else <img src="{{ URL::to('images/users/avatar-001.jpg') }}">@endif</span>
 				</a>
 			</li>
+			@if(Auth::check())
+				<li class="nav nav-list pull-right">
+						<a href="{{ URL::to('logout') }}">Logout</a>
+				</li>
+			@else
+				<a href="{{ URL::to('/') }}">Sign-in</a>
+			@endif
 		</ul>
 	</header>
 	@if(Session::has('error'))
