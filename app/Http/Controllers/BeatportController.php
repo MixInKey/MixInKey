@@ -29,6 +29,11 @@ class BeatPortController extends Controller
         */
     }
 
+    public function search()
+    {
+      return view('templates.search');
+    }
+
     public function jsonRequest(Request $request)
     {
         $parameters = array(

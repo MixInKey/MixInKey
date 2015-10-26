@@ -11,18 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('templates.search');
-});
+//getting the login page
+Route::get('/', array('uses' => 'UsersController@getLogin', 'as' => 'login'));
+Route::get('/register', array('uses' => 'UsersController@registerPage', 'as' => 'register'));
+Route::post('login', array('uses' => 'UsersController@postLogin', 'as' => 'postLogin'));
+Route::post('register', array('uses' => 'UsersController@postRegister', 'as' => 'postRegister'));
+Route::get('logout', array('uses' => 'UsersController@getLogout', 'as' => 'getLogout'));
 
-Route::get('/login', function () {
-    return view('templates.login');
-});
-
-
-Route::get('/search', function () {
-    return view('templates.search');
-});
+Route::get('/search', ['uses' => 'BeatportController@search', 'as' => 'search']);
 
 Route::get('/call', array('uses' => 'BeatportController@call'));
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));

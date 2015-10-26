@@ -64,6 +64,15 @@
 			</li>
 		</ul>
 	</header>
+	@if(Session::has('error'))
+			<div class="alert alert-danger">
+				{{ Session::get('error') }}
+			</div>
+	@elseif(Session::has('success'))
+			<div class="alert alert-success">
+					{{ Session::get('success') }}
+			</div>
+	@endif
 	<!-- Left menu -->
 	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
 		<div class="menu-scroll">
@@ -89,6 +98,15 @@
 			</div>
 		</div>
 	</nav>
+	@if(Session::has('error'))
+			<div class="alert alert-danger">
+				{{ Session::get('error') }}
+			</div>
+	@elseif(Session::has('success'))
+			<div class="alert alert-success">
+					{{ Session::get('success') }}
+			</div>
+	@endif
 	<!-- Right menu -->
 	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
 		<div class="menu-scroll">
@@ -127,7 +145,7 @@
 			</div>
 		</div>
 	</nav>
-      @yield('content')
+	@yield('content')
 		<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
