@@ -67,6 +67,9 @@
               </label>
             </div>
           </div>
+          <div class="center">
+              <a href="{{ URL::to('/call') }}" class="btn btn-block waves-attach waves-button">Search</a>
+          </div>
       </div>
     </div>
   </div>
