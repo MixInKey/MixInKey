@@ -74,6 +74,6 @@
 	<script src="../js/material-design.min.js"></script>
 
 	<!-- js for this project -->
-	<script src="../js/project.js"></script>
+	<script src="../js/script.js"></script>
 </body>
 </html>

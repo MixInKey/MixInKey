@@ -1,16 +1,23 @@
 'use strict'
 
 angular.module('MainCtrl', [])
-  .controller('MainController', function ($scope, Beatport) {
+  .controller('MainController', function ($scope, $sce, Beatport) {
 
     // Initialize scope models
     $scope.tracks = {}, $scope.artists = {}, $scope.genres = {}, $scope.BPM = 0;
+    $scope.currentTrack = '5500589';
+    $scope.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=5500589&type=track');
 
     /**
      * Beatport API calls
      * @method GET
      * @return {Object} $scope.data query-results
      */
+    $scope.changeTrack = function (trackId) {
+        $scope.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=' + trackId + '&type=track');
+        $scope.currentTrack = trackId;
+    };
+
     $scope.findTracks = function() { // $scope.variable && $scope.function() can be used in templates(directives) and controllers
       Beatport.getTracks() //  Call method of Beatport service (object as module dependency & this controller param)
         .success(function(data) {
