@@ -7,9 +7,7 @@
 	<title>Music World</title>
 
 	<!-- css -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<link href="{{ URL::to('css/material-design.css') }}" rel="stylesheet">
- 	<link rel="stylesheet" href="{{ URL::to('css/material.min.css') }}" />
+	<link href="{{ URL::to('css/materialize.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
 
@@ -19,163 +17,66 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<!-- Loader -->
 <body class="avoid-fout" ng-controller="MainController">
-	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
-		<div class="progress-circular progress-circular-alt progress-circular-center">
-			<div class="progress-circular-wrapper">
-				<div class="progress-circular-inner">
-					<div class="progress-circular-left">
-						<div class="progress-circular-spinner"></div>
-					</div>
-					<div class="progress-circular-gap"></div>
-					<div class="progress-circular-right">
-						<div class="progress-circular-spinner"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Menu -->
-	<header class="header header-transparent header-waterfall">
-		<ul class="nav nav-list pull-left">
-			<li>
-				<a data-toggle="menu" href="#menu">
-					<span class="icon icon-lg">menu</span>
-				</a>
-			</li>
-		</ul>
-		<a class="header-logo margin-left-no" data-toggle="menu" href="#menu">
-			<img src="{{ URL::to('images/logo/logo.png') }}"></img>
-		</a>
-		<!-- Page indicator -->
-		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
-			<span class="header-text margin-left-no">
-				<i class="icon margin-right">chevron_right</i>Home
-			</span>
-		</div>
-		<!-- Right menu profile -->
-		<ul class="nav nav-list pull-right">
-			<li>
-				<a data-toggle="menu" href="#profile">
-					<span class="avatar">@if(Auth::check()) {{ Auth::user()->name }} @else <img src="{{ URL::to('images/users/avatar-001.jpg') }}">@endif</span>
-				</a>
-			</li>
-			@if(Auth::check())
-				<li class="nav nav-list pull-right">
-						<a href="{{ URL::to('logout') }}">Logout</a>
-				</li>
-			@else
-				<a href="{{ URL::to('/') }}">Sign-in</a>
-			@endif
-		</ul>
-	</header>
-	@if(Session::has('error'))
-			<div class="alert alert-danger">
-				{{ Session::get('error') }}
-			</div>
-	@elseif(Session::has('success'))
-			<div class="alert alert-success">
-					{{ Session::get('success') }}
-			</div>
-	@endif
-	<!-- Left menu -->
-	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-content">
-
-				<!-- Search bar -->
-				<div class="media menu-logo">
-					<div class="media-object pull-left">
-						<label class="form-icon-label" for="input-search"><span class="icon">search</span></label>
-					</div>
-					<div class="media-inner">
-						<input class="form-control" id="input-search" placeholder="RECHERCHE" type="text">
-					</div>
-				</div>
-
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="/"><span class="icon icon-lg">home</span>Home</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="/search"><span class="icon icon-lg">youtube_searched_for</span>Recherche Avancée</a>
-					</li>
-			</div>
-		</div>
-	</nav>
-	@if(Session::has('error'))
-			<div class="alert alert-danger">
-				{{ Session::get('error') }}
-			</div>
-	@elseif(Session::has('success'))
-			<div class="alert alert-success">
-					{{ Session::get('success') }}
-			</div>
-	@endif
-	<!-- Right menu -->
-	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-top">
-				<div class="menu-top-info">
-					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img src="{{ URL::to('images/users/avatar-001.jpg') }}"></span>Sylvain Martin</a>
-				</div>
-				<div class="menu-top-info-sub">
-					<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
-				</div>
-			</div>
-			<div class="menu-content">
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Compte</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">shopping_cart</span>Mon panier</a>
-					</li>
-					<li>
-						<a class="waves-attach menu-collapse collapsed" data-target="#playlist" data-toggle="collapse" href="javascript:void(0)"><span class="icon icon-lg">library_add</span>Playlists</a>
-						<span class="menu-collapse-toggle collapsed" data-target="#playlist" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="playlist">
-							<li>
-								<a class="waves-attach" href="#"><span class="icon icon-lg">add</span>Créer une playlist</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">settings</span>Paramètres</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="/login"><span class="icon icon-lg">exit_to_app</span>Déconnexion</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	@yield('content')
-		<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<p>©Copyright</p>
-		</div>
-	</footer>
-	<!-- Player button -->
-	<div class="fbtn-container">
-		<div class="fbtn-inner">
-			<a class="fbtn fbtn-green fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Player</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
-			<div class="fbtn-dropdown">
-				<a class="fbtn" target="_blank"><span class="fbtn-text">Back</span><span class="fa fa-step-backward"></span></a>
-				<a class="fbtn" target="_blank"><span class="fbtn-text">Play</span><span class="fa fa-play"></span></a>
-				<a class="fbtn" target="_blank"><span class="fbtn-text">Pause</span><span class="fa fa-pause"></span></a>
-				<a class="fbtn" target="_blank"><span class="fbtn-text">Next</span><span class="fa fa-step-forward"></span></a>
-			</div>
-		</div>
+	<header>
+	<ul id="dropdown1" class="dropdown-content">
+	  <li>
+	  	<a href="#!"><i class="material-icons left">list</i>Playlist</a>
+	  </li>
+	  <li>
+	  	<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
+	  </li>
+	  <li>
+	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+	  </li>
+	</ul>
+	
+	<div class="navbar-fixed">
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#!" class="brand-logo">
+			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
+		      </a>
+		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-med-and-down">
+		        <li>
+		        	<a><i class="material-icons left">home</i>Home</a>
+		        </li>
+		        <li>
+		        	<a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
+		        </li>
+		      </ul>
+		      <ul class="side-nav" id="mobile-demo">
+			  	<li>
+		        	<a><i class="material-icons left">home</i>Home</a>
+		        </li>
+		        <ul class="collapsible" data-collapsible="expandable">
+			        <li>
+			           <div class="collapsible-header"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></div>
+					   <div class="collapsible-body">
+						   <p>
+							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
+							<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
+							<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+						   </p>
+					   </div>
+			        </li>
+		        </ul>
+		      </ul>
+		    </div>
+		</nav>
 	</div>
+</header>
+
+@yield('content')
+
 
 	<!-- js -->
 
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="{{ URL::to('js/material-design.js') }}"></script>
+	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
