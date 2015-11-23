@@ -82,5 +82,6 @@
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
 	<!-- js for this project -->
 	<script src="{{ URL::to('js/script.js') }}"></script>
+	<script src="{{ URL::to('js/main.js') }}"></script>
 </body>
 </html>
