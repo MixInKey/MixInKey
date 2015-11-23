@@ -90,6 +90,10 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	background-color: #262626;
 }
 
+nav > div > a.button-collapse > i:hover{
+	color: #94d500;
+}
+
 #mobile-demo{
 	background-color: #131313;
 	color: whitesmoke;
@@ -99,16 +103,16 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	color: whitesmoke;
 }
 
+#mobile-demo > li > a:hover{
+	color: #94d500;
+}
+
 #mobile-demo > li:hover{
-	background-color: #262626;
+	background-color: #131313;
 }
 
 #mobile-demo > ul{
 	background-color: #131313;
-}
-
-#mobile-demo > ul > li > div.collapsible-header:hover{
-	background-color: #262626;
 }
 
 #mobile-demo > ul > li > div.collapsible-header{
@@ -116,8 +120,17 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	color: whitesmoke;
 }
 
+#mobile-demo > ul > li > div.collapsible-header:hover{
+	color: #94d500;
+}
+
+.side-nav .collapsible-header{
+	margin: 0px;
+	padding-left: 30px;
+}
+
 #mobile-demo > ul > li > div.collapsible-body > p > a:hover{
-	background-color: #262626;
+	color: #94d500;
 }
 
 #mobile-demo > ul > li > div.collapsible-body > p > a{
@@ -128,10 +141,6 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	padding: 0rem;
 	padding-left: 2rem;
 	background-color: #131313;
-}
-
-.collapsible-body p a:hover{
-	background-color: #262626;
 }
 
 /* Main */
