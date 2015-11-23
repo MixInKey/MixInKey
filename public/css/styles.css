@@ -68,7 +68,7 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	background-color: #94d500;
 }
 
-.dropdown-content li>a, 
+.dropdown-content li>a,
 .dropdown-content li>span{
 	font-size: 1rem;
 	color: whitesmoke;
@@ -78,13 +78,13 @@ ul.right.hide-on-med-and-down > li > a:hover{
 	background-color: #131313;
 }
 
-.dropdown-content li>a:hover, 
+.dropdown-content li>a:hover,
 .dropdown-content li>span:hover{
 	color: #94d500;
 	background-color: #262626;
 }
 
-.dropdown-content li>a:focus, 
+.dropdown-content li>a:focus,
 .dropdown-content li>span:focus{
 	color: #94d500;
 	background-color: #262626;
