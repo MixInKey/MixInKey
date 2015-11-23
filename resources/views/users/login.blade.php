@@ -23,7 +23,8 @@
 							<label for="password">Mot de passe</label><br>
 						</div>
 					</div>
-				</form><br>
+				</form>
+
 				<div class="button-connexion top-space">
 					<a class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</a>
 				</div>

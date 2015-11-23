@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="container">
+	<div class="container">
 		<div class="register z-depth-2">
 			<div class="page-header">
 				<h1>Inscription</h1> 
@@ -24,7 +24,7 @@
 							<input id="email" type="email" class="validate">
 							<label for="email">Email</label><br>
 							@if ($errors->has('email'))
-							<div class="alert alert-error"></div>
+							<div class="alert alert-error">
 						    {{ $errors->first('email') }}
 						</div><br>
 						@endif
@@ -32,13 +32,12 @@
 							<input id="password" type="password" class="validate">
 							<label for="password">Mot de passe</label><br>
 							@if ($errors->has('password'))
-		                    <div class="alert alert-error"></div>
+		                    <div class="alert alert-error">
 		                    {{ $errors->first('password') }}
 	                    </div>
 	                    @endif
-					</div>
 				</form><br>
-				<div class="container">
+				<div class="container-button">
 					<a href="{{ URL::to('login') }}"class="button-cancel waves-effect waves-light btn"><i class="material-icons left">clear</i>ANNULER</a>
 					<a type="submit" class="button-validate waves-effect waves-light btn"><i class="material-icons left">done</i>VALIDER</a>
 				</div>

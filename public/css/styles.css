@@ -271,6 +271,10 @@ form > div > div:nth-child(6) > div.input-field.col.s12 > label{
 	margin-left: -10px;
 }
 
+.container-button{
+	text-align: center;
+}
+
 .button-validate{
 	margin-left: auto;
 	margin-right: auto;
