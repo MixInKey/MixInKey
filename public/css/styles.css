@@ -1,152 +1,319 @@
-body {
-  padding-bottom: 69px;
-  background-color: #263238;
-  color: #ABB3BD;
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Génréal */
+
+body{
+	background-color: #262626;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+    min-height: 100vh;
+	flex-direction: column;
 }
 
-.content-heading {
-  background-color: #303e45;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 68px;
-  border-bottom: 1px solid white;
+main {
+    flex: 1 0 auto;
 }
 
-.header-logo img, .menu-logo img {
-    display: block;
-    max-height: 50px;
-    width: auto;
-    margin-top: -11px;
+h1{
+	color: whitesmoke !important;
+	font-weight: 900;
+    font-size: 35px;
+    text-transform: uppercase;
 }
 
-.search-bar{
-  margin-left: 20px;
+a{
+	cursor: pointer;
 }
 
-.header-transparent.affix{
-  background-color: #00c77f !important;
+label{
+	color: whitesmoke;
 }
 
-.menu-content > .menu-logo:first-child{
-  background-color: #303e45;
-  color: white;
+
+
+/* Material Icons */
+
+.material-icons{
+	line-height: 2.3;
 }
 
-.menu-scroll{
-  background-color: #263238;
+/* Space */
+
+.top-space{
+	margin-top: 20px;
 }
 
-.menu-content .nav a, .menu-content .nav .a{
-  color: #ABB3BD;
+.bot-space{
+	margin-bottom: 20px;
 }
 
-.menu-collapse-toggle-close{
-  color: white;
+
+/* Navbar */
+
+nav .brand-logo img{
+	margin-top: 5px;
+	margin-left:10px;
+	width: 50px;
 }
 
-.menu-collapse-toggle-default{
-  color: white;
+nav{
+	background-color: #131313;
 }
 
-.menu-content .nav a:hover{
-  color: white;
-  background-color: #02dd8e;
+.dropdown-content li:hover{
+	background-color: #262626;
 }
 
-.menu-content .nav a:focus, .menu-content .nav .a:focus{
-  color: white;
-  background-color: #00a96c;
+ul.right.hide-on-med-and-down > li > a:hover{
+	background-color: #94d500;
 }
 
-.menu-logo{
-  height: 65px;
+.dropdown-content li>a, 
+.dropdown-content li>span{
+	font-size: 1rem;
+	color: whitesmoke;
 }
 
-.menu-logo:focus, .menu-logo{
-  color: #ABB3BD;
+#dropdown1{
+	background-color: #131313;
 }
 
-.menu-logo:focus, .menu-logo:hover{
-  color: white;
+.dropdown-content li>a:hover, 
+.dropdown-content li>span:hover{
+	color: #94d500;
+	background-color: #262626;
 }
 
-.menu-top{
-  background-color: #00c77f;
+.dropdown-content li>a:focus, 
+.dropdown-content li>span:focus{
+	color: #94d500;
+	background-color: #262626;
 }
 
-.footer{
-  background-color: #303e45;
-  position: relative!important;
+#mobile-demo{
+	background-color: #131313;
+	color: whitesmoke;
 }
 
-.fbtn-green{
-  background-color: #00c77f;
+#mobile-demo > li > a{
+	color: whitesmoke;
 }
 
-/* Login page */
-
-.header{
-  background-color: #00c77f !important;
+#mobile-demo > li:hover{
+	background-color: #262626;
 }
 
-.card-login{
-  background: transparent;
-  box-shadow: 0 1px 6px rgba(0,0,0,.3);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  -webkit-transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
-  transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
-  border-radius: 6px;
+#mobile-demo > ul{
+	background-color: #131313;
 }
 
-.btn{
-  background-color: #02dd8e;
+#mobile-demo > ul > li > div.collapsible-header:hover{
+	background-color: #262626;
 }
 
-.btn-flat.btn-blue, .btn-flat.btn-blue[disabled], fieldset[disabled] .btn-flat.btn-blue{
-  color: black;
+#mobile-demo > ul > li > div.collapsible-header{
+	background-color: #131313;
+	color: whitesmoke;
 }
 
-.slide-bpm .label-more{
-  float:right;
-  margin-right: 20px;
-  width:20px!important;
-  height:20px!important;
-  min-width: 0px!important;
-}
-.slide-bpm .label-less{
-  margin-left: 20px;
-  width:20px!important;
-  min-width: 0px!important;
-  height:20px!important;
-}
-.slide-bpm .label-less:hover, .slide-bpm .label-more:hover{
-  cursor: pointer;
+#mobile-demo > ul > li > div.collapsible-body > p > a:hover{
+	background-color: #262626;
 }
 
-#playerFrame{
-  margin-top: 8%;
+#mobile-demo > ul > li > div.collapsible-body > p > a{
+	color: whitesmoke;
 }
 
-.filtres{
-  padding: 5px !important;
-}
-.filtres .form-group{
-  width: 80%;
-  margin-left: 10%;
+.collapsible-body p{
+	padding: 0rem;
+	padding-left: 2rem;
+	background-color: #131313;
 }
 
-#periodFilter, #typeFilter{
-  width: 25% !important;
-  margin-right: 2.5%;
+.collapsible-body p a:hover{
+	background-color: #262626;
 }
 
-#montantMin, #montantMax{
-  width: 17% !important;
-  margin-left: 1%;
+/* Main */
+
+.main{
+	background-color: #373737;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #94d500;
+    text-align: center;
+}
+
+.select-wrapper > input{
+	color: whitesmoke;
+}
+
+div.container > form:nth-child(3) > p > span{
+	background-color: #8bc600;
+}
+
+.button-search.bot-space > a{
+	background-color: #8bc600;
+}
+
+.button-search.bot-space > a:hover{
+	background-color: #94d500;
+}
+
+/* Search Tools */
+
+.dropdown-content{
+	background-color: #131313;
+}
+
+div.container > div.select-wrapper > span{
+	color: whitesmoke;
+}
+
+.dropdown-content > li.active{
+	background-color: #262626;
+}
+
+.main .chekbox{
+	margin-top: 10px;
+}
+
+.button-search{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+/* Login */
+
+.login{
+	background-color: #373737;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form > div > div > i{
+	color: white;
+}
+
+.input-field .prefix.active{
+	color: #90ca0a;
+}
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+	color: whitesmoke;
+	border-bottom: 1px solid #90ca0a;
+    box-shadow: 0 1px 0 0 #90ca0a;
+}
+
+input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #90ca0a;
+}
+
+.button-connexion{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.button-register{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.button-connexion a{
+	background-color: #8bc600;
+}
+
+.button-connexion a:hover{
+	background-color: #90ca0a;
+}
+
+.button-register a{
+	background-color: #8bc600;
+}
+
+.button-register a:hover{
+	background-color: #90ca0a;
+}
+
+/* Register */
+
+.register{
+	background-color: #373737;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form > div > div:nth-child(6) > div.input-field.col.s12{
+	padding: 0px;
+}
+
+form > div > div:nth-child(6) > div.input-field.col.s12 > label{
+	margin-left: -10px;
+}
+
+.container-button{
+	text-align: center;
+}
+
+.button-validate{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.button-cancel{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.button-validate{
+	background-color: #8bc600;
+}
+
+.button-validate:hover{
+	background-color: #90ca0a;
+}
+
+.button-cancel{
+	background-color: #f44235;
+}
+
+.button-cancel:hover{
+	background-color: #ff5722;
+}
+
+/* Footer */
+
+footer.footer-copyright {
+	bottom: 0;
+	text-align: center;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(255,255,255,0.8);
+    /* background-color: rgba(51,51,51,0.08); */
+    margin-top: 20px;
+    /* padding-top: 20px; */
+    background-color: #131313;
 }
