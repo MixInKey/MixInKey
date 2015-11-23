@@ -1,7 +1,10 @@
-var app = angular.module('beatportApp', [
+(function(app) {
+
+
+})(angular.module('beatportApp', [
     'MainCtrl',
-		'beatportService',
+    'beatportService',
 ],function($interpolateProvider){
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
-});
+}));

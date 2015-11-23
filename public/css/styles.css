@@ -326,3 +326,6 @@ footer.footer-copyright {
     /* padding-top: 20px; */
     background-color: #131313;
 }
+select {
+		display:block!important;
+}

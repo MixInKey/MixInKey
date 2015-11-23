@@ -79,7 +79,6 @@
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
-	<script src="{{ URL::to('js/bower_components/angular-materialize/src/angular-materialize.js') }}"></script>
 	<!-- js for this project -->
 	<script src="{{ URL::to('js/script.js') }}"></script>
 </body>
