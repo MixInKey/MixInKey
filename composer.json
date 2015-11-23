@@ -14,7 +14,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
-        "pear-pear.php.net/HTTP_OAuth": "*"
+        "pear-pear.php.net/HTTP_OAuth": "*",
+        "barryvdh/laravel-debugbar": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
