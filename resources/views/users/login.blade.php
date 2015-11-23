@@ -28,7 +28,7 @@
 					<a class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</a>
 				</div>
 				<div class="button-register top-space">
-					<a class="waves-effect waves-light btn">INSCRIPTION</a>
+					<a href="{{ URL::to('login') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
 				</div>
 			</div>
 		</div>

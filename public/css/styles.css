@@ -213,7 +213,7 @@ form > div > div > i{
 }
 
 input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-	color: #90ca0a;
+	color: whitesmoke;
 	border-bottom: 1px solid #90ca0a;
     box-shadow: 0 1px 0 0 #90ca0a;
 }
@@ -253,7 +253,7 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 /* Register */
 
 .register{
-	background-color: white;
+	background-color: #373737;
 	border-radius: 5px;
 	padding: 20px;
 	margin-top: 40px;
@@ -261,6 +261,14 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+form > div > div:nth-child(6) > div.input-field.col.s12{
+	padding: 0px;
+}
+
+form > div > div:nth-child(6) > div.input-field.col.s12 > label{
+	margin-left: -10px;
 }
 
 .button-validate{
@@ -273,6 +281,14 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+.button-validate{
+	background-color: #8bc600;
+}
+
+.button-validate:hover{
+	background-color: #90ca0a;
 }
 
 .button-cancel{
