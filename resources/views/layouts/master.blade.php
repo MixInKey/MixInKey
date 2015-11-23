@@ -101,6 +101,7 @@
 					<li>
 						<a class="waves-attach" href="/search"><span class="icon icon-lg">youtube_searched_for</span>Recherche Avancée</a>
 					</li>
+				</ul>
 			</div>
 		</div>
 	</nav>
