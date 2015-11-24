@@ -17,7 +17,7 @@
 
 				<div class="form-group">
 					<p class="range-field">
-					<input type="range" id="slide-range" min="0" max="100" />
+					<input type="range" id="slider-range" min="0" max="100" />
 					</p>
 				</div>
 
