@@ -1,10 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../font/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Génréal */
 
 body{
 	background-color: #262626;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
 	display: flex;
     min-height: 100vh;
 	flex-direction: column;
@@ -70,7 +76,7 @@ ul.right.hide-on-med-and-down > li > a:hover{
 
 .dropdown-content li>a,
 .dropdown-content li>span{
-	font-size: 1rem;
+	font-size: 14px;
 	color: whitesmoke;
 }
 
@@ -243,11 +249,11 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	text-align: center;
 }
 
-.button-connexion a{
+.button-connexion button{
 	background-color: #8bc600;
 }
 
-.button-connexion a:hover{
+.button-connexion button:hover{
 	background-color: #90ca0a;
 }
 

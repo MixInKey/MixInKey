@@ -4,12 +4,18 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Music World</title>
+	<title>MixInky</title>
 
 	<!-- css -->
 	<link href="{{ URL::to('css/materialize.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
+	<link href="{{ URL::to('css/toastr.min.css') }}" rel="stylesheet">
+
+	{{--  js (must be loaded at top of page)--}}
+	<script src="{{ URL::to('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ URL::to('js/toastr.min.js') }}"></script>
+
 
 	<!-- ie -->
 		<!--[if lt IE 9]>
@@ -26,10 +32,10 @@
 	  	<a href="#!"><i class="material-icons left">list</i>Playlist</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
+	  	<a href="#!"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
 	  </li>
 	</ul>
 
@@ -58,8 +64,8 @@
 					   <div class="collapsible-body">
 						   <p>
 							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
-							<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
-							<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+							<a href="#!"><i class="material-icons left">settings</i>Settings</a>
+							<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
 						   </p>
 					   </div>
 			        </li>
@@ -72,14 +78,23 @@
 
 @yield('content')
 
+@if(Session::has('error'))
+	<script type="text/javascript">
+		toastr.error('{{ Session::get('error') }}');
+	</script>
 
+@elseif(Session::has('success'))
+<script type="text/javascript">
+	toastr.success('{{ Session::get('success') }}');
+</script>
+@endif
 	<!-- js -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
 	<!-- js for this project -->
 	<script src="{{ URL::to('js/script.js') }}"></script>
+	<script src="{{ URL::to('js/main.js') }}"></script>
 </body>
 </html>

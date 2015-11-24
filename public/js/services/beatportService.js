@@ -24,9 +24,6 @@ angular.module('beatportService', [])
     		getByArtist : function(artistId) {
             return $http.get(urlApi+'artist/'+artistId);
     		},
-    		getAllArtists : function() {
-            return $http.get(urlApi+'artists');
-    		},
     		getAllGenres : function() {
             return $http.get(urlApi+'genres');
     		},

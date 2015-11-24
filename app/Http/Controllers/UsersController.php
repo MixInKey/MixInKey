@@ -28,9 +28,10 @@ class UsersController extends Controller {
 
 	public function postLogin(){
       $data = [
-          'name' => Input::get('name'),
+          'email' => Input::get('email'),
           'password' => Input::get('password')
       ];
+			// print_r($data);die;
 			if(Auth::attempt($data)) {
 		      return Redirect::route('search')->with('success', 'Logged');
 			} else {

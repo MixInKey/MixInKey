@@ -11,26 +11,30 @@
 						{!! Form::token() !!}
 						<div class="input-field col s12">
 							<i class="material-icons prefix">account_circle</i>
-							<input id="email" type="email" class="validate">
+							<input type="email" hidden>
+							<input id="email" type="text" autocomplete="false" class="validate">
 							<label for="email">Email</label><br>
 						</div><br>
-						@if ($errors->has('name'))
-					    	{{ $errors->first('name') }}
+						@if ($errors->has('email'))
+					    	{{ $errors->first('email') }}
 						@endif
 						<div class="input-field col s12">
 							<i class="material-icons prefix">lock</i>
-							<input id="password" type="password" class="validate">
+							<input type="password" hidden />
+							<input id="password" type="password" autocomplete="false" class="validate">
 							<label for="password">Mot de passe</label><br>
 						</div>
+						@if ($errors->has('password'))
+							 <br>{{ $errors->first('password') }}
+						@endif
 					</div>
 				<div class="button-connexion top-space">
-					<a class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</a>
+					<button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</button>
 				</div>
 				<div class="button-register top-space">
 					<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
 				</div>
 				</form>
-
 			</div>
 		</div>
 	</div>
