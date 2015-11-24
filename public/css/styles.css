@@ -243,11 +243,11 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	text-align: center;
 }
 
-.button-connexion a{
+.button-connexion button{
 	background-color: #8bc600;
 }
 
-.button-connexion a:hover{
+.button-connexion button:hover{
 	background-color: #90ca0a;
 }
 

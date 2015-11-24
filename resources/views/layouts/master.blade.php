@@ -74,7 +74,7 @@
 
 
 	<!-- js -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{{ URL::to('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
