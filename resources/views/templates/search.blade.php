@@ -15,6 +15,12 @@
            </select>
          </div>
 
+				<div class="form-group">
+					<p class="range-field">
+					<input type="range" id="slide-range" min="0" max="100" />
+					</p>
+				</div>
+
 				<form class="row chekbox">
 					<div class="col s3">
 						<input type="checkbox" class="filled-in" id="option1" checked="checked" />
