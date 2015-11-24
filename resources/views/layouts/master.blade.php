@@ -13,8 +13,8 @@
 	<link href="{{ URL::to('css/toastr.min.css') }}" rel="stylesheet">
 
 	{{--  js (must be loaded at top of page)--}}
-	<script src="{{ URL::to('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
-	<script src="{{ URL::to('js/toastr.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/toastr.min.js') }}"></script>
 
 
 	<!-- ie -->
@@ -83,13 +83,13 @@
 		toastr.error('{{ Session::get('error') }}');
 	</script>
 
-@elseif(Session::has('success'))
+ru@elseif(Session::has('success'))
 <script type="text/javascript">
 	toastr.success('{{ Session::get('success') }}');
 </script>
 @endif
-	<!-- js -->
-	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
+	<!-- Libs -->
+	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
