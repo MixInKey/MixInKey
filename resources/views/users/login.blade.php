@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="login z-depth-2">
 			<div class="page-header">
-				<h1>Connexion</h1> 
+				<h1>Connexion</h1>
 			</div>
 			<div class="row">
 				<form class="col s12" method="post" action="{{ URL::route('postLogin') }}">
@@ -23,14 +23,14 @@
 							<label for="password">Mot de passe</label><br>
 						</div>
 					</div>
-				</form>
-
 				<div class="button-connexion top-space">
 					<a class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</a>
 				</div>
 				<div class="button-register top-space">
-					<a href="{{ URL::to('login') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
+					<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
 				</div>
+				</form>
+
 			</div>
 		</div>
 	</div>
