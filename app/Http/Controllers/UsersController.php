@@ -28,7 +28,7 @@ class UsersController extends Controller {
 
 	public function postLogin(){
       $data = [
-          'name' => Input::get('name'),
+          'email' => Input::get('email'),
           'password' => Input::get('password')
       ];
 			if(Auth::attempt($data)) {
