@@ -2,7 +2,7 @@
 
 namespace Helpers;
 
-class DataFormater {
+class DataTransformer {
 
     /**
      * Prepare Request for Beatport API.

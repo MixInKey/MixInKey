@@ -17,7 +17,7 @@
 		<div class="form-group">
 			<label for="range">BPM</label>
 			<p class="range-field">
-				<input type="range" min="0" max="100" />
+				<input type="range" name="range" min="0" max="100" />
 			</p>
 		</div><br>
 
@@ -46,10 +46,11 @@
 
 		<div ng-if="main.tracks" class="row">
 			<div class="col-md-6" ng-repeat="track in main.tracks.results | filter: query">
-					<a id="<% track.id %>" href="#<% track.id %>" ng-click="changeTrack(track.id)"><% track.id %> <% track.name %></a>
+					<a id="<% track.id %>" ng-click="main.changeTrack(track.id)"><% track.id %> <% track.name %></a>
 					<img class="thumbnail" ng-src="<% track.images.medium.url %>">
 			</div>
 		</div>
+		<iframe ng-src="<% main.currentPlayer %>" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	</div>
 </div>
 @stop

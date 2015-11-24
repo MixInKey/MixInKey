@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\HelperServiceProvider;
-use Config;
 use Helpers\BeatportApi;
-use Helpers\DataFormater;
+use Helpers\DataTransformer;
 
 class BeatPortController extends Controller
 {
@@ -22,7 +21,7 @@ class BeatPortController extends Controller
      */
     public function getAllGenres()
     {
-        $query = DataFormater::prepare(null, 'genres');
+        $query = DataTransformer::prepare(null, 'genres');
         $response = $this->api->queryApi($query);
 
         return response()->json($response);
@@ -30,7 +29,7 @@ class BeatPortController extends Controller
 
     public function findTracks(Request $request)
     {
-        $query = DataFormater::prepare($request->all());
+        $query = DataTransformer::prepare($request->all());
         $response = $this->api->queryApi($query);
 
         return response()->json($response);
