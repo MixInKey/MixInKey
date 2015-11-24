@@ -7,12 +7,12 @@
 	<title>MixInky</title>
 
 	<!-- css -->
-	<link href="{{ URL::to('css/materialize.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::to('css/static/materialize.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
-	<link href="{{ URL::to('css/toastr.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::to('css/static/toastr.min.css') }}" rel="stylesheet">
 
-	{{--  js (must be loaded at top of page)--}}
+	{{--  js (must be loaded here) --}}
 	<script src="{{ URL::to('js/static/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/toastr.min.js') }}"></script>
 
@@ -78,23 +78,23 @@
 
 @yield('content')
 
+{{-- Session notifications --}}
 @if(Session::has('error'))
 	<script type="text/javascript">
 		toastr.error('{{ Session::get('error') }}');
 	</script>
-
-ru@elseif(Session::has('success'))
-<script type="text/javascript">
-	toastr.success('{{ Session::get('success') }}');
-</script>
+@elseif(Session::has('success'))
+	<script type="text/javascript">
+		toastr.success('{{ Session::get('success') }}');
+	</script>
 @endif
+
 	<!-- Libs -->
 	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
-	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>
-	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
-	<!-- js for this project -->
-	<script src="{{ URL::to('js/script.js') }}"></script>
-	<script src="{{ URL::to('js/main.js') }}"></script>
+	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
+	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
+	{{--  src --}}
+	<script src="{{ URL::to('js/src/main.js') }}"></script>
 </body>
 </html>

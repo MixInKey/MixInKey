@@ -17,8 +17,8 @@
 
 				<div class="form-group">
 					<p class="range-field">
-					<input type="range" id="slider-range" min="0" max="100" />
-					</p>
+			      <input type="range" min="0" max="100" />
+			    </p>
 				</div>
 
 				<form class="row chekbox">
