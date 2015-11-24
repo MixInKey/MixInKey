@@ -28,7 +28,7 @@
 						</div><br>
 						@endif
 						<div class="input-field col s12">
-							<input id="password" type="password" class="validate">
+							<input id="password" type="password" name="password" class="validate">
 							<label for="password">Password</label><br>
 							@if ($errors->has('password'))
 		                    <div class="alert alert-error">
