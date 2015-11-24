@@ -80,15 +80,14 @@
 
 @if(Session::has('error'))
 	<script type="text/javascript">
-		toastr.error('lol');
+		toastr.error('{{ Session::get('error') }}');
 	</script>
 
 @elseif(Session::has('success'))
 <script type="text/javascript">
-	toastr.success('lol');
+	toastr.success('{{ Session::get('success') }}');
 </script>
 @endif
-
 	<!-- js -->
 	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
