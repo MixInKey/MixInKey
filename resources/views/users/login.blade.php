@@ -20,7 +20,7 @@
 						<div class="input-field col s12">
 							<i class="material-icons prefix">lock</i>
 							<input id="password" type="password" class="validate">
-							<label for="password">Mot de passe</label><br>
+							<label for="password">Password</label><br>
 						</div>
 					</div>
 
@@ -28,7 +28,7 @@
 						<button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</a>
 					</div>
 					<div class="button-register top-space">
-						<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
+						<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">REGISTER</a>
 					</div>
 				</form>
 			</div>
