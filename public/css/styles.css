@@ -1,10 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../font/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+		src: url('../font/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Génréal */
 
 body{
 	background-color: #262626;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
 	display: flex;
     min-height: 100vh;
 	flex-direction: column;
