@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\HelperServiceProvider;
-use Helpers\BeatportApi;
-use Helpers\DataTransformer;
+use App\Helpers\BeatportApi;
+use App\Helpers\DataTransformer;
 
 class BeatPortController extends Controller
 {

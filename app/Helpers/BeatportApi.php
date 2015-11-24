@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpers;
+namespace App\Helpers;
 
 use Config;
 

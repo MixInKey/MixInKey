@@ -10,7 +10,7 @@
 		<div class="form-group form-group-label" ng-init="main.findGenres()">
 			<label for="genre">Genres</label>
 			<select class="form-control" id="genre" ng-model="main.query.genre">
-				<option value="<% genre.id %>" ng-repeat="genre in main.genres"><% genre.name %></option>
+				<option value="[% genre.id %]" ng-repeat="genre in main.genres">[% genre.name %]</option>
 			</select>
 		</div><br>
 
@@ -46,11 +46,11 @@
 
 		<div ng-if="main.tracks" class="row">
 			<div class="col-md-6" ng-repeat="track in main.tracks.results | filter: query">
-					<a id="<% track.id %>" ng-click="main.changeTrack(track.id)"><% track.id %> <% track.name %></a>
-					<img class="thumbnail" ng-src="<% track.images.medium.url %>">
+					<a id="[% track.id %]" ng-click="main.changeTrack(track.id)">[% track.id %] [% track.name %]</a>
+					<img class="thumbnail" ng-src="[% track.images.medium.url %]">
 			</div>
 		</div>
-		<iframe ng-src="<% main.currentPlayer %>" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
+		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	</div>
 </div>
 @stop

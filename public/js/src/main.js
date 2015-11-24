@@ -1,8 +1,6 @@
 (function(app) {
-
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
-
         $('.collapsible').collapsible({
             accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
@@ -22,6 +20,6 @@
     'beatportService',
     'ngRoute'
 ],function($interpolateProvider){
-    $interpolateProvider.startSymbol('<%');
-    $interpolateProvider.endSymbol('%>');
+    $interpolateProvider.startSymbol('[%');
+    $interpolateProvider.endSymbol('%]');
 }));
