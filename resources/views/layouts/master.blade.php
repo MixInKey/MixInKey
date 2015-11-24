@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Music World</title>
+	<title>MixInky</title>
 
 	<!-- css -->
 	<link href="{{ URL::to('css/materialize.min.css') }}" rel="stylesheet">
@@ -32,10 +32,10 @@
 	  	<a href="#!"><i class="material-icons left">list</i>Playlist</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
+	  	<a href="#!"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
 	  </li>
 	</ul>
 
@@ -64,8 +64,8 @@
 					   <div class="collapsible-body">
 						   <p>
 							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
-							<a href="#!"><i class="material-icons left">settings</i>Paramètres</a>
-							<a href="#!"><i class="material-icons left">exit_to_app</i>Déconnexion</a>
+							<a href="#!"><i class="material-icons left">settings</i>Settings</a>
+							<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
 						   </p>
 					   </div>
 			        </li>
@@ -96,5 +96,6 @@
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
 	<!-- js for this project -->
 	<script src="{{ URL::to('js/script.js') }}"></script>
+	<script src="{{ URL::to('js/main.js') }}"></script>
 </body>
 </html>
