@@ -14,6 +14,7 @@ body{
 	display: flex;
     min-height: 100vh;
 	flex-direction: column;
+  padding-bottom: 0px !important;
 }
 
 main {
@@ -320,18 +321,13 @@ form > div > div:nth-child(6) > div.input-field.col.s12 > label{
 
 /* Footer */
 
-footer.footer-copyright {
-	bottom: 0;
-	text-align: center;
-    overflow: hidden;
-    height: 50px;
-    line-height: 50px;
-    color: rgba(255,255,255,0.8);
-    /* background-color: rgba(51,51,51,0.08); */
-    margin-top: 20px;
-    /* padding-top: 20px; */
-    background-color: #131313;
+footer.page-footer{
+  padding-top: 0px;
+  background-color: #131313;
+  color: whitesmoke;
+  text-align: center;
 }
+
 select {
 		display:block!important;
 }

@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>MixInkey</title>
+	<title>MixInKey</title>
+	<link rel="icon" href="{{ URL::to('images/favicon.ico') }}" />
 
 	<!-- css -->
 	<link href="{{ URL::to('css/static/materialize.min.css') }}" rel="stylesheet">
@@ -26,7 +27,7 @@
 <body class="avoid-fout" ng-controller="MainController">
 
 	<!-- Menu -->
-	<header>
+<header>
 	<ul id="dropdown1" class="dropdown-content">
 	  <li>
 	  	<a href="#!"><i class="material-icons left">list</i>Playlist</a>
@@ -35,7 +36,7 @@
 	  	<a href="#!"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
+	  	<a href="{{ URL::to('logout') }}"><i class="material-icons left">exit_to_app</i>Log out</a>
 	  </li>
 	</ul>
 
@@ -45,6 +46,7 @@
 		      <a href="#!" class="brand-logo">
 			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
 		      </a>
+					@if(Auth::check())
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		        <li>
@@ -65,20 +67,32 @@
 						   <p>
 							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
 							<a href="#!"><i class="material-icons left">settings</i>Settings</a>
-							<a href="#!"><i class="material-icons left">exit_to_app</i>Log out</a>
+							<a href="{{ URL::to('logout') }}"><i class="material-icons left">exit_to_app</i>Log out</a>
 						   </p>
 					   </div>
 			        </li>
 		        </ul>
 		      </ul>
+					@endif
 		    </div>
 		</nav>
 	</div>
 </header>
 
-<div class="container">
-	@yield('content')
-</div>
+<main>
+	<div class="container">
+		@yield('content')
+	</div>
+</main>
+
+<footer class="page-footer">
+	<div class="footer-copyright">
+		<div class="container">
+			© 2015 MixInKey
+		</div>
+	</div>
+</footer>
+
 
 {{-- Session notifications --}}
 @if(Session::has('error'))

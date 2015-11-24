@@ -31,7 +31,7 @@ class UsersController extends Controller {
           'email' => Input::get('email'),
           'password' => Input::get('password')
       ];
-			// print_r($data);die;
+
 			if(Auth::attempt($data)) {
 		      return Redirect::route('search')->with('success', 'Logged');
 			} else {
@@ -68,6 +68,7 @@ class UsersController extends Controller {
           'email'=> Input::get('email'),
           'password' => Input::get('password')
       ];
+
       if($this->validator($data)) {
           $user = new User;
           $user->name = $data['name'];
