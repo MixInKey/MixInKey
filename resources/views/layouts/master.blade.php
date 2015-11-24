@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>MixInky</title>
+	<title>MixInkey</title>
 
 	<!-- css -->
 	<link href="{{ URL::to('css/static/materialize.min.css') }}" rel="stylesheet">
