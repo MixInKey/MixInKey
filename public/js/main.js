@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 $(".button-collapse").sideNav();
 
-$(document).ready(function() {
-    $('select').material_select();
-});
+// PLEASE DONT USE THIS STATEMENT
+// $(document).ready(function() {
+//     $('select').material_select();
+// });

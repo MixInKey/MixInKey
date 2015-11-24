@@ -12,7 +12,7 @@
 						<div class="input-field col s12">
 							<i class="material-icons prefix">account_circle</i>
 							<input type="email" hidden>
-							<input id="email" type="text" autocomplete="false" class="validate">
+							<input id="email" name="email" type="text" autocomplete="false" class="validate">
 							<label for="email">Email</label><br>
 						</div><br>
 						@if ($errors->has('email'))
@@ -21,7 +21,7 @@
 						<div class="input-field col s12">
 							<i class="material-icons prefix">lock</i>
 							<input type="password" hidden />
-							<input id="password" type="password" autocomplete="false" class="validate">
+							<input id="password" type="password" name="password" autocomplete="false" class="validate">
 							<label for="password">Mot de passe</label><br>
 						</div>
 						@if ($errors->has('password'))
