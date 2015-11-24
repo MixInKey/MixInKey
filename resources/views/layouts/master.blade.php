@@ -108,6 +108,7 @@
 	<!-- Libs -->
 	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
 	{{--  src --}}

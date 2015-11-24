@@ -32,6 +32,7 @@ angular.module('MainCtrl', [])
       Beatport.getAllGenres()
         .success(function(data) {
           $scope.genres = data.results;
+            console.log(data.results);
         })
         .error(function(data) {
           console.log(data);

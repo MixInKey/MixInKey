@@ -1,30 +1,35 @@
-(function(app) {
-  var rangeSlider = document.getElementById('slider-range');
+(function() {
 
-  // noUiSlider.create(rangeSlider, {
-  // 	start: [ 4000 ],
-  // 	range: {
-  // 		'min': [  2000 ],
-  // 		'max': [ 10000 ]
-  // 	}
-  // });
+    $(document).ready(function(){
+        var rangeSlider = document.getElementById('slider-range');
 
-})(angular.module('beatportApp', [
-    'MainCtrl',
-    'beatportService',
-],function($interpolateProvider){
-    $interpolateProvider.startSymbol('<%');
-    $interpolateProvider.endSymbol('%>');
-}));
+        $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+        $(".button-collapse").sideNav();
 
-$(document).ready(function(){
-    $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        // PLEASE DON'T USE FOR NOW
+        // $(document).ready(function() {
+        //     $('select').material_select();
+        // });
     });
-    $(".button-collapse").sideNav();
 
-    // PLEASE DON'T USE FOR NOW
-    // $(document).ready(function() {
-    //     $('select').material_select();
-    // });
-});
+        var app = angular.module('beatportApp', [
+            'MainCtrl',
+            'beatportService',
+            'ngRoute'
+        ],function($interpolateProvider){
+            $interpolateProvider.startSymbol('<%');
+            $interpolateProvider.endSymbol('%>');
+        });
+
+        app.config(function($routeProvider, $locationProvider){
+            $routeProvider.
+            when('/',{
+                templateUrl : '/js/src/partials/test.html'
+            });
+
+            $locationProvider.html5Mode(true);
+        });
+
+})();
