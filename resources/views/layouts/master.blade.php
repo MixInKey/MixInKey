@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>MixInky</title>
+	<title>MixInkey</title>
 	<link rel="icon" href="{{ URL::to('images/favicon.ico') }}" />
 
 	<!-- css -->
@@ -46,6 +46,7 @@
 		      <a href="#!" class="brand-logo">
 			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
 		      </a>
+					@if(Auth::check())
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		        <li>
@@ -72,6 +73,7 @@
 			        </li>
 		        </ul>
 		      </ul>
+					@endif
 		    </div>
 		</nav>
 	</div>
@@ -86,7 +88,7 @@
 <footer class="page-footer">
 	<div class="footer-copyright">
 		<div class="container">
-			© 2015 MixInky
+			© 2015 MixInkey
 		</div>
 	</div>
 </footer>
