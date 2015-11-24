@@ -1,77 +1,64 @@
-'use strict'
+(function(app) {
 
-angular.module('MainCtrl', [])
-  .controller('MainController', function ($scope, $sce, Beatport) {
-    var type;
-    // Initialize scope models
-    $scope.tracks = {}, $scope.artists = {}, $scope.genres = {}, $scope.BPM = 0; $scope.query;
-    $scope.currentTrack = '5500589';
-    $scope.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=5500589&type=track');
+    app.controller('MainController', function($sce, Beatport) {
+        var self = this;
+        var type;
+        self.tracks = {}, self.artists = {}, self.genres = {}, self.BPM = 0;
+        self.query = { genre: '9' };
+        self.currentTrack = '5500589';
+        self.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=5500589&type=track');
 
-    /**
-     * Beatport API calls
-     * @method GET
-     * @return {Object} $scope.data query-results
-     */
-    $scope.changeTrack = function (trackId) {
-        $scope.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=' + trackId + '&type=track');
-        $scope.currentTrack = trackId;
-    };
+        /**
+         * Beatport API calls
+         * @method GET
+         * @return {Object} self.data query-results
+         */
+        self.changeTrack = function (trackId) {
+            self.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=' + trackId + '&type=track');
+            self.currentTrack = trackId;
+        };
 
-    $scope.findTracks = function() { // $scope.variable && $scope.function() can be used in templates(directives) and controllers
-      Beatport.getTracks() //  Call method of Beatport service (object as module dependency & this controller param)
-        .success(function(data) {
-            $scope.tracks = data;  // success , reset the $scope variable with new data to refresh in template
-        })
-        .error(function(data) {
-            console.log(data); // error , log the server response in console at network tab (with PHP error)
-        });
-    };
+        self.findGenres = function() {
+          Beatport.getAllGenres()
+            .success(function(data) {
+                self.genres = data.results;
+                console.log(data.results);
+            })
+            .error(function(data) {
+              console.log(data);
+            });
+        };
 
-    $scope.findGenres = function() {
-      Beatport.getAllGenres()
-        .success(function(data) {
-          $scope.genres = data.results;
-            console.log(data.results);
-        })
-        .error(function(data) {
-          console.log(data);
-        });
-    };
-
-    $scope.request = function(type) {
-        if (type == 'genre') {
-            console.log($scope.query.genre);
-            Beatport.getTracksByGenre($scope.query.genre)
+        self.search = function() {
+            Beatport.findTracks(self.query)
             .success(function(data) {
                 console.log(data);
-                $scope.tracks = data;
-
+                self.tracks = data;
             })
             .error(function(err) {
                 console.log(err);
             });
+        };
 
-        }
-    };
+        /**
+         * Customize MaterialSlider (API query-param) to improve UX
+         * @param {Number} self.BPM ngModel
+         */
+        self.moreBpm = function() {
+          self.BPM += self.BPM < 100 ? 10 : 0;
+          self.BPM = self.BPM <= 100 ? self.BPM : 100;
+          document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
+        },
+        self.lessBpm = function() {
+          self.BPM -= self.BPM > 0 ? 10 : 0;
+          self.BPM = self.BPM >= 0 ? self.BPM : 0;
+          document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
+        };
 
-    /**
-     * Customize MaterialSlider (API query-param) to improve UX
-     * @param {Number} $scope.BPM ngModel
-     */
-    $scope.moreBpm = function() {
-      $scope.BPM += $scope.BPM < 100 ? 10 : 0;
-      $scope.BPM = $scope.BPM <= 100 ? $scope.BPM : 100;
-      document.getElementById('bpm-input').MaterialSlider.change($scope.BPM);
-    },
-    $scope.lessBpm = function() {
-      $scope.BPM -= $scope.BPM > 0 ? 10 : 0;
-      $scope.BPM = $scope.BPM >= 0 ? $scope.BPM : 0;
-      document.getElementById('bpm-input').MaterialSlider.change($scope.BPM);
-    };
+        $('#bpm-input').change(function() {
+          self.BPM = parseInt($(this).val());
+        });
 
-    $('#bpm-input').change(function() {
-      $scope.BPM = parseInt($(this).val());
     });
 
-});
+})(angular.module('beatportApp'));

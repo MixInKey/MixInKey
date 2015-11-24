@@ -1,4 +1,4 @@
-(function() {
+(function(app) {
 
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
@@ -14,22 +14,19 @@
         // });
     });
 
-        var app = angular.module('beatportApp', [
-            'MainCtrl',
-            'beatportService',
-            'ngRoute'
-        ],function($interpolateProvider){
-            $interpolateProvider.startSymbol('<%');
-            $interpolateProvider.endSymbol('%>');
+    app.config(function($routeProvider, $locationProvider){
+        $routeProvider.
+        when('/',{
+            templateUrl : '/js/src/partials/test.html'
         });
 
-        app.config(function($routeProvider, $locationProvider){
-            $routeProvider.
-            when('/',{
-                templateUrl : '/js/src/partials/test.html'
-            });
+        $locationProvider.html5Mode(true);
+    });
 
-            $locationProvider.html5Mode(true);
-        });
-
-})();
+})(angular.module('beatportApp', [
+    'beatportService',
+    'ngRoute'
+],function($interpolateProvider){
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+}));

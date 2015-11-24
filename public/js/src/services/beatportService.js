@@ -1,34 +1,21 @@
 angular.module('beatportService', [])
 
 .factory('Beatport', function($http){
-    var urlApi = 'http://localhost:8000/';
-    var genreId, artistId, trackId;
+    var urlApi = window.location.origin;
+    var genreId, artistId, trackId, param;
+    
     return {
     		getOne : function(trackId) {
-            return $http.get(urlApi+'track/'+trackId);
-    		},
-    		getTracks : function() {
-            var data = {
-              facets : 'artistId:405818',
-              url : 'tracks',
-              perPage : '150'
-            }
-            var value = $.param(data);
-            return $http({
-              method: 'POST',
-              url: '/request',
-              headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-              data: value
-            });
+            return $http.get(urlApi+'/track/'+trackId);
     		},
     		getByArtist : function(artistId) {
-            return $http.get(urlApi+'artist/'+artistId);
+            return $http.get(urlApi+'/artist/'+artistId);
     		},
     		getAllGenres : function() {
-            return $http.get(urlApi+'genres');
+            return $http.get(urlApi+'/genres');
     		},
-        getTracksByGenre : function(genreId) {
-            return $http.get(urlApi + 'tracks/genre/' + genreId);
+        findTracks : function(param) {
+            return $http.get(urlApi + '/search/tracks', param);
         }
     }
 });

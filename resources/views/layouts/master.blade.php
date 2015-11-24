@@ -24,7 +24,7 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body class="avoid-fout" ng-controller="MainController">
+<body class="avoid-fout" ng-controller="MainController as main">
 
 	<!-- Menu -->
 <header>
@@ -109,9 +109,9 @@
 	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
+	<script src="{{ URL::to('js/src/main.js') }}"></script>
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
 	{{--  src --}}
-	<script src="{{ URL::to('js/src/main.js') }}"></script>
 </body>
 </html>

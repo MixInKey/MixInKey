@@ -18,10 +18,9 @@ Route::post('login', array('uses' => 'UsersController@postLogin', 'as' => 'postL
 Route::post('register', array('uses' => 'UsersController@postRegister', 'as' => 'postRegister'));
 Route::get('logout', array('uses' => 'UsersController@getLogout', 'as' => 'getLogout'));
 
-Route::get('/search', ['uses' => 'BeatportController@search', 'as' => 'search']);
+Route::get('/search', ['uses' => 'BeatportController@searchView', 'as' => 'search']);
 
-Route::get('/call', array('uses' => 'BeatportController@call'));
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
 Route::get('/genres', array('uses' => 'BeatportController@getAllGenres'));
 // Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));
-Route::get('/tracks/{request}/{param}', array('uses' => 'BeatportController@findTracks'))->where('request', '.+')->where('id', '[0-9]+');
+Route::get('/search/tracks', array('uses' => 'BeatportController@findTracks'));
