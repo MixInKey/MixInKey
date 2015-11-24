@@ -2,13 +2,15 @@
 
 namespace App\Helpers;
 
-class DataTransformer {
-
+class DataTransformer
+{
     /**
      * Prepare Request for Beatport API.
-     * @param  mixed  $data      Query parameters to be serialize
-     * @param  string $endpoint  Api endpoint to use
-     * @return array  $query     Serialized Query parameters
+     *
+     * @param mixed  $data     Query parameters to be serialize
+     * @param string $endpoint Api endpoint to use
+     *
+     * @return array $query     Serialized Query parameters
      */
     public static function prepare($data = null, $endpoint = 'tracks')
     {

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Providers\HelperServiceProvider;
 use App\Helpers\BeatportApi;
+
 use App\Helpers\DataTransformer;
+use Illuminate\Http\Request;
 
 class BeatPortController extends Controller
 {
@@ -16,7 +15,8 @@ class BeatPortController extends Controller
     }
 
     /**
-     * Return all genres from Beatport
+     * Return all genres from Beatport.
+     *
      * @return Response Json
      */
     public function getAllGenres()
@@ -36,12 +36,12 @@ class BeatPortController extends Controller
     }
 
     /**
-     * Display search main view
+     * Display search main view.
+     *
      * @return resource rendered view
      */
     public function searchView()
     {
-      return view('templates.search');
+        return view('templates.search');
     }
-
 }

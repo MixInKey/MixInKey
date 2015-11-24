@@ -7,7 +7,7 @@ $finder = Symfony\CS\Finder\DefaultFinder::create()
 return Symfony\CS\Config\Config::create()
     ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
     ->fixers(array(
-        '-psr0'
+        '-psr0',
         '-unalign_double_arrow',
         '-unalign_equals',
         'newline_after_open_tag',
