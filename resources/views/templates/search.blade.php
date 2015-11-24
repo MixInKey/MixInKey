@@ -1,25 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-		<div class="main z-depth-2">
+		<div class="main z-depth-1">
 			<div class="page-header">
-				<h1>Recherche Avancée</h1>
+				<h1>Advanced Search</h1>
 			</div><br>
 
 			 <div class="container">
 				 <div class="form-group form-group-label" ng-init="findGenres()">
-           <label for="genre">Genre</label>
+           <label for="genre">Genres</label>
            <select class="form-control" id="genre">
                <option ng-repeat="genre in genres"><% genre.name %></option>
            </select>
-         </div>
+         </div><br>
 
+				<label for="slide-range">BPM</label>
 				<div class="form-group">
 					<p class="range-field">
 					<input type="range" id="slide-range" min="0" max="100" />
 					</p>
-				</div>
+				</div><br>
 
 				<form class="row chekbox">
 					<div class="col s3">
@@ -41,9 +41,8 @@
 			    </form><br>
 
 			    <div class="button-search bot-space">
-				    <a class="waves-effect waves-light btn"><i class="material-icons left">search</i>Rechercher</a>
+				    <a class="waves-effect waves-light btn"><i class="material-icons left">search</i>Search</a>
 			    </div>
 			 </div>
 		</div>
-	</div>
 @stop

@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('content')
-	<div class="container">
-		<div class="register z-depth-2">
+		<div class="register z-depth-1">
 			<div class="page-header">
 				<h1>REGISTER</h1>
 			</div>
@@ -43,5 +42,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
 @stop

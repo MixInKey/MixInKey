@@ -76,7 +76,9 @@
 	</div>
 </header>
 
-@yield('content')
+<div class="container">
+	@yield('content')
+</div>
 
 @if(Session::has('error'))
 	<script type="text/javascript">

@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('content')
-	<div class="container">
-		<div class="login z-depth-2">
+		<div class="login z-depth-1">
 			<div class="page-header">
 				<h1>Connexion</h1>
 			</div>
@@ -22,7 +21,7 @@
 							<i class="material-icons prefix">lock</i>
 							<input type="password" hidden />
 							<input id="password" type="password" autocomplete="false" class="validate">
-							<label for="password">Mot de passe</label><br>
+							<label for="password">Password</label><br>
 						</div>
 						@if ($errors->has('password'))
 							 <br>{{ $errors->first('password') }}
@@ -32,10 +31,9 @@
 					<button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</button>
 				</div>
 				<div class="button-register top-space">
-					<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">INSCRIPTION</a>
+					<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">REGISTER</a>
 				</div>
 				</form>
 			</div>
 		</div>
-	</div>
 @stop
