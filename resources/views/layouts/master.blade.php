@@ -10,6 +10,12 @@
 	<link href="{{ URL::to('css/materialize.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
+	<link href="{{ URL::to('css/toastr.min.css') }}" rel="stylesheet">
+
+	{{--  js (must be loaded at top of page)--}}
+	<script src="{{ URL::to('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ URL::to('js/toastr.min.js') }}"></script>
+
 
 	<!-- ie -->
 		<!--[if lt IE 9]>
@@ -72,9 +78,18 @@
 
 @yield('content')
 
+@if(Session::has('error'))
+	<script type="text/javascript">
+		toastr.error('lol');
+	</script>
+
+@elseif(Session::has('success'))
+<script type="text/javascript">
+	toastr.success('lol');
+</script>
+@endif
 
 	<!-- js -->
-	<script src="{{ URL::to('js/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/controllers/MainCtrl.js') }}"></script>

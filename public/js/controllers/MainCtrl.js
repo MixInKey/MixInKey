@@ -26,17 +26,7 @@ angular.module('MainCtrl', [])
         .error(function(data) {
             console.log(data); // error , log the server response in console at network tab (with PHP error)
         });
-    },
-
-    $scope.findArtists = function() {
-      Beatport.getAllArtists()
-        .success(function(data) {
-          $scope.artists = data.results;
-        })
-        .error(function(data) {
-          console.log(data);
-        });
-    },
+    };
 
     $scope.findGenres = function() {
       Beatport.getAllGenres()

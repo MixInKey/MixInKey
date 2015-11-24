@@ -31,6 +31,7 @@ class UsersController extends Controller {
           'email' => Input::get('email'),
           'password' => Input::get('password')
       ];
+			// print_r($data);die;
 			if(Auth::attempt($data)) {
 		      return Redirect::route('search')->with('success', 'Logged');
 			} else {
