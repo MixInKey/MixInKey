@@ -2,9 +2,9 @@
 
 angular.module('MainCtrl', [])
   .controller('MainController', function ($scope, $sce, Beatport) {
-
+    var type;
     // Initialize scope models
-    $scope.tracks = {}, $scope.artists = {}, $scope.genres = {}, $scope.BPM = 0;
+    $scope.tracks = {}, $scope.artists = {}, $scope.genres = {}, $scope.BPM = 0; $scope.query;
     $scope.currentTrack = '5500589';
     $scope.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=5500589&type=track');
 
@@ -36,6 +36,22 @@ angular.module('MainCtrl', [])
         .error(function(data) {
           console.log(data);
         });
+    };
+
+    $scope.request = function(type) {
+        if (type == 'genre') {
+            console.log($scope.query.genre);
+            Beatport.getTracksByGenre($scope.query.genre)
+            .success(function(data) {
+                console.log(data);
+                $scope.tracks = data;
+
+            })
+            .error(function(err) {
+                console.log(err);
+            });
+
+        }
     };
 
     /**

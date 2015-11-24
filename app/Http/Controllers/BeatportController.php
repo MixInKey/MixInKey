@@ -34,49 +34,6 @@ class BeatPortController extends Controller
       return view('templates.search');
     }
 
-    public function jsonRequest(Request $request)
-    {
-        $parameters = array(
-            'consumer' => CONSUMERAPI,
-            'secret' => SECRET,
-            'login' => LOGIN,
-            'password' => PASSWORD
-        );
-
-        $request = $request->all();
-        $query = array(
-            'facets' => $request['facets'],
-            'url' => $request['url'],
-            'perPage' => $request['perPage'],
-        );
-
-        $api = new \BeatportApi($parameters);
-        $response = $api->queryApi($query);
-
-        return response()->json($response);
-    }
-
-    public function getAllArtists()
-    {
-        $parameters = array(
-            'consumer' => CONSUMERAPI,
-            'secret' => SECRET,
-            'login' => LOGIN,
-            'password' => PASSWORD
-        );
-
-        $query = array(
-            'facets' => '',
-            'url' => 'artists',
-            'perPage' => '150',
-        );
-
-        $api = new \BeatportApi($parameters);
-        $response = $api->queryApi($query);
-
-        return response()->json($response);
-    }
-
     public function getAllGenres()
     {
         $parameters = array(
@@ -97,4 +54,55 @@ class BeatPortController extends Controller
 
         return response()->json($response);
     }
+
+    public function findByGenre($genre)
+    {
+        $parameters = array(
+            'consumer' => CONSUMERAPI,
+            'secret' => SECRET,
+            'login' => LOGIN,
+            'password' => PASSWORD
+        );
+
+        $query = array(
+            'facets' => 'genreName:'.$genre,
+            'url' => 'genres',
+            'perPage' => '1000',
+        );
+
+        $api = new \BeatportApi($parameters);
+        $response = $api->queryApi($query);
+
+        return response()->json($response);
+    }
+
+    public function byGenre($genre)
+    {
+        $query = [
+            'facets' => 'genreId:'.$genre,
+            'url'    => 'tracks',
+            'perPage' => '1000',
+        ];
+
+        return $query;
+    }
+
+    public function findTracks($request, $param)
+    {
+        $parameters = array(
+            'consumer' => CONSUMERAPI,
+            'secret' => SECRET,
+            'login' => LOGIN,
+            'password' => PASSWORD
+        );
+        if ($request == 'genre') {
+            $query = self::byGenre($param);
+        }
+
+        $api = new \BeatportApi($parameters);
+        $response = $api->queryApi($query);
+
+        return response()->json($response);
+    }
+
 }

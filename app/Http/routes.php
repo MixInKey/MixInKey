@@ -23,4 +23,5 @@ Route::get('/search', ['uses' => 'BeatportController@search', 'as' => 'search'])
 Route::get('/call', array('uses' => 'BeatportController@call'));
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
 Route::get('/genres', array('uses' => 'BeatportController@getAllGenres'));
-Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));
+// Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));
+Route::get('/tracks/{request}/{param}', array('uses' => 'BeatportController@findTracks'))->where('request', '.+')->where('id', '[0-9]+');

@@ -10,8 +10,8 @@
 			 <div class="container">
 				 <div class="form-group form-group-label" ng-init="findGenres()">
            <label for="genre">Genre</label>
-           <select class="form-control" id="genre">
-               <option ng-repeat="genre in genres"><% genre.name %></option>
+           <select class="form-control" id="genre" ng-model="query.genre">
+               <option value="<% genre.id %>" ng-repeat="genre in genres"><% genre.name %></option>
            </select>
          </div>
 
@@ -39,9 +39,12 @@
 						<label for="option4">Option 4</label>
 					</div>
 			    </form><br>
-
+					<div class="col-md-6" ng-repeat="track in tracks.results">
+							<a id="<% track.id %>" href="#<% track.id %>" ng-click="changeTrack(track.id)"><% track.id %> <% track.name %></a>
+							<img class="thumbnail" ng-src="<% track.images.medium.url %>">
+					</div>
 			    <div class="button-search bot-space">
-				    <a class="waves-effect waves-light btn"><i class="material-icons left">search</i>Rechercher</a>
+				    <a ng-click="request('genre')" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Rechercher</a>
 			    </div>
 			 </div>
 		</div>
