@@ -74,7 +74,6 @@
 
 
 	<!-- js -->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="{{ URL::to('js/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
@@ -82,6 +81,5 @@
 	<script src="{{ URL::to('js/services/beatportService.js') }}"></script>
 	<!-- js for this project -->
 	<script src="{{ URL::to('js/script.js') }}"></script>
-	<script src="{{ URL::to('js/main.js') }}"></script>
 </body>
 </html>
