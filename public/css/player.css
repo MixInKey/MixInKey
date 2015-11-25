@@ -155,7 +155,6 @@ a.stream:hover {
     position: relative;
     height: 4px;
     display: block;
-    max-width: 1600px !important;
     border-radius: 2px;
     margin: 0rem 0 0rem 0;
     overflow: visible; !important;
@@ -167,11 +166,11 @@ a.stream:hover {
       position: relative;
       height: 4px;
       display: block;
-      max-width: 1600px !important;
+      width: calc(100% - 260px);
       border-radius: 2px;
       margin: 0rem 0 0rem 0;
       overflow: visible; !important;
-      margin-left: 200px;
+      margin-left: 130px;
   }
 
   .info {
@@ -180,8 +179,7 @@ a.stream:hover {
   }
 
   #pl > span.info > span.song{
-    margin-left: 10px;
-    margin-right: 10px;
+    text-align: center;
   }
 
   .player i {

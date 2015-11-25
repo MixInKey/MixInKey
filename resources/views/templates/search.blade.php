@@ -112,9 +112,9 @@
 <i class="fa fa-fast-forward"></i>
 
 <span class="info">
-  <span class="time">00:00</span>
+  <span class="time hidden-mobile">00:00</span>
   <span class="song">Preloading...</span>
-  <span class="dur"></span>
+  <span class="dur hidden-mobile"></span>
 </span>
 <div class="progress"></div>
 
