@@ -67,7 +67,7 @@
 						 </tr>
 					 </thead>
 
-					 <tbody ng-repeat="track in main.tracks.results | filter: query">
+					 <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage">
 						 <tr>
 							 <td>
 								 <img class="thumbnail" ng-src="[% track.images.medium.url %]">
@@ -81,9 +81,7 @@
 							 <td>
 								 Genre
 							 </td>
-							 <td>
-								 Key
-							 </td>
+							 <td>Key</td>
 							 <td>
 								 BPM
 							 </td>
@@ -97,7 +95,7 @@
 			<div class="text-center">
         <ul class="pagination">
           <li class="waves-effect"
-					ng-class="main.isActive(i) ? 'active' : ''"
+						ng-class="main.isActive(i) ? 'active' : ''"
 						ng-click="main.switch(i)"
 						ng-repeat="i in main.pages">
 						<a>[% i %]</a>
