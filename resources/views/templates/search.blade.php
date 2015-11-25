@@ -56,7 +56,7 @@
 					<table class="bordered">
 					 <thead>
 						 <tr>
-								 <th data-field="cover">Cover</th>
+								 <th class="hidden-mobile" data-field="cover">Cover</th>
 								 <th data-field="artist">Artist</th>
 								 <th data-field="track">Track</th>
 								 <th data-field="genre">Genre</th>
@@ -68,7 +68,7 @@
 
 					 <tbody ng-repeat="track in main.tracks.results | filter: query">
 						 <tr>
-							 <td>
+							 <td class="hidden-mobile">
 								 <img class="thumbnail" ng-src="[% track.images.medium.url %]">
 							 </td>
 							 <td>
