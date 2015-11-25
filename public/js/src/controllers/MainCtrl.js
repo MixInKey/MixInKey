@@ -81,6 +81,7 @@
         self.getMoreTracks = function() {
             self.lastPage += 150;
             self.query.page = self.lastPage;
+            var currentPage = self.currentPage;
             Beatport.findTracks(self.query)
             .success(function(data) {
                 var results = { metadata: data.metadata };
@@ -169,7 +170,6 @@
             for (var i = 1; i <= nbPages; i++)
                 newPages.push(i);
             self.pages = newPages;
-            self.currentPage = 0;
         }, true);
 
     });
