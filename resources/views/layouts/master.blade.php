@@ -94,24 +94,26 @@
 </footer>
 
 
-{{-- Session notifications --}}
-@if(Session::has('error'))
-	<script type="text/javascript">
-		toastr.error('{{ Session::get('error') }}');
-	</script>
-@elseif(Session::has('success'))
-	<script type="text/javascript">
-		toastr.success('{{ Session::get('success') }}');
-	</script>
-@endif
+	{{-- Session notifications --}}
+	@if(Session::has('error'))
+		<script type="text/javascript">
+			toastr.error('{{ Session::get('error') }}');
+		</script>
+	@elseif(Session::has('success'))
+		<script type="text/javascript">
+			toastr.success('{{ Session::get('success') }}');
+		</script>
+	@endif
 
 	<!-- Libs -->
 	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
+	<script src="{{ URL::to('js/static/bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
 	<script src="{{ URL::to('js/src/main.js') }}"></script>
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
+	<script src="{{ URL::to('js/src/pipes/Components.js') }}"></script>
 	{{--  src --}}
 </body>
 </html>

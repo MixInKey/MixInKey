@@ -45,10 +45,20 @@
 		</div>
 
 		<div ng-if="main.tracks" class="row">
-			<div class="col-md-6" ng-repeat="track in main.tracks.results | filter: query">
+			<div class="col-md-6" ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage">
 					<a id="[% track.id %]" ng-click="main.changeTrack(track.id)">[% track.id %] [% track.name %]</a>
 					<img class="thumbnail" ng-src="[% track.images.medium.url %]">
 			</div>
+			<div class="text-center">
+        <ul class="pagination">
+          <li class="waves-effect"
+					ng-class="main.isActive(i) ? 'active' : ''"
+						ng-click="main.switch(i)"
+						ng-repeat="i in main.pages">
+						<a>[% i %]</a>
+					</li>
+        </ul>
+      </div>
 		</div>
 		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	</div>

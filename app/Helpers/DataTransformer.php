@@ -16,6 +16,7 @@ class DataTransformer
     {
         $params = [];
         $query  = [
+            'page'    => isset($data['page']) ? $data['page'] : null,
             'perPage' => isset($data['perPage']) ? $data['perPage'] : 150,
             'url'     => $endpoint,
             'facets'  => '',
@@ -23,8 +24,9 @@ class DataTransformer
 
         if (!is_null($data)) {
             if (isset($data['genre'])) {
-                $params['genre'] = self::byGenre($data['genre']);
+                $params['genre'] = self::byGenre($data['genre']);  // Prepare param if exist
             }
+            //Do The same for others
         }
 
         if (count($params) > 0) {
@@ -34,14 +36,19 @@ class DataTransformer
         return $query;
     }
 
-    protected function byGenre($genre)
+    /**
+     * Prepare 'genre' parameter for query.
+     * @param  [type] $genre [description]
+     * @return [type]        [description]
+     */
+    protected static function byGenre($genre)
     {
         if (is_null($genre)) {
             return '';
         }
 
         $param = '';
-        if (is_int($genre)) {
+        if (intval($genre) > 0) {
             $param = "genreId:{$genre}";
         } else {
             $param = "genreName:{$genre}";

@@ -6,6 +6,7 @@ use App\Helpers\BeatportApi;
 
 use App\Helpers\DataTransformer;
 use Illuminate\Http\Request;
+// use Request;
 
 class BeatPortController extends Controller
 {
@@ -17,22 +18,33 @@ class BeatPortController extends Controller
     /**
      * Return all genres from Beatport.
      *
+     * @method GET
+     *
      * @return Response Json
      */
     public function getAllGenres()
     {
         $query = DataTransformer::prepare(null, 'genres');
-        $response = $this->api->queryApi($query);
+        $genres = $this->api->queryApi($query);
 
-        return response()->json($response);
+        return response()->json($genres);
     }
 
+    /**
+     * Find tracks by multi where clauses.
+     *
+     * @method GET
+     *
+     * @param  Request  $request Data from clientside (AngularJS)
+     *
+     * @return Response $tracks
+     */
     public function findTracks(Request $request)
     {
-        $query = DataTransformer::prepare($request->all());
-        $response = $this->api->queryApi($query);
+        $query = DataTransformer::prepare($request->all(), 'tracks');
+        $tracks = $this->api->queryApi($query);
 
-        return response()->json($response);
+        return response()->json($tracks);
     }
 
     /**

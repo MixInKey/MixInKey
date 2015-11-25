@@ -2,7 +2,7 @@
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
         $('.collapsible').collapsible({
-            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            accordion : false
         });
         $(".button-collapse").sideNav();
     });
@@ -12,13 +12,13 @@
         when('/',{
             templateUrl : '/js/src/partials/test.html'
         });
-
         $locationProvider.html5Mode(true);
     });
 
 })(angular.module('beatportApp', [
     'beatportService',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ],function($interpolateProvider){
     $interpolateProvider.startSymbol('[%');
     $interpolateProvider.endSymbol('%]');

@@ -60,6 +60,10 @@ class BeatportApi
         );
     }
 
+    /**
+     * oAuth API Authentication.
+     * @return oAuth
+     */
     private function oAuthDance()
     {
         $req_url        = 'https://oauth-api.beatport.com/identity/1/oauth/request-token';
@@ -78,7 +82,7 @@ class BeatportApi
         $request_token_info         = $oauth->getRequestToken($req_url);
         $oauth_request_token        = $oauth->getToken();
         $oauth_request_token_secret = $oauth->getTokenSecret();
-        $post_string        = 'oauth_token='.$oauth_request_token.'&username='.$this->params['beatportLogin'].'&password='.$this->params['beatportPassword'].'&submit=Login';
+        $post_string = 'oauth_token='.$oauth_request_token.'&username='.$this->params['beatportLogin'].'&password='.$this->params['beatportPassword'].'&submit=Login';
         $curl_connection_bp = curl_init();
         curl_setopt($curl_connection_bp, CURLOPT_URL, $auth_submiturl);
         curl_setopt($curl_connection_bp, CURLOPT_CONNECTTIMEOUT, 0);
