@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main z-depth-1">
+<div class="search z-depth-1">
 	<div class="page-header">
-		<h1>Advanced Search</h1>
+		<h3>Advanced Search</h3>
 	</div><br>
 
 	<div class="container">
@@ -43,14 +43,57 @@
 		<div class="button-search bot-space">
 			<a ng-click="main.search()" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Search</a>
 		</div>
+	</div>
+</div>
 
+<div class="result z-depth-1">
+	<div class="page-header">
+		<h3>Result</h3>
+	</div><br>
+
+	<div class="container">
 		<div ng-if="main.tracks" class="row">
-			<div class="col-md-6" ng-repeat="track in main.tracks.results | filter: query">
-					<a id="[% track.id %]" ng-click="main.changeTrack(track.id)">[% track.id %] [% track.name %]</a>
-					<img class="thumbnail" ng-src="[% track.images.medium.url %]">
+					<table class="bordered">
+					 <thead>
+						 <tr>
+								 <th data-field="cover">Cover</th>
+								 <th data-field="artist">Artist</th>
+								 <th data-field="track">Track</th>
+								 <th data-field="genre">Genre</th>
+								 <th data-field="key">Key</th>
+								 <th data-field="bpm">BPM</th>
+								 <th data-field="play">Play</th>
+						 </tr>
+					 </thead>
+
+					 <tbody ng-repeat="track in main.tracks.results | filter: query">
+						 <tr>
+							 <td>
+								 <img class="thumbnail" ng-src="[% track.images.medium.url %]">
+							 </td>
+							 <td>
+								 Artist
+							 </td>
+							 <td>
+								 [% track.name %]
+							 </td>
+							 <td>
+								 Genre
+							 </td>
+							 <td>
+								 Key
+							 </td>
+							 <td>
+								 BPM
+							 </td>
+							 <td>
+								 <a id="[% track.id %]" ng-click="main.changeTrack(track.id)"><i class="material-icons">play_circle_filled</i></a>
+							 </td>
+						 </tr>
+					 </tbody>
+				 </table>
 			</div>
 		</div>
-		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	</div>
 </div>
 @stop
