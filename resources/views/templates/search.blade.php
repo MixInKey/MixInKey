@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<base href="/search/" />
 <div class="main z-depth-1">
 	<div class="page-header">
 		<h1>Advanced Search</h1>
@@ -60,6 +61,7 @@
         </ul>
       </div>
 		</div>
+		<div ng-view></div>
 		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	</div>
 </div>
