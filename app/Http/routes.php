@@ -15,7 +15,6 @@
 Route::get('/register', array('uses' => 'UsersController@registerPage', 'as' => 'register'));
 Route::post('login', array('uses' => 'UsersController@postLogin', 'as' => 'postLogin'));
 Route::get('login', array('uses' => 'UsersController@getLogin', 'as' => 'login'));
-Route::get('/auth/login', array('uses' => 'UsersController@getLogin'));
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/', array('uses' => 'BeatportController@searchView', 'as' => 'search'));
 });
