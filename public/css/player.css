@@ -155,11 +155,67 @@ a.stream:hover {
     position: relative;
     height: 4px;
     display: block;
-    width: 76% !important;
+    max-width: 1600px !important;
     border-radius: 2px;
     margin: 0rem 0 0rem 0;
     overflow: visible; !important;
     margin-left: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .progress {
+      position: relative;
+      height: 4px;
+      display: block;
+      max-width: 1600px !important;
+      border-radius: 2px;
+      margin: 0rem 0 0rem 0;
+      overflow: visible; !important;
+      margin-left: 200px;
+  }
+
+  .info {
+    font-size: 0.4em;
+    width: auto;
+  }
+
+  #pl > span.info > span.song{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .player i {
+    color: #fff;
+    position: relative;
+    left: 10px;
+    font-size: 20px;
+    margin-right: none;
+    top: 20px;
+    cursor: pointer;
+    width: 5px;
+    transition: transform 0.2s;
+  }
+  .player i:active {
+    transform: scale(0.8);
+    transition: none;
+  }
+  .player i.pause {
+    color: rgba(255,255,255,0.7);
+    text-shadow: 0 0 10px #000;
+    transition: transform 0.2s;
+    margin-right: 33px;
+  }
+  .player i.pause:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+  #cover {
+    height: 56px;
+    position: fixed;
+    left: 35px;
+    bottom: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
 }
 
 .volume {

@@ -118,7 +118,7 @@
 </span>
 <div class="progress"></div>
 
-<div class="controls">
+<div class="controls hidden-mobile">
   <i class="fa fa-repeat inactive"></i>
   <i class="fa fa-random inactive"></i>
 </div>
