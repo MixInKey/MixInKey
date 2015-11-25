@@ -17,6 +17,10 @@ body{
   padding-bottom: 0px !important;
 }
 
+body > main > .container{
+  width: 95% !important;
+}
+
 main {
     flex: 1 0 auto;
 }
@@ -158,6 +162,15 @@ nav > div > a.button-collapse > i:hover{
 	padding: 20px;
 	margin-top: 50px;
 	margin-bottom: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .search{
+    width: 100%;
+  }
 }
 
 .page-header {
@@ -169,6 +182,17 @@ nav > div > a.button-collapse > i:hover{
 
 .select-wrapper > input{
 	color: whitesmoke;
+}
+
+@media screen and (max-width: 600px) {
+  .hidden-mobile {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
 }
 
 div.container > form:nth-child(3) > p > span{
@@ -215,6 +239,10 @@ div.container > div.select-wrapper > span{
   padding: 20px;
   margin-top: 50px;
   margin-bottom: 20px;
+}
+
+.result.z-depth-1 > div.container{
+  width: 95% !important;
 }
 
 table > thead > tr > th{
