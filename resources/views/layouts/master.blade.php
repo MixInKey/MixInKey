@@ -8,14 +8,24 @@
 	<link rel="icon" href="{{ URL::to('images/favicon.ico') }}" />
 
 	<!-- css -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<link href="{{ URL::to('css/static/materialize.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
+	<link href="{{ URL::to('css/player.css') }}" rel="stylesheet">
 	<link href="{{ URL::to('css/static/toastr.min.css') }}" rel="stylesheet">
 
 	{{--  js (must be loaded here) --}}
 	<script src="{{ URL::to('js/static/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script src="{{ URL::to('js/static/toastr.min.js') }}"></script>
+	<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>
 
 
 	<!-- ie -->
@@ -86,9 +96,11 @@
 </main>
 
 <footer class="page-footer">
+	<!--
 	@if(Auth::check())
 	<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
 	@endif
+-->
 	<div class="footer-copyright">
 		<div class="container">
 			© 2015 MixInKey
@@ -109,11 +121,11 @@
 	@endif
 
 	<!-- Libs -->
-	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
 	<script src="{{ URL::to('js/static/bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
 	<script src="{{ URL::to('js/src/main.js') }}"></script>
+	<script src="{{ URL::to('js/src/player.js') }}"></script>
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
 	<script src="{{ URL::to('js/src/pipes/Components.js') }}"></script>
