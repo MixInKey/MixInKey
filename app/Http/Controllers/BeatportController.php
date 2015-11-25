@@ -43,6 +43,9 @@ class BeatPortController extends Controller
     {
         $query = DataTransformer::prepare($request->all(), 'tracks');
         $tracks = $this->api->queryApi($query);
+        if ($request->get('page') > $tracks['metadata']['totalPages']) {
+            $tracks = [];
+        }
 
         return response()->json($tracks);
     }

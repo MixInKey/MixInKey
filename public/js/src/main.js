@@ -10,7 +10,7 @@
     app.config(function($routeProvider, $locationProvider){
         $routeProvider.
         when('/',{
-            templateUrl : 'test.html'
+            templateUrl : 'Search/index.html'
         });
         $locationProvider.html5Mode(true);
     });

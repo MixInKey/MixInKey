@@ -24,10 +24,15 @@
             self.currentTrack = trackId;
         };
 
+        /**
+         * Get all genres to build search select field
+         * @return {Object} genres
+         */
         self.findGenres = function() {
           Beatport.getAllGenres()
             .success(function(data) {
                 self.genres = data.results;
+                self.lastPage = 0;
             })
             .error(function(data) {
               console.log(data);
@@ -44,28 +49,29 @@
             Beatport.findTracks(self.query)
             .success(function(data) {
                 self.tracks = data;
-                var results = { metadata: data.metadata};
-                // results.results = [];
-                // results.results = self.extend(self.tracks.results, data.results);
-                // self.tracks = results;
-                console.log(self.tracks);
             })
             .error(function(err) {
                 console.log(err);
             });
         };
 
+        /**
+         * Merge two objects
+         * @param  {Object} base First objects
+         * @param  {Object} src  2th Obj
+         * @return {Object} ba     [description]
+         */
         self.extend = function(base, src) {
-          count = 0;
-          if(self.lastPage > 0) {
-              for (var key in src)
-                  ++count;
-          }
-          for (var key in src) {
-              base[count] = src[key];
-              ++count;
-          }
-          return base;
+            count = 0;
+            if(self.lastPage < 1)
+                return src;
+            for (var key in base)
+                ++count;
+            for (var key in src) {
+                base[count] = src[key];
+                ++count;
+            }
+            return base;
       }
 
         /**
@@ -75,8 +81,17 @@
         self.getMoreTracks = function() {
             self.lastPage += 150;
             self.query.page = self.lastPage;
-            self.search();
-
+            Beatport.findTracks(self.query)
+            .success(function(data) {
+                var results = { metadata: data.metadata };
+                results.results = [];
+                results.results = self.extend(self.tracks.results, data.results);
+                self.tracks = results;
+                console.log(self.tracks);
+            })
+            .error(function(err) {
+                console.log(err);
+            });
         };
 
         /**
@@ -84,8 +99,7 @@
          * @return {Number} self.currentPage
          */
         self.switch = function(index) {
-            if (self.nbPages == index+2) {
-            console.log('reload');
+            if (self.nbPages <= index+2) {
                 self.getMoreTracks();
             }
             return self.currentPage = index-1;

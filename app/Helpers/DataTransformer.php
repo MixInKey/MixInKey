@@ -4,6 +4,11 @@ namespace App\Helpers;
 
 class DataTransformer
 {
+    public function __construct()
+    {
+        $this->endpoint = 'tracks';
+    }
+
     /**
      * Prepare Request for Beatport API.
      *
@@ -23,14 +28,12 @@ class DataTransformer
         ];
 
         if (!is_null($data)) {
-            if (isset($data['genre'])) {
-                $params['genre'] = self::byGenre($data['genre']);  // Prepare param if exist
+            foreach ($data as $prop => $v) {
+                $method = 'by'.ucfirst($prop);
+                if (method_exists(__CLASS__, $method)) {
+                    $params[$prop] = self::$method($data[$prop]);
+                }
             }
-
-            if (isset($data['bpm'])) {
-                $params['bpm'] = self::byBpm($data['bpm']);
-            }
-            //Do The same for others
         }
 
         if (count($params) > 0) {
@@ -42,8 +45,10 @@ class DataTransformer
 
     /**
      * Prepare 'genre' parameter for query.
-     * @param  [type] $genre [description]
-     * @return [type]        [description]
+     *
+     * @param  int    $genre
+     *
+     * @return string $param
      */
     protected static function byGenre($genre)
     {
@@ -69,6 +74,8 @@ class DataTransformer
 
         $param = '';
         if (intval($bpm) > 0) {
+            $param = "bpm:{$bpm}";
+        } else {
             $param = "rangeName=bpm&rangeStart=128&rangeEnd=180";
         }
 
