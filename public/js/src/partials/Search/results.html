@@ -1,0 +1,47 @@
+<div class="result z-depth-1" ng-if="main.tracks.results" >
+	<div class="page-header">
+		<h3>Result</h3>
+	</div><br>
+  <div class="container">
+    <div class="row">
+        <table class="bordered">
+         <thead>
+           <tr>
+               <th data-field="cover">Cover</th>
+               <th data-field="artist">Artist</th>
+               <th data-field="track">Track</th>
+               <th data-field="genre">Genre</th>
+               <th data-field="key">Key</th>
+               <th data-field="bpm">BPM</th>
+               <th data-field="play">Play</th>
+           </tr>
+         </thead>
+         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage">
+           <tr>
+             <td>
+               <img class="thumbnail" ng-src="[% track.images.medium.url %]">
+             </td>
+             <td>Artist</td>
+             <td>[% track.name %]</td>
+             <td>Genre</td>
+             <td>Key</td>
+             <td>BPM</td>
+             <td>
+               <a id="[% track.id %]" ng-click="main.changePlayerTrack(track.id)"><i class="material-icons">play_circle_filled</i></a>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+    <div class="text-center">
+      <ul class="pagination">
+        <li class="waves-effect"
+          ng-class="main.isActive(i) ? 'active' : ''"
+          ng-click="main.switch(i)"
+          ng-repeat="i in main.pages">
+          <a>[% i %]</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

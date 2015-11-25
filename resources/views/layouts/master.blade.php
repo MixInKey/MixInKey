@@ -123,12 +123,14 @@
 	<!-- Libs -->
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
-	<script src="{{ URL::to('js/static/bower_components/angular-bootstrap/ui-bootstrap.min.js') }}"></script>
-	<script src="{{ URL::to('js/src/main.js') }}"></script>
-	<script src="{{ URL::to('js/src/player.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::to('/js/dist/app.min.js')}}"></script>
+	<script src="{{ URL::to('js/src/plugins/player.js') }}"></script>
+	{{-- <script src="{{ URL::to('js/src/main.js') }}"></script>
+>>>>>>> dev
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
 	<script src="{{ URL::to('js/src/pipes/Components.js') }}"></script>
+	<script src="{{ URL::to('js/src/directives/Search.js') }}"></script> --}}
 	{{--  src --}}
 </body>
 </html>

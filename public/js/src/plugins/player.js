@@ -121,6 +121,7 @@ $(".volume").mouseout(function() {
 
 audio.onplay = function() {
   setInterval(function() {
+
     var time = Math.floor(audio.currentTime);
     var wf = 1 + (2 / audio.duration * audio.currentTime);
     $(".time").text(timeConvert(time));

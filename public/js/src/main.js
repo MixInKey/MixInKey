@@ -10,15 +10,18 @@
     app.config(function($routeProvider, $locationProvider){
         $routeProvider.
         when('/',{
-            templateUrl : '/js/src/partials/test.html'
+            templateUrl: 'Search/index.html',
+            controller: 'PlayerController',
+            controllerAs: 'player' 
         });
         $locationProvider.html5Mode(true);
     });
+    angular.module('templates', []);
 
 })(angular.module('beatportApp', [
     'beatportService',
     'ngRoute',
-    'ui.bootstrap'
+    'templates',
 ],function($interpolateProvider){
     $interpolateProvider.startSymbol('[%');
     $interpolateProvider.endSymbol('%]');

@@ -1,0 +1,36 @@
+{
+  "name": "MixInKey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The missing ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [
+    "beaport"
+  ],
+  "author": "Robin Chalas <rchalas@sutunam.com>",
+  "license": "GPL",
+  "dependencies": {
+    "add-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.7",
+    "gulp": "^3.9.0",
+    "chai": "^3.4.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.7",
+    "karma": "^0.13.14",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "mocha": "^2.3.3",
+    "moment": "^2.10.6",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
+}
