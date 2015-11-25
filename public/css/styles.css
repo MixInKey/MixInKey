@@ -17,10 +17,6 @@ body{
   padding-bottom: 0px !important;
 }
 
-body > main > .container{
-  width: 95% !important;
-}
-
 main {
     flex: 1 0 auto;
 }
@@ -162,7 +158,6 @@ nav > div > a.button-collapse > i:hover{
 	padding: 20px;
 	margin-top: 50px;
 	margin-bottom: 20px;
-  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -241,8 +236,8 @@ div.container > div.select-wrapper > span{
   margin-bottom: 20px;
 }
 
-.result.z-depth-1 > div.container{
-  width: 95% !important;
+.result.z-depth-1 > .container{
+  width: 95%;
 }
 
 table > thead > tr > th{

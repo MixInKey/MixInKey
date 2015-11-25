@@ -1,0 +1,188 @@
+header i {
+  width: 25px;
+}
+.menu {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  background: #222;
+  overflow: hidden;
+  border-right: 1px solid #ddd;
+}
+.menu:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 10px;
+  top: 5%;
+  height: 90%;
+  right: -10px;
+  border-radius: 5px/100px;
+  box-shadow: 0 0 28px #000;
+}
+/******/
+.streamC {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 165px);
+  top: 45px;
+}
+.streamC img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 50px;
+}
+/******/
+#bg {
+  width: 100vw;
+  height: 120px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+.darkenBlur {
+  width: 100vw;
+  height: 80px;
+  margin-top: 40px;
+  position: fixed;
+  right: 0;
+  z-index: -1;
+  background-color: #131313
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #eee;
+  text-align: center;
+  flex-grow: 1;
+}
+a.s {
+  background: #fff;
+  color: #111;
+  cursor: default;
+}
+a.d {
+  background: #222;
+}
+a.stream {
+  background: rgba(34,34,34,0.5);
+}
+a.stream:hover {
+  background: rgba(51,51,51,0.3);
+}
+.player {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 120px;
+  line-height: 120px;
+  font-size: 25px;
+  user-select: none;
+}
+.player i {
+  color: #fff;
+  position: relative;
+  left: 30px;
+  margin-right: 36px;
+  top: 20px;
+  cursor: pointer;
+  width: 25px;
+  transition: transform 0.2s;
+}
+.player i:active {
+  transform: scale(0.8);
+  transition: none;
+}
+.player i.pause {
+  color: rgba(255,255,255,0.7);
+  text-shadow: 0 0 10px #000;
+  transition: transform 0.2s;
+  margin-right: 33px;
+}
+.player i.pause:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+#cover {
+  height: 56px;
+  position: fixed;
+  left: 80px;
+  bottom: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.info {
+  display: inline-flex;
+  justify-content: space-between;
+  width: calc(100% - 350px);
+  margin-left: 20px;
+  color: #fff;
+  font-size: 0.6em;
+  cursor: default;
+}
+.vol {
+  display: none;
+  position: absolute;
+  right: 30px;
+  bottom: -7px;
+  text-align: center;
+  color: #fff;
+}
+.controls {
+  position: absolute;
+  right: 50px;
+  bottom: 13px;
+  font-size: 20px;
+}
+.controls i {
+  margin: 3px;
+}
+.inactive {
+  opacity: 0.6;
+}
+.progress {
+  left: 20px;
+  bottom: 28px;
+
+  width: calc(100% - 350px);
+}
+
+.progress {
+    position: relative;
+    height: 4px;
+    display: block;
+    width: 76% !important;
+    border-radius: 2px;
+    margin: 0rem 0 0rem 0;
+    overflow: visible; !important;
+    margin-left: 200px;
+}
+
+.volume {
+  width: 70px;
+  float: right;
+  right: 20px;
+  bottom: 30px;
+}
+.ui-slider {
+  height: 2px;
+  border: none;
+  background: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  outline: none;
+  border: #fff 3px solid;
+  background: theme;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  margin-left: -7px;
+  margin-top: 5px !important;
+  cursor: pointer;
+}
