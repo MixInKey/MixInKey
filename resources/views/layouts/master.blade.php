@@ -33,10 +33,10 @@
 <header>
 	<ul id="dropdown1" class="dropdown-content">
 	  <li>
-	  	<a href="#!"><i class="material-icons left">list</i>Playlist</a>
+	  	<a href="/"><i class="material-icons left">list</i>Playlist</a>
 	  </li>
 	  <li>
-	  	<a href="#!"><i class="material-icons left">settings</i>Settings</a>
+	  	<a href="/"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
 	  	<a href="{{ URL::to('logout') }}" target="_self"><i class="material-icons left">exit_to_app</i>Log out</a>
@@ -46,7 +46,7 @@
 	<div class="navbar-fixed">
 		<nav>
 		    <div class="nav-wrapper">
-		      <a href="#!" class="brand-logo">
+		      <a href="/" class="brand-logo">
 			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
 		      </a>
 					@if(Auth::check())
@@ -56,7 +56,7 @@
 		        	<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>
 		        </li>
 		        <li>
-		        	<a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
+		        	<a class="dropdown-button" href="/" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
 		        </li>
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">
@@ -68,8 +68,8 @@
 			           <div class="collapsible-header"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></div>
 					   <div class="collapsible-body">
 						   <p>
-							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
-							<a href="#!"><i class="material-icons left">settings</i>Settings</a>
+							<a href="/"><i class="material-icons left">list</i>Playlist</a>
+							<a href="/"><i class="material-icons left">settings</i>Settings</a>
 							<a href="{{ URL::to('logout') }}" target="_self"><i class="material-icons left">exit_to_app</i>Log out</a>
 						   </p>
 					   </div>

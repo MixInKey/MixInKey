@@ -12,7 +12,7 @@
     <div class="darkenBlur"></div>
     <i class="fa fa-fast-backward"></i>
     <img id="cover">
-    	<i class="pause fa fa-play"></i>
+    	<i class="pause fa" ng-click="player.startStop()" ng-class="player.isPlay ? 'fa-pause' : 'fa-play'"></i>
     </img>
   	<i class="fa fa-fast-forward"></i>
   	<span class="info">

@@ -58,29 +58,8 @@ function timeConvert(s) {
 }
 
 $("#cover").attr("src", cover_sml);
-
 var audio = document.getElementById("audio");
-
 audio.load();
-
-$(".pause").click(function() {
-  $(this).animate({
-    top: 10,
-    opacity: 0
-  }, 150, function() {
-    if ($(this).hasClass("fa-pause") == true) {
-      $(this).css("top", "30px").removeClass("fa-pause").addClass("fa-play");
-      audio.pause();
-    } else {
-      $(this).css("top", "30px").removeClass("fa-play").addClass("fa-pause");
-      audio.play();
-    }
-  }).animate({
-    top: 20,
-    opacity: 1
-  }, 350)
-})
-
 var dur;
 
 audio.ondurationchange = function() {
@@ -98,7 +77,7 @@ audio.ondurationchange = function() {
       audio.currentTime = $(this).slider("value");
     }
   });
-}
+};
 
 $(".volume").slider({
   min: 0,
