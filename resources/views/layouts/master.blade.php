@@ -86,6 +86,9 @@
 </main>
 
 <footer class="page-footer">
+	@if(Auth::check())
+	<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
+	@endif
 	<div class="footer-copyright">
 		<div class="container">
 			© 2015 MixInKey

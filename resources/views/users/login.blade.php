@@ -31,6 +31,7 @@
 				<button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</button>
 			</div>
 			<div class="button-register top-space">
+				<p>Don't have an account yet ?</p>
 				<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">REGISTER</a>
 			</div>
 		</form>

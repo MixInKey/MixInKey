@@ -21,11 +21,11 @@ main {
     flex: 1 0 auto;
 }
 
-h1{
+h1, h3{
 	color: whitesmoke !important;
 	font-weight: 900;
-    font-size: 35px;
-    text-transform: uppercase;
+  font-size: 25px;
+  text-transform: uppercase;
 }
 
 a{
@@ -150,9 +150,9 @@ nav > div > a.button-collapse > i:hover{
 	background-color: #131313;
 }
 
-/* Main */
+/* Search */
 
-.main{
+.search{
 	background-color: #373737;
 	border-radius: 5px;
 	padding: 20px;
@@ -164,7 +164,7 @@ nav > div > a.button-collapse > i:hover{
     padding-bottom: 9px;
     margin: 20px 0 20px;
     border-bottom: 1px solid #94d500;
-    text-align: center;
+    padding-left: 10px;
 }
 
 .select-wrapper > input{
@@ -197,7 +197,7 @@ div.container > div.select-wrapper > span{
 	background-color: #262626;
 }
 
-.main .chekbox{
+.search .chekbox{
 	margin-top: 10px;
 }
 
@@ -205,6 +205,34 @@ div.container > div.select-wrapper > span{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+/* Result */
+
+.result{
+  background-color: #373737;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+table > thead > tr > th{
+  color: #90ca0a;
+  text-align: center;
+}
+
+table > tbody > tr > td{
+  color: whitesmoke;
+  text-align: center;
+}
+
+table > tbody > tr > td > a > i{
+  color: whitesmoke;
+}
+
+table > tbody > tr > td > a > i:hover{
+  color: #90ca0a;
 }
 
 /* Login */
@@ -218,6 +246,16 @@ div.container > div.select-wrapper > span{
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.login > .page-header{
+  text-align: center;
+  padding-left: 0px;
+}
+
+.button-register.top-space > p{
+  text-align: center;
+  color: whitesmoke;
 }
 
 form > div > div > i{
@@ -279,6 +317,12 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	margin-right: auto;
 }
 
+.register > .page-header{
+  text-align: center;
+  padding-left: 0px;
+
+}
+
 form > div > div:nth-child(6) > div.input-field.col.s12{
 	padding: 0px;
 }
@@ -322,10 +366,17 @@ form > div > div:nth-child(6) > div.input-field.col.s12 > label{
 /* Footer */
 
 footer.page-footer{
-  padding-top: 0px;
-  background-color: #131313;
+  background-color: transparent;
   color: whitesmoke;
   text-align: center;
+}
+
+.footer-copyright{
+  background-color: #131313 !important;
+}
+
+#playerFrame{
+  width: 100%;
 }
 
 select {
