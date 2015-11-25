@@ -21,13 +21,6 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script src="{{ URL::to('js/static/toastr.min.js') }}"></script>
-	<script>
-  $(function() {
-    $( document ).tooltip();
-  });
-  </script>
-
-
 	<!-- ie -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -46,7 +39,7 @@
 	  	<a href="#!"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
-	  	<a href="{{ URL::to('logout') }}"><i class="material-icons left">exit_to_app</i>Log out</a>
+	  	<a href="{{ URL::to('logout') }}" target="_self"><i class="material-icons left">exit_to_app</i>Log out</a>
 	  </li>
 	</ul>
 
@@ -60,7 +53,7 @@
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		        <li>
-		        	<a><i class="material-icons left">home</i>Home</a>
+		        	<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>
 		        </li>
 		        <li>
 		        	<a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
@@ -68,7 +61,7 @@
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">
 			  	<li>
-		        	<a><i class="material-icons left">home</i>Home</a>
+		        	<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>
 		        </li>
 		        <ul class="collapsible" data-collapsible="expandable">
 			        <li>
@@ -77,7 +70,7 @@
 						   <p>
 							<a href="#!"><i class="material-icons left">list</i>Playlist</a>
 							<a href="#!"><i class="material-icons left">settings</i>Settings</a>
-							<a href="{{ URL::to('logout') }}"><i class="material-icons left">exit_to_app</i>Log out</a>
+							<a href="{{ URL::to('logout') }}" target="_self"><i class="material-icons left">exit_to_app</i>Log out</a>
 						   </p>
 					   </div>
 			        </li>
@@ -96,11 +89,6 @@
 </main>
 
 <footer class="page-footer">
-	<!--
-	@if(Auth::check())
-	<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
-	@endif
--->
 	<div class="footer-copyright">
 		<div class="container">
 			© 2015 MixInKey
@@ -126,11 +114,15 @@
 	<script type="text/javascript" src="{{ URL::to('/js/dist/app.min.js')}}"></script>
 	<script src="{{ URL::to('js/src/plugins/player.js') }}"></script>
 	{{-- <script src="{{ URL::to('js/src/main.js') }}"></script>
->>>>>>> dev
 	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
 	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
 	<script src="{{ URL::to('js/src/pipes/Components.js') }}"></script>
 	<script src="{{ URL::to('js/src/directives/Search.js') }}"></script> --}}
 	{{--  src --}}
+	<script>
+	$(function() {
+		$( document ).tooltip();
+	});
+	</script>
 </body>
 </html>

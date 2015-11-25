@@ -17,12 +17,10 @@ Route::post('login', array('uses' => 'UsersController@postLogin', 'as' => 'postL
 Route::get('login', array('uses' => 'UsersController@getLogin', 'as' => 'login'));
 Route::get('/auth/login', array('uses' => 'UsersController@getLogin'));
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/', array('uses' => 'BeatportController@searchView'));
+    Route::get('/', array('uses' => 'BeatportController@searchView', 'as' => 'search'));
 });
 Route::post('register', array('uses' => 'UsersController@postRegister', 'as' => 'postRegister'));
 Route::get('logout', array('uses' => 'UsersController@getLogout', 'as' => 'getLogout'));
-Route::get('/search', ['uses' => 'BeatportController@searchView', 'as' => 'search']);
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
 Route::get('/genres', array('uses' => 'BeatportController@getAllGenres'));
-// Route::post('/request', array('uses' => 'BeatportController@jsonRequest'));
 Route::post('/search/tracks', array('uses' => 'BeatportController@findTracks'));
