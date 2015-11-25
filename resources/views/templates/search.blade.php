@@ -62,7 +62,7 @@
       </div>
 		</div>
 		<div ng-view></div>
-		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='800' height='166' scrolling='no' frameborder='0'></iframe>
+		<iframe ng-src="[% main.currentPlayer %]" id="playerFrame" width='100%' height='100%' scrolling='no' frameborder='0'></iframe>
 	</div>
 </div>
 @stop
