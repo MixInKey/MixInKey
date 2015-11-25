@@ -47,7 +47,7 @@
 	</div>
 </div>
 
-<div class="result z-depth-1" ng-if="main.tracks[0]" >
+<div class="result z-depth-1" ng-if="main.tracks.results" >
 	<div class="page-header">
 		<h3>Result</h3>
 	</div><br>
