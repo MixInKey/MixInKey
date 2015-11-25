@@ -26,6 +26,10 @@ class DataTransformer
             if (isset($data['genre'])) {
                 $params['genre'] = self::byGenre($data['genre']);  // Prepare param if exist
             }
+
+            if (isset($data['bpm'])) {
+                $params['bpm'] = self::byBpm($data['bpm']);
+            }
             //Do The same for others
         }
 
@@ -52,6 +56,20 @@ class DataTransformer
             $param = "genreId:{$genre}";
         } else {
             $param = "genreName:{$genre}";
+        }
+
+        return $param;
+    }
+
+    protected static function byBpm($bpm)
+    {
+        if (is_null($bpm)) {
+            return '';
+        }
+
+        $param = '';
+        if (intval($bpm) > 0) {
+            $param = "rangeName=bpm&rangeStart=128&rangeEnd=180";
         }
 
         return $param;

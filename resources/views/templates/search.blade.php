@@ -18,7 +18,7 @@
 		<div class="form-group">
 			<label for="range">BPM</label>
 			<p class="range-field">
-				<input type="range" name="range" min="0" max="100" />
+				<input type="range" name="range" min="0" max="100" id="bpm" ng-model="main.query.bpm" />
 			</p>
 		</div><br>
 
