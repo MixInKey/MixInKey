@@ -5,6 +5,7 @@ angular.module('beatportService', [])
     var genreId, artistId, trackId, param;
 
     return {
+
     		getOne : function(trackId) {
             return $http.get(urlApi+'/track/'+trackId);
     		},

@@ -9,11 +9,11 @@
   <div class="form-group">
     <label for="range">BPM</label>
     <p class="range-field">
-      <input type="range" name="range" min="0" max="100" />
+      <input type="range" name="range" min="0" max="100" id="bpm" ng-model="main.query.bpm" />
     </p>
   </div><br>
 
-  <div class="row chekbox">
+  <form class="row chekbox">
     <div class="col s3">
       <input type="checkbox" class="filled-in" id="option1" checked="checked" />
       <label for="option1">Option 1</label>
@@ -30,9 +30,8 @@
       <input type="checkbox" class="filled-in" id="option4" checked="checked" />
       <label for="option4">Option 4</label>
     </div>
-  </div><br>
+  </form><br>
 
-  <!-- Submit -->
   <div class="button-search bot-space">
     <a ng-click="main.search()" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Search</a>
   </div>

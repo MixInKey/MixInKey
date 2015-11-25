@@ -3,7 +3,7 @@
     app.controller('MainController', function($sce, $rootScope, Beatport) {
         var self = this;
         var type;
-        self.tracks = {}, self.artists = {}, self.genres = {}, self.BPM = 0;
+        self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
         self.tracks.results;
         self.perPage = 30;
         self.currentPage = 0;
