@@ -32,7 +32,6 @@
         self.search = function() {
             Beatport.findTracks(self.query)
             .success(function(data) {
-                console.log(data);
                 self.tracks = data;
             })
             .error(function(err) {
