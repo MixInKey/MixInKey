@@ -33,10 +33,10 @@
 <header>
 	<ul id="dropdown1" class="dropdown-content">
 	  <li>
-	  	<a href="/"><i class="material-icons left">list</i>Playlist</a>
+	  	<a href="#"><i class="material-icons left">list</i>Playlist</a>
 	  </li>
 	  <li>
-	  	<a href="/"><i class="material-icons left">settings</i>Settings</a>
+	  	<a href="#"><i class="material-icons left">settings</i>Settings</a>
 	  </li>
 	  <li>
 	  	<a href="{{ URL::to('logout') }}" target="_self"><i class="material-icons left">exit_to_app</i>Log out</a>
@@ -50,10 +50,10 @@
 			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
 		      </a>
 					@if(Auth::check())
-		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		        <li>
-		        	<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>
+		        	<a href="/" targ><i class="material-icons left">home</i>Home</a>
 		        </li>
 		        <li>
 		        	<a class="dropdown-button" href="/" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
@@ -111,13 +111,9 @@
 	<!-- Libs -->
 	<script src="{{ URL::to('js/static/bower_components/angularjs/angular.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/bower_components/angular-route/angular-route.min.js') }}"> </script>
+	{{--  dist --}}
 	<script type="text/javascript" src="{{ URL::to('/js/dist/app.min.js')}}"></script>
-	{{-- <script src="{{ URL::to('js/src/main.js') }}"></script>
-	<script src="{{ URL::to('js/src/controllers/MainCtrl.js') }}"></script>
-	<script src="{{ URL::to('js/src/services/beatportService.js') }}"></script>
-	<script src="{{ URL::to('js/src/pipes/Components.js') }}"></script>
-	<script src="{{ URL::to('js/src/directives/Search.js') }}"></script> --}}
-	{{--  src --}}
+	<script src="{{ URL::to('js/src/plugins/player.js') }}"></script>
 	<script>
 	$(function() {
 		$( document ).tooltip();
