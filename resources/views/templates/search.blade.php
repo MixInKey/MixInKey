@@ -2,6 +2,7 @@
 
 @section('content')
 <base href="/" />
+<h1>{{Auth::user()->email }}</h1>
 <div ng-view></div>
 <div id="player" ng-controller="PlayerController as player">
   <canvas id="bg" height="120px"></canvas>

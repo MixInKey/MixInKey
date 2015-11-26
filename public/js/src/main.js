@@ -1,6 +1,7 @@
 (function(app) {
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
+        $(this).tooltip();
         $('.collapsible').collapsible({
             accordion : false
         });
@@ -12,7 +13,7 @@
         when('/',{
             templateUrl: 'Search/index.html',
             controller: 'PlayerController',
-            controllerAs: 'player' 
+            controllerAs: 'player'
         });
         $locationProvider.html5Mode(true);
     });
