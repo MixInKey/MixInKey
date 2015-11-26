@@ -67,6 +67,18 @@ nav{
 	background-color: #131313;
 }
 
+#icon_prefix{
+  padding-left: 0;
+  font-size: 14px;
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 5px;
+  width: 70%;
+}
+
+nav > div > ul.right.hide-on-med-and-down > li.input-field{
+  margin-left: 5px;
+}
+
 .dropdown-content li:hover{
 	background-color: #262626;
 }
@@ -162,6 +174,25 @@ nav > div > a.button-collapse > i:hover{
   margin-right: auto;
 }
 
+.container > div:nth-child(1) > div > label{
+  left: 0;
+}
+
+.search-select{
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.key{
+  width: 50%;
+}
+
+.genre{
+  width: 50%;
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 600px) {
   .search{
     width: 100%;
@@ -200,6 +231,10 @@ div.container > form:nth-child(3) > p > span{
 
 .button-search.bot-space > a:hover{
 	background-color: #94d500;
+}
+
+.pagination li.active{
+  background-color: #8bc600;
 }
 
 /* Search Tools */
