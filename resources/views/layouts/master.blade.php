@@ -9,23 +9,24 @@
 
 	<!-- css -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link href="{{ URL::to('css/static/materialize.min.css') }}" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	{{-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> --}}
+	<link href="/css/static/material-icons.css" rel="stylesheet">
+	<link href="/css/static/materialize.min.css" rel="stylesheet">
+	<link href="/css/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
 	<link href="{{ URL::to('css/player.css') }}" rel="stylesheet">
-	<link href="{{ URL::to('css/static/toastr.min.css') }}" rel="stylesheet">
+	<!-- <link href="{{ URL::to('css/static/toastr.min.css') }}" rel="stylesheet"> -->
 
 	{{--  js (must be loaded here) --}}
 	<script src="{{ URL::to('js/static/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/jquery-ui.min.js') }}"></script>
+	<!-- <script src="{{ URL::to('js/static/toastr.min.js') }}"></script> -->
 
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-	<script src="{{ URL::to('js/static/toastr.min.js') }}"></script>
-	<!-- ie -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body class="avoid-fout" ng-controller="MainController as main">
 
@@ -95,16 +96,15 @@
 		</div>
 	</div>
 </footer>
-
-
+s
 	{{-- Session notifications --}}
 	@if(Session::has('error'))
 		<script type="text/javascript">
-			toastr.error('{{ Session::get('error') }}');
+			Materialize.toast('{{ Session::get('error') }}', 1500)
 		</script>
 	@elseif(Session::has('success'))
 		<script type="text/javascript">
-			toastr.success('{{ Session::get('success') }}');
+			Materialize.toast('{{ Session::get('success') }}', 1500);
 		</script>
 	@endif
 
