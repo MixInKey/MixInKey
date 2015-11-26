@@ -30,4 +30,5 @@
   </section>
   <audio id="audio" ng-src="[% player.currentTrack.audioUrl %]" preload></audio>
 </div>
+<script src="{{ URL::to('js/src/plugins/player.js') }}"></script>
 @stop
