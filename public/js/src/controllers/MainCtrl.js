@@ -32,9 +32,9 @@
          * @return {Object} $tracks
          */
         self.search = function() {
-            self.query.page = self.lastPage;
             Beatport.findTracks(self.query)
             .success(function(data) {
+                self.currentPage = 0;
                 self.tracks = data;
             })
             .error(function(err) {
