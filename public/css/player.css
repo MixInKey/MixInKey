@@ -31,13 +31,7 @@
   z-index: -1;
   background-color: #131313
 }
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: #eee;
-  text-align: center;
-  flex-grow: 1;
-}
+
 a.s {
   background: #fff;
   color: #111;
@@ -133,25 +127,25 @@ a.stream:hover {
 }
 
 .progress {
-    position: relative;
-    height: 4px;
-    display: block;
-    border-radius: 2px;
-    margin: 0rem 0 0rem 0;
-    overflow: visible; !important;
-    margin-left: 200px;
+  position: relative;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  margin: 0rem 0 0rem 0;
+  overflow: visible; !important;
+  margin-left: 200px;
 }
 
 @media screen and (max-width: 600px) {
   .progress {
-      position: relative;
-      height: 4px;
-      display: block;
-      width: calc(100% - 220px);
-      border-radius: 2px;
-      margin: 0rem 0 0rem 0;
-      overflow: visible; !important;
-      margin-left: 85px;
+    position: relative;
+    height: 4px;
+    display: block;
+    width: calc(100% - 220px);
+    border-radius: 2px;
+    margin: 0rem 0 0rem 0;
+    overflow: visible; !important;
+    margin-left: 85px;
   }
 
   .info {
@@ -191,7 +185,7 @@ a.stream:hover {
   }
   #cover {
     height: 56px;
-    position: fixed;
+    position: absolute;
     right: 15px;
     left: auto;
     bottom: 12px;
