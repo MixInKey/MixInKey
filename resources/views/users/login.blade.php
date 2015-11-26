@@ -2,7 +2,7 @@
 @section('content')
 <div class="login z-depth-1">
 	<div class="page-header">
-		<h1>Connexion</h1>
+		<h1>authentication</h1>
 	</div>
 	<div class="row">
 		<form class="col s12" method="post" action="{{ URL::route('postLogin') }}">
@@ -15,7 +15,7 @@
 					<label for="email">Email</label><br>
 				</div><br>
 				@if ($errors->has('email'))
-				{{ $errors->first('email') }}
+					<p>{{ $errors->first('email') }}</p>
 				@endif
 				<div class="input-field col s12">
 					<i class="material-icons prefix">lock</i>
@@ -24,15 +24,15 @@
 					<label for="password">Password</label><br>
 				</div>
 				@if ($errors->has('password'))
-				<br>{{ $errors->first('password') }}
+				<p>{{ $errors->first('password') }}</p>
 				@endif
 			</div>
 			<div class="button-connexion top-space">
-				<button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>CONNEXION</button>
+				<button type="submit" class="waves-effect waves-light btn">Sign in</button>
 			</div>
 			<div class="button-register top-space">
 				<p>Don't have an account yet ?</p>
-				<a href="{{ URL::to('register') }}" class="waves-effect waves-light btn">REGISTER</a>
+				<a href="{{ URL::to('signup') }}" class="waves-effect waves-light btn" title="Create your MixInKey account">Sign up</a>
 			</div>
 		</form>
 	</div>

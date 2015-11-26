@@ -1,6 +1,7 @@
 (function(app) {
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
+        $(this).tooltip();
         $('.collapsible').collapsible({
             accordion : false
         });
