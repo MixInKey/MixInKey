@@ -5,7 +5,7 @@
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
 	<title>MixInKey</title>
-	<link rel="icon" href="{{ URL::to('images/favicon.ico') }}" />
+	<link rel="icon" href="{{ URL::to('favicon.ico') }}" />
 
 	<!-- css -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
