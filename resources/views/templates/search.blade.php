@@ -10,11 +10,11 @@
   </section>
   <section class="player" id="pl">
     <div class="darkenBlur"></div>
-    <i class="fa fa-fast-backward"></i>
-    <img id="cover">
+    <i class="fa fa-fast-backward hidden-mobile"></i>
+    <img id="cover hidden-mobile">
     	<i class="pause fa" ng-click="player.startStop()" ng-class="player.isPlay ? 'fa-pause' : 'fa-play'"></i>
     </img>
-  	<i class="fa fa-fast-forward"></i>
+  	<i class="fa fa-fast-forward hidden-mobile"></i>
   	<span class="info">
   	  <span class="time hidden-mobile">00:00</span>
   	  <span class="song">Preloading...</span>
@@ -25,8 +25,9 @@
   	  <i class="fa fa-repeat inactive"></i>
   	  <i class="fa fa-random inactive"></i>
   	</div>
-  	<div class="volume"></div>
-  	<span class="vol"></span>
+    <img id="cover"></img>
+  	<div class="volume hidden-mobile"></div>
+  	<span class="vol hidden-mobile"></span>
   </section>
   <audio id="audio" ng-src="[% player.currentTrack.audioUrl %]" preload></audio>
 </div>

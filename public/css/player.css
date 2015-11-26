@@ -1,26 +1,4 @@
-header i {
-  width: 25px;
-}
-.menu {
-  position: fixed;
-  left: 0;
-  height: 100vh;
-  width: 0;
-  background: #222;
-  overflow: hidden;
-  border-right: 1px solid #ddd;
-}
-.menu:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  width: 10px;
-  top: 5%;
-  height: 90%;
-  right: -10px;
-  border-radius: 5px/100px;
-  box-shadow: 0 0 28px #000;
-}
+
 /******/
 .streamC {
   display: none;
@@ -83,6 +61,7 @@ a.stream:hover {
   line-height: 120px;
   font-size: 25px;
   user-select: none;
+  z-index: 50;
 }
 .player i {
   color: #fff;
@@ -103,6 +82,7 @@ a.stream:hover {
   text-shadow: 0 0 10px #000;
   transition: transform 0.2s;
   margin-right: 33px;
+  z-index: 10;
 }
 .player i.pause:hover {
   color: #fff;
@@ -114,6 +94,7 @@ a.stream:hover {
   left: 80px;
   bottom: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 .info {
   display: inline-flex;
@@ -166,11 +147,11 @@ a.stream:hover {
       position: relative;
       height: 4px;
       display: block;
-      width: calc(100% - 260px);
+      width: calc(100% - 220px);
       border-radius: 2px;
       margin: 0rem 0 0rem 0;
       overflow: visible; !important;
-      margin-left: 130px;
+      margin-left: 85px;
   }
 
   .info {
@@ -202,6 +183,7 @@ a.stream:hover {
     text-shadow: 0 0 10px #000;
     transition: transform 0.2s;
     margin-right: 33px;
+    margin-left: -30px;
   }
   .player i.pause:hover {
     color: #fff;
@@ -210,9 +192,11 @@ a.stream:hover {
   #cover {
     height: 56px;
     position: fixed;
-    left: 35px;
+    right: 15px;
+    left: auto;
     bottom: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    float: right;
   }
 }
 

@@ -5,7 +5,7 @@
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
 	<title>MixInKey</title>
-	<link rel="icon" href="{{ URL::to('images/favicon.ico') }}" />
+	<link rel="icon" href="{{ URL::to('/favicon.jpg') }}" />
 
 	<!-- css -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -47,7 +47,7 @@
 		<nav>
 		    <div class="nav-wrapper">
 		      <a href="/" class="brand-logo">
-			      <img src="{{ URL::to('images/logo/logo.png') }}"></a>
+			      <img src="{{ URL::to('images/logo/logo50x50.png') }}"></a>
 		      </a>
 					@if(Auth::check())
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
