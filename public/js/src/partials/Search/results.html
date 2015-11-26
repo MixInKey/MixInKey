@@ -38,6 +38,9 @@
           ng-repeat="i in main.pages">
           <a>[% i %]</a>
         </li>
+        <li ng-if="main.isLoadingItems">
+          <i id="page-spinner" class="fa fa-spinner fa-spin"></i>
+        </li>
       </ul>
     </div>
   </div>
