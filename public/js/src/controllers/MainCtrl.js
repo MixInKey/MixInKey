@@ -4,25 +4,12 @@
         var self = this;
         var type;
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
-        self.tracks.results;
+        self.tracks.results; self.query = {}; self.filtered;
+        self.pages = []; self.nbPages;
         self.perPage = 30;
         self.currentPage = 0;
-        self.pages = [];
-        self.lastPage = 0; self.filtered;
-        self.nbPages;
-        self.query = {};
-        self.currentTrack = '5500589';
-        self.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=5500589&type=track');
-
-        /**
-         * Beatport API calls
-         * @method GET
-         * @return {Object} self.data query-results
-         */
-        self.changeTrack = function (trackId) {
-            self.currentPlayer = $sce.trustAsResourceUrl('http://embed.beatport.com/player/?id=' + trackId + '&type=track');
-            self.currentTrack = trackId;
-        };
+        self.lastPage = 0;
+        self.isLoadingItems = false;
 
         /**
          * Get all genres to build search select field
@@ -79,16 +66,17 @@
          * @return {Object} self.tracks
          */
         self.getMoreTracks = function() {
+            self.isLoadingItems = true;
             self.lastPage += 150;
             self.query.page = self.lastPage;
-            var currentPage = self.currentPage;
+            console.log("Loading tracks ...");
             Beatport.findTracks(self.query)
             .success(function(data) {
                 var results = { metadata: data.metadata };
                 results.results = [];
                 results.results = self.extend(self.tracks.results, data.results);
                 self.tracks = results;
-                console.log(self.tracks);
+                self.isLoadingItems = false;
             })
             .error(function(err) {
                 console.log(err);
