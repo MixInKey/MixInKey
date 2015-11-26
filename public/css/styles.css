@@ -457,3 +457,8 @@ select {
 #signin-btn {
     margin-top: 18px;
 }
+
+#page-spinner {
+  color: #8bc600;
+  font-size: 1.1em;
+}
