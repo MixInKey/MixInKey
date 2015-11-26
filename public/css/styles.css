@@ -164,6 +164,14 @@ nav > div > a.button-collapse > i:hover{
 
 /* Search */
 
+h3 > i{
+  float: right;
+}
+
+h3 > .material-icons{
+  line-height: 1.3;
+}
+
 .search{
 	background-color: #373737;
 	border-radius: 5px;
