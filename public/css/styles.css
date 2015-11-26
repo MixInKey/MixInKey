@@ -67,7 +67,15 @@ nav{
 	background-color: #131313;
 }
 
-#icon_prefix{
+#search{
+  padding-left: 0;
+  font-size: 14px;
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 5px;
+  width: 70%;
+}
+
+#search-mobile{
   padding-left: 0;
   font-size: 14px;
   border-bottom: 1px solid whitesmoke;

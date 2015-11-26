@@ -60,13 +60,13 @@
 						</li>
 						<li class="input-field">
 							<i class="material-icons prefix">search</i>
-							<input id="icon_prefix" type="text" placeholder="search" class="validate">
+							<input id="search" type="text" placeholder="search" class="validate">
 						</li>
 					</ul>
 					<ul class="side-nav" id="mobile-demo">
 						<li class="input-field">
 								<i class="material-icons prefix">search</i>
-								<input id="search" type="text" placeholder="search" class="validate">
+								<input id="search-mobile" type="text" placeholder="search" class="validate">
 						</li>
 						<li>
 							<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>

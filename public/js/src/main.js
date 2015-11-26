@@ -11,7 +11,7 @@
         });
 
         $(".title-search-collapse").click(function(){
-           $(".search-collapse").show("slow");
+           $(".search-collapse").slideToggle("slow");
         });
     });
 
