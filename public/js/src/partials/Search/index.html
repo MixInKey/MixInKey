@@ -6,4 +6,9 @@
 	</a>
 	<search-form></search-form> <!-- Search form -->
 </div>
+<div class="search z-depth-1" ng-if="main.NoResultsException">
+	<div class="container">
+	    <h5>No results found</h5>
+	</div>
+</div>
 <results-block></results-block> <!-- Results of search -->

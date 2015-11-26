@@ -1,6 +1,6 @@
 (function(app) {
 
-    app.controller('MainController', function($sce, $rootScope, Beatport) {
+    app.controller('MainController', function($sce, $timeout, $rootScope, Beatport) {
         var self = this;
         var type;
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
@@ -10,6 +10,7 @@
         self.currentPage = 0;
         self.lastPage = 0;
         self.isLoadingItems = false;
+        self.NoResultsException = false;
 
         /**
          * Get all genres to build search select field
@@ -32,8 +33,18 @@
          * @return {Object} $tracks
          */
         self.search = function() {
+            angular.element(".search-collapse").hide("slow");
+            self.query.page = self.lastPage = 0;
             Beatport.findTracks(self.query)
             .success(function(data) {
+                if (data.results.length < 1 || !data.metadata) {
+                    self.NoResultsException = true;
+                    $timeout(function() {
+                        angular.element('.search-collapse').show('slow');
+                        self.NoResultsException = false;
+                    }, 1000);
+                    return self.currentPage = 0;
+                }
                 self.currentPage = 0;
                 self.tracks = data;
             })
@@ -54,6 +65,7 @@
                 return src;
             for (var key in base)
                 ++count;
+            console.log('number of element: ' + count);
             for (var key in src) {
                 base[count] = src[key];
                 ++count;
@@ -66,6 +78,9 @@
          * @return {Object} self.tracks
          */
         self.getMoreTracks = function() {
+            if (self.pages.length < 4) {
+                return;
+            }
             self.isLoadingItems = true;
             self.lastPage += 150;
             self.query.page = self.lastPage;
@@ -88,7 +103,7 @@
          * @return {Number} self.currentPage
          */
         self.switch = function(index) {
-            if (self.nbPages <= index+2) {
+            if (self.nbPages <= index+1) {
                 self.getMoreTracks();
             }
             return self.currentPage = index-1;

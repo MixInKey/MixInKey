@@ -26,6 +26,15 @@
         };
     };
 
+    // function NoResultComponent() {
+    //     return {
+    //         restrict: 'EA',
+    //         replace: true,
+    //         template:
+    //           '',
+    //     };
+    // };
+
     app.directive('resultsBlock', ResultsComponent);
     app.directive('searchForm', SearchFormComponent);
     app.directive('player', PlayerComponent);
