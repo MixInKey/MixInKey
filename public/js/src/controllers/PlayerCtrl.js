@@ -49,6 +49,10 @@
             return !audio.paused;
         };
 
+        self.getResourceUrl = function(url) {
+            return $sce.getResourceUrl(url);
+        }
+
     });
 
 })(angular.module('beatportApp'));

@@ -25,7 +25,7 @@
   	  <i class="fa fa-repeat inactive"></i>
   	  <i class="fa fa-random inactive"></i>
   	</div>
-    <img id="cover" src="[% player.currentTrack.cover %]"></img>
+    <img id="cover" ng-src="[% player.currentTrack.cover %]"/>
   	<div class="volume hidden-mobile"></div>
   	<span class="vol hidden-mobile"></span>
   </section>
