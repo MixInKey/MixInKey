@@ -47,6 +47,10 @@
 					<a href="/" class="brand-logo">
 						<img src="{{ URL::to('images/logo/logo50x50.png') }}"></a>
 					</a>
+					<span class="input-field hidden-search inner-addon left-addon">
+						<i class="material-icons prefix">search</i>
+						<input id="search" type="text" placeholder="Search" class="validate">
+					</span>
 					@if(Auth::check())
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
@@ -56,15 +60,11 @@
 						<li>
 							<a class="dropdown-button" href="/" data-activates="dropdown1"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></a>
 						</li>
-						<li class="input-field">
-							<i class="material-icons prefix">search</i>
-							<input id="search" type="text" placeholder="search" class="validate">
-						</li>
 					</ul>
 					<ul class="side-nav" id="mobile-demo">
 						<li class="input-field">
 								<i class="material-icons prefix">search</i>
-								<input id="search-mobile" type="text" placeholder="search" class="validate">
+								<input id="search-mobile" type="text" placeholder="Search" class="validate">
 						</li>
 						<li>
 							<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>

@@ -60,12 +60,46 @@ nav{
 	background-color: #131313;
 }
 
+nav .input-field input{
+	height: 65%;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative !important;
+}
+
+/* style icon */
+.inner-addon i {
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+/* align icon */
+.left-addon i  {
+	left:  42% !important;
+}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px !important; }
+
+@media screen and (max-width: 992px) {
+	.hidden-search {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
 #search{
   padding-left: 0;
+	margin-left: 10%;
   font-size: 14px;
   border-bottom: 1px solid whitesmoke;
-  padding-bottom: 5px;
-  width: 70%;
+  width: 10%;
 }
 
 #search-mobile{
