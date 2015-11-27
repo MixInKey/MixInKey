@@ -81,4 +81,33 @@ class DataTransformer
 
         return $param;
     }
+
+    protected static function byKey($key)
+    {
+        if(is_null($key)){
+            return '';
+        }
+
+        $param = '';
+        if(intval($key)){
+            $param = "key:{$key}";
+        }
+
+        return $param;
+    }
+
+    protected static function byArtistName($artist)
+    {
+        if(is_null($artist)){
+            return '';
+        }
+
+        $param = '';
+        $artist = ucfirst($artist);
+        if(strval($artist)){
+            $param = "artistName:{$artist}";
+        }
+
+        return $param;
+    }
 }

@@ -2,8 +2,8 @@
 
   <div class="form-group">
     <div class="input-field col s12">
-      <input id="artists" type="text" class="validate">
-      <label for="artists">Artists</label>
+      <input id="artistName" type="text" class="validate" ng-model="main.query.artistName">
+      <label for="artistName">Artist</label>
     </div>
   </div>
 
@@ -16,18 +16,16 @@
     </div>
     <div class="form-group form-group-label key">
       <label for="key">Key</label>
-      <select class="form-control" id="key">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+      <select class="form-control" id="key" ng-model="main.query.key">
+        <<option value="[% key.key %]" ng-repeat="key in main.keys">[% key.value %]</option>
       </select>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="range">BPM</label>
+    <label for="bpm">BPM</label>
     <p class="range-field">
-      <input type="range" name="range" min="0" max="100" ng-model="main.query.bpm" />
+      <input type="range" title="[% main.query.bpm %]" name="range" min="0" max="175" id="bpm" ng-model="main.query.bpm" />
     </p>
   </div><br>
 
