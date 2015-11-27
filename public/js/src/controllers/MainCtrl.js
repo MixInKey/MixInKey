@@ -110,9 +110,9 @@
          * Interact with player using search results
          * @param  {Number} trackId
          */
-        self.changePlayerTrack = function(trackId) {
+        self.changePlayerTrack = function(track) {
             var player = angular.element('#player').controller();
-            player.changeTrack(trackId);
+            player.changeTrack(track);
         };
 
         /**
