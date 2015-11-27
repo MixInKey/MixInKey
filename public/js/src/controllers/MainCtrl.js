@@ -43,6 +43,7 @@
                         angular.element('.search-collapse').show('slow');
                         self.NoResultsException = false;
                     }, 1000);
+                    self.tracks = {};
                     return self.currentPage = 0;
                 }
                 self.currentPage = 0;
