@@ -318,7 +318,12 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 
-	tr { border: 1px solid #ccc; }
+	tr {
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-top: 3px solid #ccc;
+		border-bottom: 3px solid #ccc !important;
+	}
 
 	td {
 		/* Behave  like a "row" */
