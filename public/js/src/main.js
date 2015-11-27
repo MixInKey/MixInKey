@@ -1,17 +1,23 @@
 (function(app) {
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
-
         $(this).tooltip();
 
         $('.collapsible').collapsible({
             accordion : false
         });
-
         $(".button-collapse").sideNav();
 
         $(".title-search-collapse").click(function(){
-           $(".search-collapse").slideToggle("slow");
+            $(".search-collapse").slideToggle("slow");
+        });
+
+        $('#search')
+        .on('focus', function() {
+            $(this).toggleClass('field-border');
+        })
+        .on('blur', function() {
+            $(this).toggleClass('field-border');
         });
 
     });

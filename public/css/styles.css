@@ -3,6 +3,7 @@
 body{
 	background-color: #262626;
 	font-family: 'Open Sans', sans-serif;
+	/*font-family:"Helvetica Neue", Helvetica, Arial, freesans, sans-serif;*/
 	-webkit-font-smoothing: antialiased;
 	display: flex;
     min-height: 100vh;
@@ -17,6 +18,7 @@ main {
 h1, h3{
 	color: whitesmoke !important;
 	font-weight: 900;
+
   font-size: 25px;
   text-transform: uppercase;
 }
@@ -98,9 +100,8 @@ nav .input-field input{
 
 #search{
   padding-left: 0;
-	margin-left: 8%;
+	margin-left: 7%;
   font-size: 14px;
-  border-bottom: 1px solid whitesmoke;
   width: 10%;
 }
 
@@ -542,7 +543,7 @@ footer.page-footer{
 }
 
 select {
-		display:block!important;
+	display:block!important;
 }
 
 #signin-btn {
@@ -552,4 +553,22 @@ select {
 #page-spinner {
   color: #8bc600;
   font-size: 1.1em;
+}
+
+.input-field label {
+	color: whitesmoke;
+}
+
+.search label {
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: text;
+}
+
+nav i {
+	font-size: 1.8rem!important;
+}
+
+.field-border {
+	border-bottom: 1px solid whitesmoke!important;
 }

@@ -8,17 +8,16 @@
 	<link rel="icon" href="{{ URL::to('favicon.ico') }}" />
 
 	<!-- css -->
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	{{-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> --}}
 	<link href="/css/static/material-icons.css" rel="stylesheet">
-	<link href="/css/static/materialize.min.css" rel="stylesheet">
+	<link href="/css/static/materialize/css/materialize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<link href="/css/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
 	<link href="{{ URL::to('css/player.css') }}" rel="stylesheet">
 
 	{{--  js (must be loaded here) --}}
 	<script src="{{ URL::to('js/static/bower_components/jquery/dist/jquery.min.js') }}"></script>
-	<script src="{{ URL::to('js/static/materialize.min.js') }}"></script>
+	<script src="{{ URL::to('js/static/materialize.js') }}"></script>
 	<script src="{{ URL::to('js/static/jquery-ui.min.js') }}"></script>
 
 	<!--[if lt IE 9]>

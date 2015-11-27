@@ -24,7 +24,6 @@
                 audio.play();
                 self.isPlay = self.isPlaying();
             }, 500);
-            console.log("Change track - use #" + trackId);
         };
 
         self.startStop = function() {
