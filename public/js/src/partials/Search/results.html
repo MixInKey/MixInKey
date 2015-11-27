@@ -13,7 +13,7 @@
                <th data-field="play">Play</th>
            </tr>
          </thead>
-         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage">
+         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id'">
            <tr>
              <td>
                <img class="thumbnail" ng-src="[% track.images.medium.url %]">
@@ -22,7 +22,7 @@
              <td>[% track.name %]</td>
              <td>[% track.genres[0].name %]</td>
              <td>[% track.key.shortName | serializeKey %]</td>
-             <td>[% track.bpm %]</td>
+             <td>[% track.bpm  | emptyBpm %]</td>
              <td>
                <a id="[% track.id %]" ng-click="main.changePlayerTrack(track.id)"><i class="material-icons">play_circle_filled</i></a>
              </td>

@@ -103,7 +103,6 @@ class DataTransformer
         }
 
         $param = '';
-        $artist = ucfirst($artist);
         if(strval($artist)){
             $param = "artistName:{$artist}";
         }

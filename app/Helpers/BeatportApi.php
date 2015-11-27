@@ -24,6 +24,7 @@ class BeatportApi
         $facets  = $parameters['facets'];
         $perPage = $parameters['perPage'];
         $url     = $parameters['url'];
+
         $qryarray = array();
         $qrystring = '';
         if (isset($facets)) {
@@ -35,7 +36,8 @@ class BeatportApi
         } else {
             throw new Exception('Parameter missing');
         }
-        if (isset($sortBy) && strlen($sortBy) > 0) {
+        if (isset($parameters['sortBy']) && strlen($parameters['sortBy']) > 0) {
+            $sortBy = $parameters['sortBy'];
             $qrystring .= '&sortBy='.urlencode($sortBy);
             $qryarray['sortBy'] = $sortBy;
         }
@@ -52,6 +54,9 @@ class BeatportApi
         if (isset($url) && strlen($url) > 0) {
             $path = $url;
         }
+
+
+        //return compact('qrystring', 'path', 'qryarray');
 
         return array(
             'qrystring' => $qrystring,
@@ -112,9 +117,8 @@ class BeatportApi
         $query    = $this->buildQuery($parameters);
         $path     = $query['path'];
         $qryarray = $query['qryarray'];
-        $request  = $this->oauth->sendRequest('https://oauth-api.beatport.com/catalog/3/'.$path, $qryarray);
+        $request  = $this->oauth->sendRequest('https://oauth-api.beatport.com/catalog/3/' . $path, $qryarray);
         $json     = $request->getBody();
-
         return json_decode($json, true);
     }
 }

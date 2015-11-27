@@ -65,10 +65,23 @@ function toArray() {
     }
   }
 
+  function bpm(){
+    return function(bpm){
+      if(bpm == 0){
+        return;
+      }
+      else{
+        return bpm;
+      }
+    }
+  }
+
+
   //&#9839;
   app.filter('startFrom', startFrom);
   // app.filter('toArray', toArray);
   app.filter('serializeKey', serialize);
   app.filter('implodeArtists', implode);
+  app.filter('emptyBpm', bpm);
 
 })(angular.module('beatportApp'));

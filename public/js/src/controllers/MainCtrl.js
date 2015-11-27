@@ -33,6 +33,12 @@
          * @return {Object} $tracks
          */
         self.search = function() {
+            var artist = self.query.artistName;
+            if(artist){
+                self.query.artistName = self.formatString(artist);
+                console.log(self.query);
+
+            }
             angular.element(".search-collapse").hide("slow");
             self.query.page = self.lastPage = 0;
             Beatport.findTracks(self.query)
@@ -204,6 +210,15 @@
             self.pages = newPages;
         }, true);
 
+        self.formatString = function(string) {
+            return string.replace(/\w\S*/g, function(string){
+                return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+            });
+
+
+        }
     });
+
+
 
 })(angular.module('beatportApp'));
