@@ -17,7 +17,7 @@
   	<i class="fa fa-fast-forward hidden-mobile"></i>
   	<span class="info">
   	  <span class="time hidden-mobile">00:00</span>
-  	  <span class="song">Preloading...</span>
+  	  <span class="song">[% player.currentTrack.name %]</span>
   	  <span class="dur hidden-mobile"></span>
   	</span>
   	<div class="progress"></div>
@@ -25,7 +25,7 @@
   	  <i class="fa fa-repeat inactive"></i>
   	  <i class="fa fa-random inactive"></i>
   	</div>
-    <img id="cover"></img>
+    <img id="cover" ng-src="[% player.currentTrack.cover %]"/>
   	<div class="volume hidden-mobile"></div>
   	<span class="vol hidden-mobile"></span>
   </section>

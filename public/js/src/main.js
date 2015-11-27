@@ -13,7 +13,7 @@
         $(".title-search-collapse").click(function(){
            $(".search-collapse").slideToggle("slow");
         });
-        
+
     });
 
     app.config(function($routeProvider, $locationProvider){

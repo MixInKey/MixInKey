@@ -1,6 +1,6 @@
 (function(app) {
 
-    app.controller('MainController', function($sce, $timeout, $rootScope, Beatport) {
+    app.controller('MainController', function($sce, $timeout, $location, $rootScope, Beatport) {
         var self = this;
         var type;
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
@@ -49,6 +49,7 @@
                         angular.element('.search-collapse').show('slow');
                         self.NoResultsException = false;
                     }, 1000);
+                    self.tracks = {};
                     return self.currentPage = 0;
                 }
                 self.currentPage = 0;
@@ -147,9 +148,9 @@
          * Interact with player using search results
          * @param  {Number} trackId
          */
-        self.changePlayerTrack = function(trackId) {
+        self.changePlayerTrack = function(track) {
             var player = angular.element('#player').controller();
-            player.changeTrack(trackId);
+            player.changeTrack(track);
         };
 
         /**
