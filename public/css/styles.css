@@ -77,11 +77,13 @@ nav .input-field input{
 
 /* align icon */
 .left-addon i  {
-	left:  42% !important;
+	left:  35% !important;
 }
 
 /* add padding  */
-.left-addon input  { padding-left:  30px !important; }
+.left-addon input  {
+	padding-left:  30px !important;
+}
 
 @media screen and (max-width: 992px) {
 	.hidden-search {
@@ -96,7 +98,7 @@ nav .input-field input{
 
 #search{
   padding-left: 0;
-	margin-left: 10%;
+	margin-left: 8%;
   font-size: 14px;
   border-bottom: 1px solid whitesmoke;
   width: 10%;
