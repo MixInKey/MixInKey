@@ -33,8 +33,42 @@ function toArray() {
     }
   };
 };
+  function serialize(){
+    return function(str){
+      if(!str){
+        return;
+      }
+      if(str.search(str) > -1){
+        str = str.replace('&#9839;', '#');
+      }
+      return str;
+    }
+  }
 
+  function implode(){
+    return function(artists){
+      if(!artists){
+        return;
+      }
+      var result = '';
+      if(artists.length > 0){
+        artists.forEach(function(artist){
+          if (result.length > 0)
+              result += ', ' + artist.name;
+          else
+            result = artist.name;
+        });
+
+        return result;
+
+      }
+    }
+  }
+
+  //&#9839;
   app.filter('startFrom', startFrom);
   // app.filter('toArray', toArray);
+  app.filter('serializeKey', serialize);
+  app.filter('implodeArtists', implode);
 
 })(angular.module('beatportApp'));

@@ -18,11 +18,11 @@
              <td>
                <img class="thumbnail" ng-src="[% track.images.medium.url %]">
              </td>
-             <td>Artist</td>
+             <td>[% track.artists | implodeArtists %]</td>
              <td>[% track.name %]</td>
-             <td>Genre</td>
-             <td>Key</td>
-             <td>BPM</td>
+             <td>[% track.genres[0].name %]</td>
+             <td>[% track.key.shortName | serializeKey %]</td>
+             <td>[% track.bpm %]</td>
              <td>
                <a id="[% track.id %]" ng-click="main.changePlayerTrack(track.id)"><i class="material-icons">play_circle_filled</i></a>
              </td>

@@ -17,13 +17,13 @@
          * @return {Object} genres
          */
         self.findGenres = function() {
-          Beatport.getAllGenres()
+            Beatport.getAllGenres()
             .success(function(data) {
                 self.genres = data.results;
                 self.lastPage = 0;
             })
             .error(function(data) {
-              console.log(data);
+                console.log(data);
             });
         };
 
@@ -71,7 +71,35 @@
                 ++count;
             }
             return base;
-      }
+        };
+
+        self.keys =[
+        {key : '', value : ''},
+        {key : 8, value : 'A Minor'},
+        {key : 23, value :'A Major'},
+        {key : 26, value: 'A# Minor'},
+        {key : 25, value : 'A# Major'},
+        {key : 10, value : 'B Minor'},
+        {key : 13, value : 'B Major'},
+        {key : 5, value : 'C Minor'},
+        {key : 20, value : 'C Major'},
+        {key : 28, value : 'C# Minor'},
+        {key : 27, value : 'C# Major'},
+        {key : 7, value : 'D Minor'},
+        {key : 22, value : 'D Major'},
+        {key : 30, value : 'D# Minor'},
+        {key : 29, value : 'D# Major'},
+        {key : 9, value : 'E Minor'},
+        {key : 24, value :'E Major'},
+        {key : 4, value : 'F Minor'},
+        {key : 19, value : 'F Major'},
+        {key : 11, value : 'F# Minor'},
+        {key : 14, value :'F# Major'},
+        {key : 6, value : 'G Minor'},
+        {key : 21, value : 'G Major'},
+        {key : 32, value : 'G# Minor'},
+        {key : 31, value : 'G# Major'}
+        ];
 
         /**
          * Load next pages of items
@@ -156,6 +184,7 @@
         self.getNbPages = function(count, perPage) {
             return Math.ceil(count/perPage);
         };
+
 
         /**
          * Watch for make update paginer dynamically
