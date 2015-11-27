@@ -4,8 +4,10 @@
         var self = this;
         self.isPlay = false;
         self.currentTrack = {
-            id: '5500589',
-            audioUrl:  $sce.trustAsResourceUrl('https://geo-samples.beatport.com/lofi/5500589.LOFI.mp3'),
+            id: '2003405',
+            audioUrl:  $sce.trustAsResourceUrl('https://geo-samples.beatport.com/lofi/2003405.LOFI.mp3'),
+            name: 'Mary Jane',
+            cover: 'http://geo-media.beatport.com/image/2990439.jpg',
         };
 
         /**
@@ -13,9 +15,11 @@
          * @method GET
          * @return {Object} self.data query-results
          */
-        self.changeTrack = function (trackId) {
-            self.currentTrack.audioUrl = $sce.trustAsResourceUrl('https://geo-samples.beatport.com/lofi/' + trackId + '.LOFI.mp3');
-            self.currentTrack.id = trackId;
+        self.changeTrack = function (track) {
+            self.currentTrack.audioUrl = $sce.trustAsResourceUrl('https://geo-samples.beatport.com/lofi/' + track.id + '.LOFI.mp3');
+            self.currentTrack.id = track.id;
+            self.currentTrack.name = track.name;
+            self.currentTrack.cover = track.images.medium.url;
             $timeout(function() {
                 audio.play();
                 self.isPlay = self.isPlaying();

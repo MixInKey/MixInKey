@@ -85,7 +85,7 @@ a.stream:hover {
 #cover {
   height: 56px;
   position: fixed;
-  left: 80px;
+  left: 83px;
   bottom: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   overflow: hidden;
@@ -177,7 +177,7 @@ a.stream:hover {
     text-shadow: 0 0 10px #000;
     transition: transform 0.2s;
     margin-right: 33px;
-    margin-left: -30px;
+    margin-left: 28px;
   }
   .player i.pause:hover {
     color: #fff;
