@@ -1,18 +1,19 @@
 (function(app) {
     $(document).ready(function(){
         var rangeSlider = document.getElementById('slider-range');
+
+        $(this).tooltip();
+
         $('.collapsible').collapsible({
             accordion : false
         });
-        $(".button-collapse").sideNav();
 
-        $(".btn-search-collapse").click(function(){
-           $(".search-collapse").hide("slow");
-        });
+        $(".button-collapse").sideNav();
 
         $(".title-search-collapse").click(function(){
            $(".search-collapse").slideToggle("slow");
         });
+        
     });
 
     app.config(function($routeProvider, $locationProvider){

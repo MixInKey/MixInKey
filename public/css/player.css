@@ -177,7 +177,7 @@ a.stream:hover {
     text-shadow: 0 0 10px #000;
     transition: transform 0.2s;
     margin-right: 33px;
-    margin-left: -30px;
+    margin-left: 28px;
   }
   .player i.pause:hover {
     color: #fff;
