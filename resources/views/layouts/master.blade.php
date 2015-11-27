@@ -47,11 +47,11 @@
 					<a href="/" class="brand-logo">
 						<img src="{{ URL::to('images/logo/logo50x50.png') }}"></a>
 					</a>
+					@if(Auth::check())
 					<span class="input-field hidden-search inner-addon left-addon">
 						<i class="material-icons prefix">search</i>
 						<input id="search" type="text" placeholder="Search" class="validate">
 					</span>
-					@if(Auth::check())
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
 						<li>

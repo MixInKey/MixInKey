@@ -436,10 +436,11 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	margin-right: auto;
 	text-align: center;
 }
-
+/*
 .button-connexion a, .button-connexion button, .button-register a, .button-register button {
   width: 33%;
 }
+*/
 
 .button-register{
 	margin-left: auto;
