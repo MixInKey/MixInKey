@@ -1,6 +1,6 @@
 (function(app) {
 
-    app.controller('MainController', function($sce, $timeout, $rootScope, Beatport) {
+    app.controller('MainController', function($sce, $timeout, $location, $rootScope, Beatport) {
         var self = this;
         var type;
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
