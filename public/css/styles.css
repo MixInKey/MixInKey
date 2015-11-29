@@ -60,6 +60,7 @@ nav .brand-logo img{
 
 nav{
 	background-color: #131313;
+	font-weight: bold;
 }
 
 nav .input-field input{
@@ -120,9 +121,27 @@ nav > div > ul.right.hide-on-med-and-down > li.input-field{
 .dropdown-content li:hover{
 	background-color: #262626;
 }
+/*
+ul.right.hide-on-med-and-down > li:hover{
+	border-top: 5px solid #90ca0a;
+}
 
 ul.right.hide-on-med-and-down > li > a:hover{
-	background-color: #94d500;
+	margin-top: -5px;
+}*/
+
+ul.right.hide-on-med-and-down > li > a {
+  background-color: #131313;
+	border-radius: 0px;
+  -webkit-transition: background-color 500ms, border-radius 500ms;
+  -moz-transition: background-color 500ms, border-radius 500ms;
+  -o-transition: background-color 500ms, border-radius 500ms;
+  transition: background-color 500ms, border-radius 500ms;
+}
+
+ul.right.hide-on-med-and-down > li > a:hover {
+    background-color: #90ca0a;
+		border-radius: 2px;
 }
 
 .dropdown-content li>a,

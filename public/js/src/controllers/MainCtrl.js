@@ -1,6 +1,6 @@
 (function(app) {
 
-    app.controller('MainController', function($sce, $timeout, $location, $rootScope, Beatport) {
+    app.controller('MainController', function($sce, $timeout, $location, $controller, $rootScope, Beatport) {
         var self = this;
         var type;
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
@@ -38,6 +38,7 @@
             { key : 32, value : 'G# Minor' },
             { key : 31, value : 'G# Major' }
         ];
+
         /**
          * Get all genres to build search select field
          * @return {Object} genres
@@ -151,6 +152,10 @@
             player.changeTrack(track);
         };
 
+        self.isCurrentTrack = function(trackId) {
+            return $controller('PlayerCtrl').currentTrack.id == trackId;
+        };
+
         /**
          * Customize MaterialSlider (API query-param) to improve UX
          * @param {Number} self.BPM ngModel
@@ -190,9 +195,8 @@
             return Math.ceil(count/perPage);
         };
 
-
         /**
-         * Watch for make update paginer dynamically
+         * Watch for update paginer dynamically
          */
         $rootScope.$watch(function() {
             return self.filtered;
@@ -209,13 +213,19 @@
             self.pages = newPages;
         }, true);
 
+        $('.search input, .search select').focus(function() {
+            $(this).on('keydown', function(e) {
+                if (e.keyCode == 13) {
+                    self.search();
+                }
+            });
+        });
+
         self.formatString = function(string) {
-            return string.replace(/\w\S*/g, function(string){
+            return string.replace(/\w\S*/g, function(string) {
                 return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
             });
-
-
-        }
+        };
     });
 
 

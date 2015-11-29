@@ -1,7 +1,7 @@
 <div class="result z-depth-1" ng-if="main.tracks.results" >
   <div class="container">
     <div class="row">
-        <table class="bordered">
+        <table class="bordered table-hover">
          <thead>
            <tr>
                <th data-field="cover">Cover</th>
@@ -13,16 +13,16 @@
                <th data-field="play">Play</th>
            </tr>
          </thead>
-         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id'">
+         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id' track by $index">
            <tr>
              <td>
                <img class="thumbnail" ng-src="[% track.images.medium.url %]">
              </td>
              <td>[% track.artists | implodeArtists %]</td>
-             <td>[% track.name %]</td>
+             <td>[% track.name %] ([% track.mixName %])</td>
              <td>[% track.genres[0].name %]</td>
              <td>[% track.key.shortName | serializeKey %]</td>
-             <td>[% track.bpm  | emptyBpm %]</td>
+             <td>[% track.bpm | emptyBpm %]</td>
              <td>
                <a id="[% track.id %]" ng-click="main.changePlayerTrack(track)"><i class="material-icons">play_circle_filled</i></a>
              </td>

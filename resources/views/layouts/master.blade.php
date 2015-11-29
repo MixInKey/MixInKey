@@ -44,7 +44,7 @@
 			<nav>
 				<div class="nav-wrapper">
 					<a href="/" class="brand-logo">
-						<img src="{{ URL::to('images/logo/logo50x50.png') }}"></a>
+						<img src="{{ URL::to('images/logo/logo100x100.png') }}"></a>
 					</a>
 					@if(Auth::check())
 					<span class="input-field hidden-search inner-addon left-addon">

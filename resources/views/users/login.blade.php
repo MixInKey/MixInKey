@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<base href="/" />
 <div class="login z-depth-1">
 	<div class="page-header">
 		<h1>authentication</h1>
@@ -24,7 +25,7 @@
 					<label for="password">Password</label><br>
 				</div>
 				@if ($errors->has('password'))
-				<p>{{ $errors->first('password') }}</p>
+					<p>{{ $errors->first('password') }}</p>
 				@endif
 			</div>
 			<div class="button-connexion top-space">
