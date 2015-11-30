@@ -591,3 +591,12 @@ nav i {
 .field-border {
 	border-bottom: 1px solid whitesmoke!important;
 }
+
+.ctrl-result {
+	font-size: 1.8rem;
+}
+
+.track-cover {
+	width: 60px;
+	height: 60px;
+}

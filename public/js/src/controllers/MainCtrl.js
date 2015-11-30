@@ -1,8 +1,9 @@
 (function(app) {
 
-    app.controller('MainController', function($sce, $timeout, $location, $controller, $rootScope, Beatport) {
+    app.controller('MainController', function($sce, $timeout, $location, $rootScope, $routeParams, Beatport) {
         var self = this;
         var type;
+        var PlayerCtrl = angular.element('#player');
         self.tracks = {}, self.artists = {}, self.genres = {}, self.bpm = 0;
         self.tracks.results; self.query = {}; self.filtered;
         self.pages = []; self.nbPages;
@@ -40,7 +41,7 @@
         ];
 
         /**
-         * Get all genres to build search select field
+         * Get all genres to build search select field.
          * @return {Object} genres
          */
         self.findGenres = function() {
@@ -55,16 +56,14 @@
         };
 
         /**
-         * Advanced search called on submit
+         * Advanced search called on submit.
          * @method GET
          * @return {Object} $tracks
          */
         self.search = function() {
             var artist = self.query.artistName;
-            if(artist){
-                self.query.artistName = self.formatString(artist);
-                console.log(self.query);
-
+            if (artist) {
+                self.query.artistName = self.eachFirstToUpper(artist);
             }
             angular.element(".search-collapse").hide("slow");
             self.query.page = self.lastPage = 0;
@@ -80,6 +79,7 @@
                     return self.currentPage = 0;
                 }
                 self.currentPage = 0;
+                $location.path('/results/1');
                 self.tracks = data;
             })
             .error(function(err) {
@@ -88,14 +88,14 @@
         };
 
         /**
-         * Merge two objects
+         * Merge two objects.
          * @param  {Object} base First objects
          * @param  {Object} src  2th Obj
          * @return {Object} ba     [description]
          */
         self.extend = function(base, src) {
             count = 0;
-            if(self.lastPage < 1)
+            if (self.lastPage < 1)
                 return src;
             for (var key in base)
                 ++count;
@@ -108,7 +108,7 @@
         };
 
         /**
-         * Load next pages of items
+         * Load next pages of items.
          * @return {Object} self.tracks
          */
         self.getMoreTracks = function() {
@@ -133,48 +133,41 @@
         };
 
         /**
-         * Go to a given page
+         * Go to a given page.
          * @return {Number} self.currentPage
          */
         self.switch = function(index) {
             if (self.nbPages <= index+1) {
                 self.getMoreTracks();
             }
+            $location.path('results/' + index);
             return self.currentPage = index-1;
         };
 
         /**
-         * Interact with player using search results
+         * Interact with player using search results.
          * @param  {Number} trackId
          */
         self.changePlayerTrack = function(track) {
-            var player = angular.element('#player').controller();
+            var player = PlayerCtrl.controller();
+            if (track.id == player.currentTrack.id) {
+                !audio.paused ? audio.pause() : audio.play();
+                return player.isPlay = !audio.paused ? true : false;
+            }
             player.changeTrack(track);
         };
 
-        self.isCurrentTrack = function(trackId) {
-            return $controller('PlayerCtrl').currentTrack.id == trackId;
-        };
-
         /**
-         * Customize MaterialSlider (API query-param) to improve UX
-         * @param {Number} self.BPM ngModel
+         * Check for current track.
+         * @param  {Number}  trackId
+         * @return {boolean} Is current track
          */
-        self.moreBpm = function() {
-          self.BPM += self.BPM < 100 ? 10 : 0;
-          self.BPM = self.BPM <= 100 ? self.BPM : 100;
-          document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
+        self.isCurrentTrack = function(trackId) {
+            if (!audio.paused) {
+                return PlayerCtrl.controller().currentTrack.id == trackId;
+            }
+            return false;
         };
-
-        self.lessBpm = function() {
-          self.BPM -= self.BPM > 0 ? 10 : 0;
-          self.BPM = self.BPM >= 0 ? self.BPM : 0;
-          document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
-        };
-
-        $('#bpm-input').change(function() {
-          self.BPM = parseInt($(this).val());
-        });
 
         /**
          * Return true if index is equal to self.currentPage (paginer)
@@ -195,6 +188,18 @@
             return Math.ceil(count/perPage);
         };
 
+
+        /**
+         * Format string for query param.
+         * @param  {string} string
+         * @return {string} Formatted str
+         */
+        self.eachFirstToUpper = function(string) {
+            return string.replace(/\w\S*/g, function(string) {
+                return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+            });
+        };
+
         /**
          * Watch for update paginer dynamically
          */
@@ -213,21 +218,31 @@
             self.pages = newPages;
         }, true);
 
-        $('.search input, .search select').focus(function() {
-            $(this).on('keydown', function(e) {
-                if (e.keyCode == 13) {
-                    self.search();
-                }
-            });
+        $('.search input, .search select').on('keydown', function(e) {
+            if (e.keyCode == 13) {
+                self.search();
+            }
         });
-
-        self.formatString = function(string) {
-            return string.replace(/\w\S*/g, function(string) {
-                return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
-            });
-        };
     });
 
-
+    // /**
+    //  * Customize MaterialSlider (API query-param) to improve UX.
+    //  * @param {Number} self.BPM ngModel
+    //  */
+    // self.moreBpm = function() {
+    //   self.BPM += self.BPM < 100 ? 10 : 0;
+    //   self.BPM = self.BPM <= 100 ? self.BPM : 100;
+    //   document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
+    // };
+    //
+    // self.lessBpm = function() {
+    //   self.BPM -= self.BPM > 0 ? 10 : 0;
+    //   self.BPM = self.BPM >= 0 ? self.BPM : 0;
+    //   document.getElementById('bpm-input').MaterialSlider.change(self.BPM);
+    // };
+    //
+    // $('#bpm-input').change(function() {
+    //   self.BPM = parseInt($(this).val());
+    // });
 
 })(angular.module('beatportApp'));

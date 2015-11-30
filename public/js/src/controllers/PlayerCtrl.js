@@ -1,6 +1,6 @@
 (function(app) {
 
-    app.controller('PlayerController', function(Beatport, $sce, $rootScope, $timeout) {
+    app.controller('PlayerController', function(Beatport, $sce, $rootScope, $routeParams, $timeout) {
         var self = this;
         self.isPlay = false;
         self.currentTrack = {
@@ -10,6 +10,10 @@
             cover: 'http://geo-media.beatport.com/image/2990439.jpg',
         };
 
+        self.forward = function() {
+            console.log($routeParams);
+        };
+        
         /**
          * Beatport API calls.
          * @method GET
@@ -50,7 +54,7 @@
 
         self.getResourceUrl = function(url) {
             return $sce.getResourceUrl(url);
-        }
+        };
 
     });
 

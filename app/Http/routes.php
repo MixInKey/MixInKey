@@ -23,3 +23,4 @@ Route::get('signout', array('uses' => 'UsersController@getLogout', 'as' => 'getL
 Route::get('/artists', array('uses' => 'BeatportController@getAllArtists'));
 Route::get('/genres', array('uses' => 'BeatportController@getAllGenres'));
 Route::post('/search/tracks', array('uses' => 'BeatportController@findTracks'));
+Route::get('/{route?}', array('uses' => 'BeatportController@searchView', 'as' => 'other'))->where('route', '.+');

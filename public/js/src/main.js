@@ -24,11 +24,15 @@
 
     app.config(function($routeProvider, $locationProvider){
         $routeProvider.
-        when('/',{
+        when('/search',{
+            templateUrl: 'Search/index.html',
+        })
+        .when('/results/:page',{
             templateUrl: 'Search/index.html',
             controller: 'PlayerController',
-            controllerAs: 'player'
-        });
+            controllerAs: 'player',
+        })
+        .otherwise('/search');
         $locationProvider.html5Mode(true);
     });
     angular.module('templates', []);

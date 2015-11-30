@@ -1,6 +1,54 @@
+<span ng-init="main.forward()"></span>
 <div class="search z-depth-1" ng-if="main.NoResultsException">
 	<div class="container">
 	    <h5>No results found</h5>
 	</div>
 </div>
-<results-block></results-block> <!-- Results of search -->
+<div class="result z-depth-1" ng-if="main.tracks.results" >
+  <div class="container">
+    <div class="row">
+        <table class="bordered table-hover">
+         <thead>
+           <tr>
+               <th data-field="cover">Cover</th>
+               <th data-field="artist">Artist</th>
+               <th data-field="track">Track</th>
+               <th data-field="genre">Genre</th>
+               <th data-field="key">Key</th>
+               <th data-field="bpm">BPM</th>
+               <th data-field="play">Play</th>
+           </tr>
+         </thead>
+         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id' track by $index">
+           <tr ng-class="main.isCurrentTrack(track.id) ? 'selected-track' : ''">
+             <td>
+               <img class="thumbnail track-cover" ng-src="[% track.images.large.url %]">
+             </td>
+             <td>[% track.artists | listArtists %]</td>
+             <td>[% track.name %] ([% track.mixName %])</td>
+             <td>[% track.genres[0].name %]</td>
+             <td>[% track.key.shortName | serializeKey %]</td>
+             <td>[% track.bpm | emptyBpm %]</td>
+             <td>
+               <a id="[% track.id %]" ng-click="main.changePlayerTrack(track)">
+                 <i class="ctrl-result" ng-class="main.isCurrentTrack(track.id) ? 'fa fa-pause-circle' : 'fa fa-play-circle'"></i></a>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+    <div class="text-center">
+      <ul class="pagination">
+        <li class="waves-effect"
+          ng-class="main.isActive(i) ? 'active' : ''"
+          ng-click="main.switch(i)"
+          ng-repeat="i in main.pages">
+          <a>[% i %]</a>
+        </li>
+        <li ng-if="main.isLoadingItems">
+          <i id="page-spinner" class="fa fa-spinner fa-spin"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

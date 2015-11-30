@@ -11,7 +11,7 @@
 	<link href="/css/static/material-icons.css" rel="stylesheet">
 	<link href="/css/static/materialize/css/materialize.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link href="/css/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/font/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{ URL::to('css/styles.css') }}" rel="stylesheet">
 	<link href="{{ URL::to('css/player.css') }}" rel="stylesheet">
 
