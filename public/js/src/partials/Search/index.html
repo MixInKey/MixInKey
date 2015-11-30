@@ -19,8 +19,8 @@
                <th data-field="play">Play</th>
            </tr>
          </thead>
-         <tbody ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id' track by $index">
-           <tr ng-class="main.isCurrentTrack(track.id) ? 'selected-track' : ''">
+         <tbody>
+           <tr ng-repeat="track in main.filtered = (main.tracks.results | filter: query ) | startFrom:main.currentPage*main.perPage | limitTo:main.perPage | orderBy:'-id' track by $index" ng-class="main.isCurrentTrack(track.id) ? 'selected-track' : ''">
              <td>
                <img class="thumbnail track-cover" ng-src="[% track.images.large.url %]">
              </td>

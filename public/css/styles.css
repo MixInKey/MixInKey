@@ -31,8 +31,6 @@ label{
 	color: whitesmoke;
 }
 
-
-
 /* Material Icons */
 
 .material-icons{
@@ -599,4 +597,8 @@ nav i {
 .track-cover {
 	width: 60px;
 	height: 60px;
+}
+
+.selected-track {
+		border-bottom: 2px solid #8bc600 !important;
 }
