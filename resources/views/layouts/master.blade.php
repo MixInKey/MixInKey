@@ -68,7 +68,7 @@
 						<li>
 							<a href="/" target="_self"><i class="material-icons left">home</i>Home</a>
 						</li>
-						<ul class="collapsible" data-collapsible="expandable">
+						<ul class="collapsible-menu" data-collapsible="expandable">
 							<li>
 								<div class="collapsible-header"><i class="material-icons left">account_box</i>Profile<i class="material-icons right">arrow_drop_down</i></div>
 								<div class="collapsible-body">
