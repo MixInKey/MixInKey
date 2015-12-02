@@ -6,6 +6,7 @@
         $('.collapsible').collapsible({
             accordion : false
         });
+        
         $(".button-collapse").sideNav();
 
         $(".title-search-collapse").click(function(){
