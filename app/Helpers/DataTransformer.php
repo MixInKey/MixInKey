@@ -84,12 +84,12 @@ class DataTransformer
 
     protected static function byKey($key)
     {
-        if(is_null($key)){
+        if (is_null($key)) {
             return '';
         }
 
         $param = '';
-        if(intval($key)){
+        if (intval($key)) {
             $param = "key:{$key}";
         }
 
@@ -98,12 +98,12 @@ class DataTransformer
 
     protected static function byArtistName($artist)
     {
-        if(is_null($artist)){
+        if (is_null($artist)) {
             return '';
         }
 
         $param = '';
-        if(strval($artist)){
+        if (strval($artist)) {
             $param = "artistName:{$artist}";
         }
 
