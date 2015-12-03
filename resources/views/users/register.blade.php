@@ -48,7 +48,7 @@
 			</form>
 			<div class="button-register top-space">
 				<p>Already have an account ?</p>
-				<a href="{{ URL::to('signin') }}" class="waves-effect waves-light btn">Sign in</a>
+				<a target="_self" href="{{ URL::to('signin') }}" class="waves-effect waves-light btn">Sign in</a>
 			</div>
 		</div>
 	</div>
