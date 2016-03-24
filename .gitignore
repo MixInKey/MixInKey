@@ -8,3 +8,4 @@ bower_components
 .idea
 /.idea
 .env
+/config/beatport.php

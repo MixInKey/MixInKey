@@ -1,0 +1,8 @@
+<?php
+
+return array(
+    'consumer' => 'API_CONSUMER',
+    'secret'   => 'API_SECRET',
+    'login'    => 'ApiAuthLogin',
+    'password' => 'ApiAuthPassword'
+);
