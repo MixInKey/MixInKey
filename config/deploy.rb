@@ -7,8 +7,8 @@ set :ssh_user, "chalas_r"
 set :format, :pretty
 set :log_level, :info
 set :stage, "production"
-set :deploy_to,   "/var/www/html/projects/caplaravel"
-set :branch, "master"
+set :deploy_to,   "/var/www/html/projects/mixinkey"
+set :branch, "design"
 set :pty, true
 set :scm, :git
 set :use_sudo, true

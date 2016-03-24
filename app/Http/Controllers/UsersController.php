@@ -58,11 +58,13 @@ class UsersController extends Controller
      */
     protected function postRegister()
     {
-        $validator = Validator::make(Input::all(), [
+        $data = Input::all();
+
+        $validator = Validator::make($data, [
             'name' => 'required',
             'firstname' => 'required',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|min:4',
         ]);
 
         if ($validator->fails()) {
